@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+.h-one{
+    width: 100vw;
+    height: 800px;
+    border: 1px solid red;
+
+}
+
+.h-two{
+    width: 100%;
+    height: 90%;
+    border: 1px solid green;
+    /* background-color: aquamarine; */
+}
+
+.h-h1{
+    
+        border: 1px solid red;
+        color: #8687e7;
+        width: 50%;
+        font-size: 42px;
+        text-align: center;
+}
+
+.h-three{
+    margin-top: 25px;
+    /* border: 1px solid green; */
+    width: 100vw;
+    height: 144px;
+    margin-bottom: 35px;
+}
+
+.h-three-flexer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 99%;
+    /* border: 1px solid blue; */
+    margin: auto;
+    text-align: center;
+}
+
+.h-flex-childs{
+    /* border: 1px solid rgb(255, 62, 230); */
+    height: 100%;
+    width: 14%;
+    border-radius: 21px;
+    cursor: pointer;
+    -webkit-box-shadow: 3px 3px 10px 3px #ddd;
+-moz-box-shadow: 3px 3px 10px 3px #ddd;
+box-shadow: 3px 3px 10px 3px #ddd;
+}
+
+.h-flex-childs:hover{
+    transform: translateY(-10px);
+}
+
+.h-icon1{
+    font-size: 45px;
+    color: rgb(255, 62, 230);
+    margin-top: 26px;
+}
+
+.h-p1{
+    color: rgb(255, 62, 230);
+    font-weight: 600;
+}
+
+.h-mainp1{
+    text-align: center;
+    font-size: 36px;
+    
+}
+.h-mainp2{
+    font-size: 26px;
+    margin-left: 8%;
+}
+
+.h-four{
+    width: 90vw;
+    margin: auto;
+    /* border: 1px solid green; */
+    height: auto;
+    margin-left: 8%;
+    margin-top: 3%;
+}
+
+.h-p2{
+    font-size: 21px;
+}
