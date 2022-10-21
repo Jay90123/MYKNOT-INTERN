@@ -3,10 +3,15 @@ require("dotenv").config({path:"./config.env"})
 const connectDB=require("./config/db")
 const ErrorResponse=require("./middlewares/ErrorResponse")
 const cookieParser=require("cookie-parser")
+const cors=require("cors")
 
 
 connectDB()
 const app=express()
+
+app.use(cors({
+    origin:"https://myknot-official.netlify.app"
+}))
 
 app.use(express.json({limit:"50mb"}))
 app.use(express.urlencoded({limit:"50mb",extended:true}))
