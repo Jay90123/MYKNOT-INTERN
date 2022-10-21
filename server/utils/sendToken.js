@@ -12,13 +12,13 @@ const sendToken=async (user,statusCode,res)=>{
         httpOnly:true,
         // sameSite:"lax",
         sameSite:"none",
-        secure,
+        secure:true
     }
 
     
     res.status(statusCode||200).cookie("token",token,options).json({
         success:true,
-        // token,
+        token,
         // user
     })
 }

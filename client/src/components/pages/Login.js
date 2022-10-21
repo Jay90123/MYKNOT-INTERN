@@ -12,7 +12,7 @@ const Login = () => {
         method:"POST",
         body:JSON.stringify({email,password}),
         withCredentials:true,
-        // credentials:"include",
+        credentials:"include",
         headers:{"Content-type":"application/json","Access-Control-Allow-Credentials":"true"
       }
       }).then((res)=>{
