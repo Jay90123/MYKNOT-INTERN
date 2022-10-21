@@ -4,7 +4,7 @@ const { isAutheticatedUser,authorizedRole } = require("../middlewares/Authentica
 
 const router=express.Router()
 
-router.route("/createtheme").post(isAutheticatedUser,authorizedRole,createTheme)
+router.route("/createtheme").post(createTheme)
 
 router.route("/getallthemes").get(getAllThemes)
 
