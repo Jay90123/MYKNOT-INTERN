@@ -8,7 +8,7 @@ const Login = () => {
 
   async function submitHandler(){
     try {
-      await fetch("/api/auth/login",{
+      await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
         method:"POST",
         body:JSON.stringify({email,password}),
         headers:{"Content-type":"application/json"}

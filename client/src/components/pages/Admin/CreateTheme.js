@@ -37,7 +37,7 @@ const CreateTheme = () => {
 
     async function createTheme(imgurl){
         try {
-          await fetch("/api/themes/createtheme",{
+          await fetch("https://myknot-official.herokuapp.com/api/themes/createtheme",{
             method:"POST",
             body:JSON.stringify({img:imgurl,title,description,category,price,siteurl}),
             headers:{"Content-type":"application/json"}
@@ -57,7 +57,7 @@ const CreateTheme = () => {
     const uploadImage=async(base64EncodedImage)=>{
       // console.log(base64EncodedImage)
       try {
-          await fetch("/api/img/upload",{
+          await fetch("https://myknot-official.herokuapp.com/api/img/upload",{
               method:"POST",
               body:JSON.stringify({data:base64EncodedImage}),
               headers:{"Content-type":"application/json"}
