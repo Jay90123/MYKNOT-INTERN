@@ -13,7 +13,7 @@ const Login = () => {
         body:JSON.stringify({email,password}),
         withCredentials:true,
         credentials:"include",
-        headers:{"Content-type":"application/json"
+        headers:{"Content-type":"application/json","Access-Control-Allow-Credentials":"true"
       }
       }).then((res)=>{
         return res.json()
@@ -80,4 +80,3 @@ const Login = () => {
 
 export default Login
 
-// "Access-Control-Allow-Credentials":"true"
