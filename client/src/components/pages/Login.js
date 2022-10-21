@@ -11,7 +11,7 @@ const Login = () => {
       await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
         method:"POST",
         body:JSON.stringify({email,password}),
-        withCredentials:true,
+        // withCredentials:true,
         // credentials:"include",
         headers:{"Content-type":"application/json"
       }
