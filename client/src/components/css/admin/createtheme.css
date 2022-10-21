@@ -36,8 +36,8 @@
 
 .ctheme-input2{
     display: block;
-    margin-top: 61px;
-    margin-left: 147px;
+    margin-top: 19px;
+    margin-left: 184px;
 }
 
 .ctheme-btn{
@@ -109,6 +109,7 @@
 
 .ctheme-btn2:hover{
   transform: translateY(-1px);
+  border: 1px solid red;
 }
 
 .ctheme-img1{

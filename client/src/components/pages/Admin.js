@@ -20,36 +20,36 @@ const Admin = () => {
     <div className="adm-one">
         <div className="adm-sidebar">
           <div className="adm-s-one">
-         <div className="adm-s-one1"><i class="bi bi-person-circle adm-icon1"></i></div> 
+         <div className="adm-s-one1"><i className="bi bi-person-circle adm-icon1"></i></div> 
          <div className="adm-s-one2"><p className="adm-p1">Leston Aaron Salis</p><p className="adm-p3">lestonaaron321@gmail.com</p>
          </div> 
           </div>
           <div className="adm-child" onClick={()=>{
             setShowDiv(<Dashboard/>)
           }}>
-          <i class="bi bi-bar-chart-fill adm-icon2"></i> <p className="adm-p2">Dashboard</p>
+          <i className="bi bi-bar-chart-fill adm-icon2"></i> <p className="adm-p2">Dashboard</p>
           </div>
           <div className="adm-child" onClick={()=>{
             setShowDiv(<CreateTheme/>)
           }}>
-          <i class="bi bi-bag-plus-fill adm-icon2"></i> <p className="adm-p2">Add Product</p>
+          <i className="bi bi-bag-plus-fill adm-icon2"></i> <p className="adm-p2">Add Product</p>
           </div>
           <div className="adm-child" >
-          <i class="bi bi-bookmark-plus-fill adm-icon2" ></i> <p className="adm-p2">Orders</p>
+          <i className="bi bi-bookmark-plus-fill adm-icon2" ></i> <p className="adm-p2">Orders</p>
           </div>
           <div className="adm-child" onClick={()=>{
             setShowDiv(<AdminProducts/>)
           }}>
-          <i class="bi bi-handbag-fill adm-icon2"></i> <p className="adm-p2">Products</p>
+          <i className="bi bi-handbag-fill adm-icon2"></i> <p className="adm-p2">Products</p>
           </div>
           <div className="adm-child">
-          <i class="bi bi-people-fill adm-icon2"></i> <p className="adm-p2">Cusotmers</p>
+          <i className="bi bi-people-fill adm-icon2"></i> <p className="adm-p2">Cusotmers</p>
           </div>
           <div className="adm-child">
-          <i class="bi bi-chat-dots-fill adm-icon2"></i><p className="adm-p2">Reviews</p>
+          <i className="bi bi-chat-dots-fill adm-icon2"></i><p className="adm-p2">Reviews</p>
           </div>
           <div className="adm-child">
-          <i class="bi bi-person-video2 adm-icon2"></i><p className="adm-p2">Profile</p>
+          <i className="bi bi-person-video2 adm-icon2"></i><p className="adm-p2">Profile</p>
           </div>
         </div>
         <div className="adm-two">

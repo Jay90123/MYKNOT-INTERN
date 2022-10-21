@@ -102,3 +102,5 @@ exports.deleteTheme=async(req,res,next)=>{
         return next(new ErrorHandler(error.message,error.statuscode))
     }
 }
+
+
