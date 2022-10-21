@@ -12,8 +12,9 @@ const Login = () => {
         method:"POST",
         body:JSON.stringify({email,password}),
         withCredentials:true,
-        credentials:"include",
-        headers:{"Content-type":"application/json","Access-Control-Allow-Credentials":"true"}
+        // credentials:"include",
+        headers:{"Content-type":"application/json"
+      }
       }).then((res)=>{
         return res.json()
       }).then((data)=>{
@@ -78,3 +79,5 @@ const Login = () => {
 }
 
 export default Login
+
+// "Access-Control-Allow-Credentials":"true"

@@ -10,7 +10,8 @@ connectDB()
 const app=express()
 
 app.use(cors({
-    origin:"https://myknot-official.netlify.app"
+    origin:"https://myknot-official.netlify.app",
+    credentials: true
 }))
 // app.use(cors({
 //     origin:"http://localhost:3000"
