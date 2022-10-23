@@ -7,7 +7,7 @@ const CreateTheme = () => {
     const [previewSource,setPreviewSource]=useState()
     const [title,setTitle]=useState("")
     const [description,setDescription]=useState("")
-    const [price,setPrice]=useState()
+    const [price,setPrice]=useState(9999)
     const [category,setCategory]=useState("")
     const [siteurl,setSiteUrl]=useState("")
 
