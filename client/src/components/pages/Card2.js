@@ -2,11 +2,11 @@ import React from 'react'
 import "../css/card.css"
 
 const Card = ({data}) => {
-  // console.log("DATA",data)
+  console.log("DATA",data)
   return (
   <>
 
-<div class="card-one">
+<div class="card-one-two">
       <div class="card-two">
         <img src={data.img} alt="" class="card-img1" />
       </div>

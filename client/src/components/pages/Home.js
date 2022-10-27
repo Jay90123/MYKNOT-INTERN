@@ -3,20 +3,22 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Card from "./Card";
+import { useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux"
 import {getAllThemes} from "../../state/actions/themeActions.js"
 
 const Home = () => {
+  const navigate=useNavigate()
     var settings = {
         // dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         initialSlide: 0,
         autoplay: true,
-        speed: 2000,
-        autoplaySpeed: 1000,
+        speed: 500,
+        autoplaySpeed: 5000,
         pauseOnHover: true,
         // cssEase: "linear",
         responsive: [
@@ -57,71 +59,343 @@ const Home = () => {
         return state.themes;
       });
       setTimeout(()=>{
-        console.log(themes)
+        // console.log(themes)
       },5000)
+
+   
+        // let themes= [
+        //   // {
+        //   //   "_id": "635254527a167c80ee93dd86",
+        //   //   "title": "Gym",
+        //   //   "description": "A website for all needs",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666339922/vhjualfkfnffgca5ishw.png",
+        //   //   "price": 9999,
+        //   //   "category": "Sports",
+        //   //   "siteurl": "https://www.myknot.club/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "6355576e876e5125031301c9",
+        //   //   "title": "Known Education",
+        //   //   "description": "Online Education website.",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537325/wbewjlfmsk27m3our1ef.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-know-edu/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "635559de876e5125031301cb",
+        //   //   "title": "EduHub",
+        //   //   "description": " Education Community",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537949/bkg9zhz1zblvujiesmps.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-eduhub/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "63555a88876e5125031301cd",
+        //   //   "title": "Perfect Learn",
+        //   //   "description": "College website.",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666538119/f2nnls9pyfd2bjlunos5.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-perfect-learn/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "635572a42c6b7aaf8fbbad7d",
+        //   //   "title": "EduWell",
+        //   //   "description": "Graphics Education website",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666544291/oesoyed4rnkjapoh4hpy.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-eduwell/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "635578fb2c6b7aaf8fbbad7f",
+        //   //   "title": "Online Study",
+        //   //   "description": "Online Education website.",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666545914/oviwjyx22g50vp7ro8eh.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-online-study/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "6355799a2c6b7aaf8fbbad81",
+        //   //   "title": "Online Study",
+        //   //   "description": "Online Education website.",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546073/ptemrtabcmv376rhjefj.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-online-study/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "63557a322c6b7aaf8fbbad83",
+        //   //   "title": "Known Education",
+        //   //   "description": "Online Education website.",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546225/mghakbhtwzljozsrx7mp.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-know-edu/",
+        //   //   "__v": 0
+        //   // },
+        //   // {
+        //   //   "_id": "63557ac42c6b7aaf8fbbad85",
+        //   //   "title": "WebUni",
+        //   //   "description": "Online Course website.",
+        //   //   "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546371/qj2ahppsvlgfv7y1oxuf.png",
+        //   //   "price": 9999,
+        //   //   "category": "Educational",
+        //   //   "siteurl": "https://goutham4391.github.io/education-webuni/",
+        //   //   "__v": 0
+        //   // },
+        //   {
+        //     "_id": "63557c962c6b7aaf8fbbad87",
+        //     "title": "EduHub",
+        //     "description": "Education Community",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546836/dqmpej8e1ia6vgo6ho0t.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-eduhub/",
+        //     "__v": 0
+        //   },
+        //   {
+        //     "_id": "63557cf32c6b7aaf8fbbad89",
+        //     "title": "Lincoln  ",
+        //     "description": "High school website. ",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546930/xvnuqew1aqp0pgfbewvz.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-lincoln/",
+        //     "__v": 0
+        //   },
+        //   {
+        //     "_id": "63557d3a2c6b7aaf8fbbad8b",
+        //     "title": "Grad School",
+        //     "description": "Graduation school website.",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666547001/faljhvt6tacwqxv47wak.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-grad-school/",
+        //     "__v": 0
+        //   },
+        //   {
+        //     "_id": "63557d762c6b7aaf8fbbad8d",
+        //     "title": "Education74  ",
+        //     "description": "Graduation college website. ",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666547061/x1vamdpycgfdhudod83g.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-university-edu74/",
+        //     "__v": 0
+        //   },
+        //   {
+        //     "_id": "63557de72c6b7aaf8fbbad8f",
+        //     "title": "Charity  ",
+        //     "description": "Non profit Donation website.",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666547174/rpoylflkgchewstjpee4.png",
+        //     "price": 9999,
+        //     "category": "Non Profit",
+        //     "siteurl": "https://goutham4391.github.io/nonprofit-charity/",
+        //     "__v": 0
+        //   },
+    
+        // ]
+
+      async function paymentcontrol(){
+        try {
+          
+
+          await fetch("https://sandbox.cashfree.com/pg/orders",{
+          method:"POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-version":"2022-01-01",
+            "x-client-id":"16659e73fe0b71d24294caa1695661",
+            "x-client-secret":"348a00ab3ee5b662f0122897e3c7bfbf4082ddf2",
+            "Accept":"application/json"
+          },
+          body:{
+            "customer_details": {
+                "customer_id": "7112AAA812234",
+                "customer_email": "johny@cashfree.com",
+                "customer_phone": "9908734801"
+            },"order_meta": {
+                "notify_url": "https://webhook.site/0578a7fd-a0c0-4d47-956c-d02a061e36d3"
+            },
+            "order_amount": 1.00,
+            "order_currency": "INR",
+            "order_id":"123456789AAA",
+            "order_amount":"1200"
+        }
+        }).then((res)=>{
+          return res.json()
+        }).then((data)=>{
+          return data
+        }).catch((error)=>{
+          console.log(error)
+        })
+
+
+        } catch (error) {
+          console.log(error)
+        }
+      }
+      
   return (
     <>
-      <div className="h-one">
-        <div className="h-two">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path
-              fill="#ff3ee6"
-              fill-opacity="1"
-              d="M0,256L14.1,256C28.2,256,56,256,85,240C112.9,224,141,192,169,186.7C197.6,181,226,203,254,218.7C282.4,235,311,245,339,213.3C367.1,181,395,107,424,117.3C451.8,128,480,224,508,234.7C536.5,245,565,171,593,160C621.2,149,649,203,678,234.7C705.9,267,734,277,762,240C790.6,203,819,117,847,112C875.3,107,904,181,932,213.3C960,245,988,235,1016,202.7C1044.7,171,1073,117,1101,96C1129.4,75,1158,85,1186,74.7C1214.1,64,1242,32,1271,21.3C1298.8,11,1327,21,1355,26.7C1383.5,32,1412,32,1426,32L1440,32L1440,0L1425.9,0C1411.8,0,1384,0,1355,0C1327.1,0,1299,0,1271,0C1242.4,0,1214,0,1186,0C1157.6,0,1129,0,1101,0C1072.9,0,1045,0,1016,0C988.2,0,960,0,932,0C903.5,0,875,0,847,0C818.8,0,791,0,762,0C734.1,0,706,0,678,0C649.4,0,621,0,593,0C564.7,0,536,0,508,0C480,0,452,0,424,0C395.3,0,367,0,339,0C310.6,0,282,0,254,0C225.9,0,198,0,169,0C141.2,0,113,0,85,0C56.5,0,28,0,14,0L0,0Z"
-            ></path>
-          </svg>
-          <h1 className="h-h1">
-            Digital Products that make your buisness successful
-          </h1>
-        </div>
+      <div class="h-one">
+      <img
+        src="https://cdn.pixabay.com/photo/2015/03/13/17/39/road-672036_960_720.jpg"
+        alt=""
+        class="h-img1"
+      />
+      <div class="h-two"></div>
+    </div>
+    <nav class="n-one">
+      <div class="n-two">
+        <img
+          src="https://www.myknot.club/images/logo%20black.png"
+          alt=""
+          class="n-img1"
+        />
       </div>
-      <p className="h-mainp1">Your dream webiste awaits here!!</p>
-      <p className="h-mainp2">Our categories.......</p>
-      <div className="h-three">
-        <div className="h-three-flexer">
-          <div className="h-flex-childs">
-            <i class="fa-solid fa-graduation-cap h-icon1"></i>
-            <p className="h-p1">Educational</p>
-          </div>
-          <div className="h-flex-childs">
-            <i class="fa-solid fa-baseball-bat-ball h-icon1"></i>
-            <p className="h-p1">Sports</p>
-          </div>
-          <div className="h-flex-childs">
-            <i class="fa-solid fa-cart-shopping h-icon1"></i>
-            <p className="h-p1">Ecommerce</p>
-          </div>
-          <div className="h-flex-childs">
-            <i class="fa-solid fa-user-tag h-icon1"></i>
-            <p className="h-p1">Portfolio</p>
-          </div>
-          <div className="h-flex-childs">
-            <i class="fa-solid fa-circle-dollar-to-slot h-icon1"></i>
-            <p className="h-p1">Non Profit</p>
-          </div>
-          <div className="h-flex-childs">
-            <i class="fa-solid fa-bell-concierge h-icon1"></i>
-            <p className="h-p1">Services</p>
-          </div>
-        </div>
+      <div class="n-three">
+        <ul class="h-listcontrol">
+          <li class="h-list-item">HOME</li>
+          <li class="h-list-item">ABOUT US</li>
+          <li class="h-list-item">CONTACT US</li>
+          <li class="h-list-item nav-extra">LOGIN</li>
+          <li class="h-list-item nav-extra">SIGNUP</li>
+        </ul>
       </div>
-  
-  <div className="h-four">
-  <p className="h-p2">Educational</p>
-  <Slider {...settings}>
-        
-        {
+      <h1 class="h-h1">Get On The Path To Buisness Success</h1>
+      <p class="h-p2">Select your dream website from our rich collection</p>
+      <div class="h-four">
+        <button class="h-btn1" onClick={()=>{
+          navigate("/collection")
+        }}>View Collection</button>
+      </div>
+    </nav>
+
+    <p class="h-pmain">Our categories</p>
+
+<div class="h-three">
+    <div class="h-three-flexer">
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-graduation-cap h-icon1"></i>
+        <p class="h-p1">Education</p>
+      </div>
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-baseball-bat-ball h-icon1"></i>
+        <p class="h-p1">Sports</p>
+      </div>
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-cart-shopping h-icon1"></i>
+        <p class="h-p1">Ecommerce</p>
+      </div>
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-user-tag h-icon1"></i>
+        <p class="h-p1">Portfolio</p>
+      </div>
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-circle-dollar-to-slot h-icon1"></i>
+        <p class="h-p1">Non Profit</p>
+      </div>
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-bell-concierge h-icon1"></i>
+        <p class="h-p1">Services</p>
+      </div>
+    </div>
+</div>
+
+  <p class="h-p-mainone"  >Eduactional</p>
+    {/* <div class="h-cardholder"> */}
+      <Slider  {...settings}>
+      {
                  themes &&  themes.map((ele,index)=>{
-                       return <Card data={ele}/>
+
+                      if(ele.category==="Educational"){
+                        return <Card data={ele}/>
+                      }
+
                    })
                }
-        </Slider>
-         
-  </div>
+
+        </Slider>      
+          {/* </div> */}
+        <p class="h-p-mainone" >Non Profit</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Non Profit"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Sports</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Sports"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Portfolio</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Portfolio"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Services</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Services"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Ecommerce</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Ecommerce"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
 
   
-
-
     </>
   );
 };

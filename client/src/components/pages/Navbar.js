@@ -40,7 +40,7 @@ const Navbar = () => {
     
     <div className="nav">
         <ul className="nav-ul">
-            <li className="list-ele nav-heading"><Link to="/">ShopX</Link></li>
+            <li className="list-ele nav-heading"><Link to="/">Myknot</Link></li>
             {
               show1===true?<>
               <li className="list-ele"><Link to="/">Home</Link></li>
