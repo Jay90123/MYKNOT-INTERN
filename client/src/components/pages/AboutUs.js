@@ -2,16 +2,17 @@ import React from 'react'
 import "../css/aboutus.css"
 import "../css/home.css"
 import founder from "../utils/img/founder3.jpg"
+import Navbar from './Navbar'
 
 const AboutUs = () => {
   return (
     <>
-    
+    <Navbar/>
     <div className="abt-one">
     <div className="abt-two">
       <h1 className='abt-h1'>About us</h1>
     </div>
-    <i class="fa-solid fa-shop abt-icon1"></i>
+    <i className="fa-solid fa-shop abt-icon1"></i>
     </div>
     <div className="abt-three">
       <h2 className='abt-h2-1' data-aos="fade-up">Who we are </h2>
@@ -20,17 +21,17 @@ const AboutUs = () => {
 
     <div className="h-three setter">
         <div className="h-three-child" data-aos="fade-up" >
-        <i class="fa-solid fa-user-tie d-icon" style={{"marginBottom":"22px"}}></i>
+        <i className="fa-solid fa-user-tie d-icon" style={{"marginBottom":"22px"}}></i>
             <p className='h-three-p1'>24+</p>
             <p className='h-three-p2'>EMPLOYEES</p>
             </div>
         <div className="h-three-child"  data-aos="fade-up">
-            <i class="bi bi-building d-icon"></i>
+            <i className="bi bi-building d-icon"></i>
             <p className='h-three-p1'>2+</p>
             <p className='h-three-p2'>OFFICES</p>
             </div>
         <div className="h-three-child"  data-aos="fade-up">
-        <i class="fa-solid fa-tree-city d-icon"></i>
+        <i className="fa-solid fa-tree-city d-icon"></i>
             <p className='h-three-p1'>23+</p>
             <p className='h-three-p2'>CITIES</p>
         </div>

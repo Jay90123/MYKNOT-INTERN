@@ -1,11 +1,13 @@
-import React ,{useEffect} from "react";
+import React ,{ useContext, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { Link } from 'react-router-dom'
 import Card from "./Card";
 import { useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from "react-redux"
 import {getAllThemes} from "../../state/actions/themeActions.js"
+import Appcontext from '../context/Appcontext'
 
 const Home = () => {
   const navigate=useNavigate()
@@ -14,12 +16,14 @@ const Home = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
         initialSlide: 0,
         autoplay: true,
         speed: 500,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 2000,
         pauseOnHover: true,
+        // nextArrow: <SampleNextArrow />,
+      // prevArrow: <SamplePrevArrow />,
         // cssEase: "linear",
         responsive: [
           {
@@ -49,11 +53,42 @@ const Home = () => {
         ]
       };
 
+      const mainstate=useContext(Appcontext)
+
+      const [show1,setShow1]=useState(false)
+      const [show2,setShow2]=useState(false)
+      function getScreenWidth(){
+        let a=window.screen.width
+        return a
+      }
+      useEffect(()=>{
+       let swidth= getScreenWidth()
+    
+       if(swidth>501){
+        setShow1(true)
+        setShow2(false)
+       }else{
+        setShow1(false)
+        setShow2(true)
+       }
+      },[])
+    
+      function overlayset(){
+        if(mainstate.overlay===true){
+    
+          mainstate.setOverlay(false)
+    
+        }else{
+          mainstate.setOverlay(true)
+    
+        }
+      }
+
       const dispatch = useDispatch();
 
       useEffect(() => {
         dispatch(getAllThemes());
-      }, [dispatch]);
+      }, []);
 
       const { themes, loading } = useSelector((state) => {
         return state.themes;
@@ -254,6 +289,9 @@ const Home = () => {
         src="https://cdn.pixabay.com/photo/2015/03/13/17/39/road-672036_960_720.jpg"
         alt=""
         class="h-img1"
+        onClick={()=>{
+          navigate("/")
+        }}
       />
       <div class="h-two"></div>
     </div>
@@ -267,15 +305,27 @@ const Home = () => {
       </div>
       <div class="n-three">
         <ul class="h-listcontrol">
-          <li class="h-list-item">HOME</li>
-          <li class="h-list-item">ABOUT US</li>
-          <li class="h-list-item">CONTACT US</li>
-          <li class="h-list-item nav-extra">LOGIN</li>
-          <li class="h-list-item nav-extra">SIGNUP</li>
+        {
+              show1===true?<>
+               <li class="h-list-item"><Link to="/">Home</Link></li>
+          <li class="h-list-item"><Link to="/aboutus">About Us</Link></li>
+          <li class="h-list-item"><Link to="/contact">Contact Us</Link></li>
+          <li class="h-list-item nav-extra"><Link to="/login">Login</Link></li>
+          <li class="h-list-item nav-extra"><Link to="/register">Signup</Link></li>
+              </>:undefined
+}
+
+{
+              show2===true?<><li className="list-ele m-nav-overrider1"></li>
+              <li className="list-ele m-nav-overrider2" onClick={()=>{
+                overlayset()
+              }}>Menu</li></>:undefined
+            }
         </ul>
       </div>
-      <h1 class="h-h1">Get On The Path To Buisness Success</h1>
-      <p class="h-p2">Select your dream website from our rich collection</p>
+      <h1 class="h-h1">Your dream websites and instant apps awaits !</h1>
+      {/* <p class="h-p2">Select your dream website from our rich collection</p> */}
+      <p class="h-p2">Welcome to our fresh collection of themes. Hope you find your dream website and instant apps here. Start your journey with our themes.</p>
       <div class="h-four">
         <button class="h-btn1" onClick={()=>{
           navigate("/collection")
@@ -314,7 +364,7 @@ const Home = () => {
     </div>
 </div>
 
-  <p class="h-p-mainone"  >Eduactional</p>
+  <p class="h-p-mainone"  >Educational</p>
     {/* <div class="h-cardholder"> */}
       <Slider  {...settings}>
       {
@@ -372,7 +422,7 @@ const Home = () => {
       <Slider  {...settings}>
       {
                  themes &&  themes.map((ele,index)=>{
-
+                  
                       if(ele.category==="Services"){
                         return <Card data={ele}/>
                       }

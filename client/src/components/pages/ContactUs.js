@@ -1,11 +1,12 @@
 import React from 'react'
 import "../css/aboutus.css"
 import "../css/contact.css"
+import Navbar from './Navbar'
 
 const ContactUs = () => {
   return (
    <>
-   
+   <Navbar/>
    <div className="abt-one">
     <div className="abt-two">
       <h1 className='abt-h1 ct-h1'>Welcome to customer support</h1>

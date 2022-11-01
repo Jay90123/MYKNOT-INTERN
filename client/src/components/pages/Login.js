@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "../css/login.css"
+import Navbar from './Navbar'
 
 const Login = () => {
 
@@ -29,6 +30,7 @@ const Login = () => {
 
   return (
     <>
+    <Navbar/>
     
     <div className="l-one">
         <div className="l-two">

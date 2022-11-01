@@ -3,16 +3,19 @@
     width: 100vw;
     height: 100vh;
     /* border:1px solid red; */
-    background-color:#252323;
+    /* background-color:#252323; */
+    background-color:white;
+    
+
 }
 
 .l-two{
     position: absolute;
     z-index:1;
     clip-path: polygon(44% 0, 71% 49%, 44% 100%, 0% 100%, 24% 49%, 0% 0%);
-    background: #000000;
-    background: -webkit-linear-gradient(to right, #e74c3c, #000000); 
-    background: linear-gradient(to right, #e74c3c, #000000);
+    background: #7F7FD5; 
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); 
     width: 100%;
     height: 100%;
     animation: l-two-anim 1s ease-in-out;
@@ -65,7 +68,7 @@
 .heading{
   text-align: center;
   /* border-bottom: 5px solid red; */
-  border-bottom: 5px solid #cc5333;
+  border-bottom: 5px solid rgb(55, 186, 218);
   animation: heading1 1s;
 }
 @keyframes heading1 {

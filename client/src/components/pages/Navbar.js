@@ -60,7 +60,7 @@ const Navbar = () => {
                 overlayset()
               }}>Menue</li></>:undefined
             }
-            <li className="list-ele testing"><p className="nav-p1"><i className="bi bi-person-circle nav-icon1"></i>Leston Aaron Salis</p></li>
+            {/* <li className="list-ele testing"><p className="nav-p1"><i className="bi bi-person-circle nav-icon1"></i>Leston Aaron Salis</p></li> */}
         </ul>
     </div>
     

@@ -1,9 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Register = () => {
   return (
    
 <>
+<Navbar/>
 
 <div className="l-one">
         <div className="l-two">
