@@ -1,4 +1,5 @@
 import React from 'react'
+import Rating from './Rating'
 import "../css/card.css"
 
 const Card = ({data}) => {
@@ -14,6 +15,7 @@ const Card = ({data}) => {
         <div class="card-three-child1">
           <p class="card-p1">{data.title}</p>
           <p class="card-p2">{data.description}</p>
+          <Rating value={3.5} review={2}/>
         </div>
         <div class="card-three-child2">
           <p class="card-p3"><a href={data.siteurl}  target="_blank" class="card-anchor">Live Preview</a></p>

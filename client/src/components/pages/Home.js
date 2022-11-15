@@ -84,112 +84,92 @@ const Home = () => {
         }
       }
 
-      // const dispatch = useDispatch();
+      const dispatch = useDispatch();
 
-      // useEffect(() => {
-      //   dispatch(getAllThemes());
-      // }, []);
+      useEffect(() => {
+        dispatch(getAllThemes());
+      }, []);
 
-      // const { themes, loading } = useSelector((state) => {
-      //   return state.themes;
-      // });
+      const { themes, loading } = useSelector((state) => {
+        return state.themes;
+      });
    
 
    
-        let themes= [
-          {
-            "_id": "635254527a167c80ee93dd86",
-            "title": "Gym",
-            "description": "A website for all needs",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666339922/vhjualfkfnffgca5ishw.png",
-            "price": 9999,
-            "category": "Sports",
-            "siteurl": "https://www.myknot.club/",
-            "__v": 0
-          },
-          {
-            "_id": "6355576e876e5125031301c9",
-            "title": "Known Education",
-            "description": "Online Education website.",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537325/wbewjlfmsk27m3our1ef.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-know-edu/",
-            "__v": 0
-          },
-          {
-            "_id": "635559de876e5125031301cb",
-            "title": "EduHub",
-            "description": " Education Community",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537949/bkg9zhz1zblvujiesmps.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-eduhub/",
-            "__v": 0
-          },
-          {
-            "_id": "63555a88876e5125031301cd",
-            "title": "Perfect Learn",
-            "description": "College website.",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666538119/f2nnls9pyfd2bjlunos5.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-perfect-learn/",
-            "__v": 0
-          },
-          {
-            "_id": "635572a42c6b7aaf8fbbad7d",
-            "title": "EduWell",
-            "description": "Graphics Education website",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666544291/oesoyed4rnkjapoh4hpy.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-eduwell/",
-            "__v": 0
-          },
-          {
-            "_id": "635578fb2c6b7aaf8fbbad7f",
-            "title": "Online Study",
-            "description": "Online Education website.",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666545914/oviwjyx22g50vp7ro8eh.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-online-study/",
-            "__v": 0
-          },
-          {
-            "_id": "6355799a2c6b7aaf8fbbad81",
-            "title": "Online Study",
-            "description": "Online Education website.",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546073/ptemrtabcmv376rhjefj.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-online-study/",
-            "__v": 0
-          },
-          {
-            "_id": "63557a322c6b7aaf8fbbad83",
-            "title": "Known Education",
-            "description": "Online Education website.",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546225/mghakbhtwzljozsrx7mp.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-know-edu/",
-            "__v": 0
-          },
-          {
-            "_id": "63557ac42c6b7aaf8fbbad85",
-            "title": "WebUni",
-            "description": "Online Course website.",
-            "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546371/qj2ahppsvlgfv7y1oxuf.png",
-            "price": 9999,
-            "category": "Educational",
-            "siteurl": "https://goutham4391.github.io/education-webuni/",
-            "__v": 0
-          },
-         
-    
-        ]
+        // let themes= [
+        //   {
+        //     "_id": "635559de876e5125031301cb",
+        //     "title": "EduHub",
+        //     "description": " Education Community",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537949/bkg9zhz1zblvujiesmps.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-eduhub/",
+        //     "__v": 0,
+        //     "numOfReviews": 0,
+        //     "reviews": []
+        //   },
+        //   {
+        //     "_id": "63555a88876e5125031301cd",
+        //     "title": "Perfect Learn",
+        //     "description": "College website.",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666538119/f2nnls9pyfd2bjlunos5.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-perfect-learn/",
+        //     "__v": 0,
+        //     "numOfReviews": 0,
+        //     "reviews": []
+        //   },
+        //   {
+        //     "_id": "635572a42c6b7aaf8fbbad7d",
+        //     "title": "EduWell",
+        //     "description": "Graphics Education website",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666544291/oesoyed4rnkjapoh4hpy.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-eduwell/",
+        //     "__v": 0,
+        //     "numOfReviews": 0,
+        //     "reviews": []
+        //   },
+        //   {
+        //     "_id": "63557a322c6b7aaf8fbbad83",
+        //     "title": "Known Education",
+        //     "description": "Online Education website.",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546225/mghakbhtwzljozsrx7mp.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-know-edu/",
+        //     "__v": 0,
+        //     "numOfReviews": 0,
+        //     "reviews": []
+        //   },
+        //   {
+        //     "_id": "63557ac42c6b7aaf8fbbad85",
+        //     "title": "WebUni",
+        //     "description": "Online Course website.",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546371/qj2ahppsvlgfv7y1oxuf.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-webuni/",
+        //     "__v": 0,
+        //     "numOfReviews": 0,
+        //     "reviews": []
+        //   },
+        //   {
+        //     "_id": "63557c962c6b7aaf8fbbad87",
+        //     "title": "EduHub",
+        //     "description": "Education Community",
+        //     "img": "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546836/dqmpej8e1ia6vgo6ho0t.png",
+        //     "price": 9999,
+        //     "category": "Educational",
+        //     "siteurl": "https://goutham4391.github.io/education-eduhub/",
+        //     "__v": 0,
+        //     "numOfReviews": 0,
+        //     "reviews": []
+        //   }
+        // ]
 
       async function paymentcontrol(){
         try {
@@ -310,6 +290,38 @@ const Home = () => {
         <i class="fa-solid fa-bell-concierge h-icon1"></i>
         <p class="h-p1">Services</p>
       </div>
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-plane-departure h-icon1"></i>
+        <p class="h-p1">Aerospace</p>
+      </div>
+      <div class="h-flex-childs">
+        <i class="fa-solid fa-flask-vial h-icon1"></i>
+        <p class="h-p1">Chemical</p>
+      </div>
+      <div class="h-flex-childs">
+      <i class="fa-solid fa-car-side h-icon1"></i>
+        <p class="h-p1">Transport</p>
+      </div>
+      <div class="h-flex-childs">
+      <i class="fa-solid fa-industry h-icon1"></i>
+        <p class="h-p1">Manufacturing</p>
+      </div>
+      <div class="h-flex-childs">
+      <i class="fa-solid fa-tractor h-icon1"></i>
+        <p class="h-p1">Heavy</p>
+      </div>
+      <div class="h-flex-childs">
+      <i class="fa-solid fa-plug h-icon1"></i>
+        <p class="h-p1">Electric</p>
+      </div>
+      <div class="h-flex-childs">
+      <i class="fa-solid fa-suitcase-medical h-icon1"></i>
+        <p class="h-p1">Healthcare</p>
+      </div>
+      <div class="h-flex-childs">
+      <i class="fa-solid fa-arrow-trend-up h-icon1"></i>
+        <p class="h-p1">Economic</p>
+      </div>
     </div>
 </div>
 
@@ -386,6 +398,136 @@ const Home = () => {
                  themes &&  themes.map((ele,index)=>{
 
                       if(ele.category==="Ecommerce"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Aerospace</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Aerospace"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Automotive</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Automotive"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Chemical Industry</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Chemical"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Transport Industry</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Transport"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Manufacturing Industry</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Manufacturing"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Heavy Industry</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Heavy"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Healthcare</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Healthcare"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Electric Industry</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Electric"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Hospitality</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Hospitality"){
+                        return <Card data={ele}/>
+                      }
+
+                   })
+               }
+
+        </Slider>      
+        <p class="h-p-mainone" >Economic</p>
+      <Slider  {...settings}>
+      {
+                 themes &&  themes.map((ele,index)=>{
+
+                      if(ele.category==="Economic"){
                         return <Card data={ele}/>
                       }
 

@@ -35,7 +35,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="f-three-child">
-            <ul className="f-list">
+            <ul className="f-list f-list-lastone ">
                     <li className="list-head">Contact Us</li>
                     <li className="f-list-ele cutoff">&nbsp;</li>
                     <li className="f-list-ele"></li>
@@ -45,7 +45,7 @@ const Footer = () => {
                 </ul>
             </div>
             <div className="f-three-child">
-            <ul className="f-list">
+            <ul className="f-list f-list-lastone">
                     <li className="list-head cutoff">&nbsp;</li>
                     <li className="f-list-ele cutoff">&nbsp;</li>
                     <li className="f-list-ele cutoff"></li>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </ul>
             </div>
         </div>
-        <p className='f-last-p'>&#169;  2022  ShopX.com</p>
+        <p className='f-last-p'>&#169;  2022  Myknot.com</p>
         </div>
 </div>
 

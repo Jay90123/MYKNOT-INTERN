@@ -125,10 +125,12 @@ body{
 
 
 .h-three{
-    height: 108px;
+    /* height: 108px; */
+    height: auto;
     width: 100vw;
     margin: 0;
     margin-top: 50px;
+    /* border: 1px solid green; */
 }
 
 
@@ -141,6 +143,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    /* border: 1px solid red; */
 }
 
 .h-flex-childs{
@@ -151,6 +154,7 @@ body{
     -moz-box-shadow: 3px 3px 10px 3px #ddd;
     box-shadow: 3px 3px 10px 3px #ddd;
     cursor: pointer;
+    margin: 16px 15px;
 }
 
 .h-icon1{
@@ -256,20 +260,31 @@ body{
     }
     .h-three{
         /* border: 1px solid red; */
-        height: 400px;
+        /* height: 400px; */
+        /* height: 800px; */
+        /* height: auto; */
     }
     .h-three-flexer{
-        flex-direction: column;
+        display: flex;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
         /* border: 1px solid green; */
         width: 99%;
         justify-content: space-evenly;
         margin: 0;
     }
     .h-flex-childs{
-        width: 35%;
-        margin: 0;
-        margin-left: 26px;
+        width: 25%;
+        height: 8%;
+        /* margin: 0; */
+        /* margin-left: 0px; */
+        margin: 3% 3%;
     }
-  
-
+    .h-icon1{
+        margin-left: 35%;
+        font-size: 25px;
+    }
+    .h-p1{
+        font-size: 13px;
+    }
 }

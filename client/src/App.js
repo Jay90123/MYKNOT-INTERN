@@ -10,6 +10,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
 import Navbar from "./components/pages/Navbar";
 import Overlaynav from "./components/pages/Overlaynav";
+import ParticluarTheme from "./components/pages/ParticluarTheme";
 import Register from "./components/pages/Register";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/admin" element={<Admin/>}></Route>
             <Route path="/collection" element={<Collection/>}></Route>
+            <Route path="/getparticulartheme" element={<ParticluarTheme/>}></Route>
             <Route path="/" exact={true} element={<Home />}></Route>
           </Routes>
           <Footer />

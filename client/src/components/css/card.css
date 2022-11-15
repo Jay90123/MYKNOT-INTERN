@@ -114,6 +114,15 @@
     /* margin-bottom: 15px; */
 }
 
+.rating-span{
+    color:red;
+    font-size: 12px;
+}
+.rating{
+    /* border: 1px solid green; */
+    padding-left: 5%;
+}
+
 
 @media (max-width:820px){
   .card-one{

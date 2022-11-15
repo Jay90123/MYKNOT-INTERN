@@ -104,3 +104,17 @@ exports.deleteTheme=async(req,res,next)=>{
 }
 
 
+exports.updateAllThemes=async (req,res, next)=>{
+    try {
+
+        const allupdatetheme=await Themes.updateMany({},{$set:{numOfReviews:0, reviews:[]}})
+        return res.status(200).json({
+            "success":true,
+            allupdatetheme
+        })
+
+    } catch (error) {
+        return next(new ErrorResponse(error,error.status))
+    }
+}
+
