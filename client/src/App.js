@@ -27,7 +27,7 @@ const App = () => {
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/admin" element={<Admin/>}></Route>
             <Route path="/collection" element={<Collection/>}></Route>
-            <Route path="/getparticulartheme" element={<ParticluarTheme/>}></Route>
+            <Route path="/getparticulartheme/:id" element={<ParticluarTheme/>}></Route>
             <Route path="/" exact={true} element={<Home />}></Route>
           </Routes>
           <Footer />

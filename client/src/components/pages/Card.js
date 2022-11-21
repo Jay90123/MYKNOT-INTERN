@@ -1,13 +1,17 @@
 import React from 'react'
 import Rating from './Rating'
 import "../css/card.css"
+import { useNavigate } from 'react-router-dom'
 
 const Card = ({data}) => {
+  const navigate=useNavigate()
   // console.log("DATA",data)
   return (
   <>
 
-<div class="card-one">
+<div class="card-one" onClick={()=>{
+  navigate(`/getparticulartheme/${data._id}`)
+}}>
       <div class="card-two">
         <img src={data.img} alt="" class="card-img1" />
       </div>

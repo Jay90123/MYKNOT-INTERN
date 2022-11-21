@@ -167,13 +167,16 @@
 .overcut{
     border: none;
     margin-left: 48%;
-    margin-top: 0%;
-    width: 23%;
-    height: 9%;
+    margin-top: 1%;
+    /* width: 23%; */
+    /* height: 9%; */
     font-size: 17px;
     background: #eded80;
     font-size: 15px;
     border-radius: 7px;
+    color: black;
+    padding: 1%;
+    padding: 1% 4%;
 }
 .ptc-btnfive{
     width: 11%;

@@ -54,4 +54,20 @@ exports.login=async(req,res,next)=>{
     }
 }
 
+exports.getUserDetails=async(req,res,next)=>{
+    const userID=req.header("userID")
+    try {
+        const user=await User.findById({_id:userID})
+        if(!user){
+            return next(new ErrorHandler("User not found",400))
+        }else{
+            return res.status(200).json({
+                success:true,
+                user
+            })
+        }
+    } catch (error) {
+        return next(new ErrorHandler(error,error.code))
+    }
+}
 

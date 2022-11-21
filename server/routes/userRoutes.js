@@ -1,5 +1,5 @@
 const express=require("express")
-const {register,login}=require("../controllers/userAuth")
+const {register,login,getUserDetails}=require("../controllers/userAuth")
 
 const router=express.Router()
 
@@ -7,6 +7,8 @@ const router=express.Router()
 router.route("/register").post(register)
 
 router.route("/login").post(login)
+
+router.route("/getuserdetails").get(getUserDetails)
 
 
 

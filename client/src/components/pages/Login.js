@@ -10,6 +10,7 @@ const Login = () => {
   async function submitHandler(){
     try {
       await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
+      // await fetch("http://localhost:3001/api/auth/login",{
         method:"POST",
         body:JSON.stringify({email,password}),
         // withCredentials:true,
@@ -19,6 +20,7 @@ const Login = () => {
       }).then((res)=>{
         return res.json()
       }).then((data)=>{
+        localStorage.setItem("userID",data.user._id)
         return data
       }).catch((error)=>[
         console.log(error)
