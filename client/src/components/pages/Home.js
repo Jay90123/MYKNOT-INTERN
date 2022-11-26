@@ -8,6 +8,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllThemes } from "../../state/actions/themeActions.js";
 import Appcontext from "../context/Appcontext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ const Home = () => {
     slidesToShow: 4,
     slidesToScroll: 2,
     initialSlide: 0,
-    autoplay: true,
+    autoplay: false,
     speed: 500,
     autoplaySpeed: 2000,
     pauseOnHover: true,
@@ -55,8 +57,10 @@ const Home = () => {
 
   const mainstate = useContext(Appcontext);
 
+
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
+
   function getScreenWidth() {
     let a = window.screen.width;
     return a;
@@ -81,90 +85,90 @@ const Home = () => {
     }
   }
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(getAllThemes());
-  // }, []);
+  useEffect(() => {
+    dispatch(getAllThemes());
+  }, []);
 
-  // const { themes, loading } = useSelector((state) => {
-  //   return state.themes;
-  // });
+  const { themes, loading } = useSelector((state) => {
+    return state.themes;
+  });
 
-  let themes = [
-    {
-      _id: "635559de876e5125031301cb",
-      title: "EduHub",
-      description: " Education Community",
-      img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537949/bkg9zhz1zblvujiesmps.png",
-      price: 9999,
-      category: "Educational",
-      siteurl: "https://goutham4391.github.io/education-eduhub/",
-      __v: 0,
-      numOfReviews: 0,
-      reviews: [],
-    },
-    {
-      _id: "63555a88876e5125031301cd",
-      title: "Perfect Learn",
-      description: "College website.",
-      img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666538119/f2nnls9pyfd2bjlunos5.png",
-      price: 9999,
-      category: "Educational",
-      siteurl: "https://goutham4391.github.io/education-perfect-learn/",
-      __v: 0,
-      numOfReviews: 0,
-      reviews: [],
-    },
-    {
-      _id: "635572a42c6b7aaf8fbbad7d",
-      title: "EduWell",
-      description: "Graphics Education website",
-      img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666544291/oesoyed4rnkjapoh4hpy.png",
-      price: 9999,
-      category: "Educational",
-      siteurl: "https://goutham4391.github.io/education-eduwell/",
-      __v: 0,
-      numOfReviews: 0,
-      reviews: [],
-    },
-    {
-      _id: "63557a322c6b7aaf8fbbad83",
-      title: "Known Education",
-      description: "Online Education website.",
-      img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546225/mghakbhtwzljozsrx7mp.png",
-      price: 9999,
-      category: "Educational",
-      siteurl: "https://goutham4391.github.io/education-know-edu/",
-      __v: 0,
-      numOfReviews: 0,
-      reviews: [],
-    },
-    {
-      _id: "63557ac42c6b7aaf8fbbad85",
-      title: "WebUni",
-      description: "Online Course website.",
-      img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546371/qj2ahppsvlgfv7y1oxuf.png",
-      price: 9999,
-      category: "Educational",
-      siteurl: "https://goutham4391.github.io/education-webuni/",
-      __v: 0,
-      numOfReviews: 0,
-      reviews: [],
-    },
-    {
-      _id: "63557c962c6b7aaf8fbbad87",
-      title: "EduHub",
-      description: "Education Community",
-      img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546836/dqmpej8e1ia6vgo6ho0t.png",
-      price: 9999,
-      category: "Educational",
-      siteurl: "https://goutham4391.github.io/education-eduhub/",
-      __v: 0,
-      numOfReviews: 0,
-      reviews: [],
-    },
-  ];
+  // let themes = [
+  //   {
+  //     _id: "635559de876e5125031301cb",
+  //     title: "EduHub",
+  //     description: " Education Community",
+  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537949/bkg9zhz1zblvujiesmps.png",
+  //     price: 9999,
+  //     category: "Educational",
+  //     siteurl: "https://goutham4391.github.io/education-eduhub/",
+  //     __v: 0,
+  //     numOfReviews: 0,
+  //     reviews: [],
+  //   },
+  //   {
+  //     _id: "63555a88876e5125031301cd",
+  //     title: "Perfect Learn",
+  //     description: "College website.",
+  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666538119/f2nnls9pyfd2bjlunos5.png",
+  //     price: 9999,
+  //     category: "Educational",
+  //     siteurl: "https://goutham4391.github.io/education-perfect-learn/",
+  //     __v: 0,
+  //     numOfReviews: 0,
+  //     reviews: [],
+  //   },
+  //   {
+  //     _id: "635572a42c6b7aaf8fbbad7d",
+  //     title: "EduWell",
+  //     description: "Graphics Education website",
+  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666544291/oesoyed4rnkjapoh4hpy.png",
+  //     price: 9999,
+  //     category: "Educational",
+  //     siteurl: "https://goutham4391.github.io/education-eduwell/",
+  //     __v: 0,
+  //     numOfReviews: 0,
+  //     reviews: [],
+  //   },
+  //   {
+  //     _id: "63557a322c6b7aaf8fbbad83",
+  //     title: "Known Education",
+  //     description: "Online Education website.",
+  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546225/mghakbhtwzljozsrx7mp.png",
+  //     price: 9999,
+  //     category: "Educational",
+  //     siteurl: "https://goutham4391.github.io/education-know-edu/",
+  //     __v: 0,
+  //     numOfReviews: 0,
+  //     reviews: [],
+  //   },
+  //   {
+  //     _id: "63557ac42c6b7aaf8fbbad85",
+  //     title: "WebUni",
+  //     description: "Online Course website.",
+  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546371/qj2ahppsvlgfv7y1oxuf.png",
+  //     price: 9999,
+  //     category: "Educational",
+  //     siteurl: "https://goutham4391.github.io/education-webuni/",
+  //     __v: 0,
+  //     numOfReviews: 0,
+  //     reviews: [],
+  //   },
+  //   {
+  //     _id: "63557c962c6b7aaf8fbbad87",
+  //     title: "EduHub",
+  //     description: "Education Community",
+  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546836/dqmpej8e1ia6vgo6ho0t.png",
+  //     price: 9999,
+  //     category: "Educational",
+  //     siteurl: "https://goutham4391.github.io/education-eduhub/",
+  //     __v: 0,
+  //     numOfReviews: 0,
+  //     reviews: [],
+  //   },
+  // ];
 
   return (
     <>
@@ -311,8 +315,8 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Educational") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}  />;
+     }
           })}
       </Slider>
       {/* </div> */}
@@ -321,8 +325,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Non Profit") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone" id="sports">
@@ -332,8 +335,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Sports") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Portfolio</p>
@@ -341,8 +343,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Portfolio") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Services</p>
@@ -350,8 +351,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Services") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Ecommerce</p>
@@ -359,8 +359,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Ecommerce") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Aerospace</p>
@@ -368,8 +367,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Aerospace") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Automotive</p>
@@ -377,8 +375,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Automotive") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Chemical Industry</p>
@@ -386,8 +383,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Chemical") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Transport Industry</p>
@@ -395,8 +391,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Transport") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Manufacturing Industry</p>
@@ -404,8 +399,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Manufacturing") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Heavy Industry</p>
@@ -413,8 +407,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Heavy") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Healthcare</p>
@@ -422,8 +415,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Healthcare") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Electric Industry</p>
@@ -431,8 +423,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Electric") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Hospitality</p>
@@ -440,8 +431,7 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Hospitality") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
       <p class="h-p-mainone">Economic</p>
@@ -449,10 +439,10 @@ const Home = () => {
         {themes &&
           themes.map((ele, index) => {
             if (ele.category === "Economic") {
-              return <Card data={ele} />;
-            }
+              return <Card data={ele}   />;      }
           })}
       </Slider>
+      <ToastContainer/>
     </>
   );
 };

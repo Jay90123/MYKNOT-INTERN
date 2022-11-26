@@ -46,7 +46,13 @@ const userSchema=new mongoose.Schema({
     role:{
         type:String,
         default:"customer"
-    }
+    },
+    cart:[
+        {
+            type:mongoose.Schema.ObjectId,
+            ref:"themes",
+        }
+    ]
 })
 
 

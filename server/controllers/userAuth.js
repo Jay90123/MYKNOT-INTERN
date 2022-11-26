@@ -71,3 +71,25 @@ exports.getUserDetails=async(req,res,next)=>{
     }
 }
 
+exports.addToCart=async(req,res,next)=>{
+    const userID=req.header("userID")
+    const themeID=req.header("themeID")
+    try {
+        const user=await User.findById({_id:userID})
+        // const user2=await User.findByIdAndUpdate({_id:userID},{cart:themeID})
+        if(user){
+            console.log(user.cart)
+            user.cart.push(themeID)
+            console.log(user.cart)
+            await user.save({validateBeforeSave:false})
+            // res.status(200).json({
+            //     success:true,
+            // })
+        }else{
+            return next(new ErrorHandler("User not found",404))
+        }
+        
+    } catch (error) {
+        return next(new ErrorHandler(error,error.status))
+    }
+}

@@ -121,9 +121,25 @@
 .rating{
     /* border: 1px solid green; */
     padding-left: 5%;
+    width: 50%;
+    display: inline-block;
 }
 
-
+.addtocart{
+    width: 20%;
+    display: inline-block;
+    /* border: 1px solid red; */
+    margin-left: 48px;
+    cursor: pointer;
+}
+.cart-icon{
+    font-size: 20px;
+    border: 1px solid teal;
+    border-radius: 20px;
+    padding: 4px;
+    color:black;
+    background-color: rgb(63, 176, 157,0.5);
+}
 @media (max-width:820px){
   .card-one{
     margin-left: 20px;

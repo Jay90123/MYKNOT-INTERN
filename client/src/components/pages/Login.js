@@ -1,32 +1,58 @@
 import React, { useState } from 'react'
 import "../css/login.css"
 import Navbar from './Navbar'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-
+  const navigate=useNavigate()
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
 
+  
+  const toastoptions = {
+    position: "top-center",
+    autoClose: 1000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+  };
+
   async function submitHandler(){
+    if(!email || !password){
+      toast.error("Please enter email or password",toastoptions)
+      return
+    }
     try {
       await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
-      // await fetch("http://localhost:3001/api/auth/login",{
-        method:"POST",
-        body:JSON.stringify({email,password}),
+      // await fetch("http://localhost:3001/api/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
         // withCredentials:true,
         // credentials:"include",
-        headers:{"Content-type":"application/json","Access-Control-Allow-Credentials":true
-      }
-      }).then((res)=>{
-        return res.json()
-      }).then((data)=>{
-        localStorage.setItem("userID",data.user._id)
-        return data
-      }).catch((error)=>[
-        console.log(error)
-      ])
+        headers: {
+          "Content-type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          if (data.success === false) {
+            toast.error("Please enter valid email or password", toastoptions);
+            return;
+          } else {
+            localStorage.setItem("userID", data.user._id);
+            toast.success("Logged in successfully", toastoptions);
+            navigate("/");
+            return data;
+          }
+        })
+        .catch((error) => [console.log(error)]);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
@@ -76,8 +102,9 @@ const Login = () => {
           </div>
         </div>
       </div>
+   
     </div>
-    
+    <ToastContainer/>
     </>
   )
 }

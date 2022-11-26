@@ -49,12 +49,12 @@
 .ptc-boxone{
     border-radius: 10px;
     /* border: 1px solid grey; */
-    border: 1px solid #cfebcf;
+    border: 1px solid #6e776e;
     width: 53%;
-    height: 70%;
+    height: 63%;
     margin-left: 4%;
     margin-top: 8%;
-    box-shadow: 3px 3px 10px 3px rgb(196, 196, 196);
+    /* box-shadow: 3px 3px 10px 3px rgb(196 196 196); */
 }
 
 
