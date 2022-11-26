@@ -24,7 +24,7 @@ const Rating = ({value,review}) => {
       <span className='rating-span'>
         <i className={value>=5 ? "fa-solid fa-star":value>=4.5 ?"fa-solid fa-star-half":"" }></i>
       </span>
-      <span>({3.5})</span>
+      <span>({4.5})</span>
     </div>
   )
 }
