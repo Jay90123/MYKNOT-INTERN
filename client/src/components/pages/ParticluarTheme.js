@@ -37,55 +37,6 @@ const ParticluarTheme = () => {
       });
   }, []);
 
-  // let ids=[
-  // '63557e212c6b7aaf8fbbad91',
-  // '63557e702c6b7aaf8fbbad93',
-  // '63557ebb2c6b7aaf8fbbad95',
-  // '63557efd2c6b7aaf8fbbad97',
-  // '63557fb02c6b7aaf8fbbad9a',
-  // '63557fe92c6b7aaf8fbbad9c',
-  // '6355803b2c6b7aaf8fbbad9e',
-  // '635580a92c6b7aaf8fbbada0',
-  // '635580e42c6b7aaf8fbbada2',
-  // '6355811a2c6b7aaf8fbbada4',
-  // '6355814c2c6b7aaf8fbbada6',
-  // '6355817f2c6b7aaf8fbbada8',
-  // '635581c12c6b7aaf8fbbadaa',
-  // '6355823e2c6b7aaf8fbbadac',
-  // '63561a6d96cda82dceba4d4a',
-  // '63561ad796cda82dceba4d4c',
-  // '63561b1896cda82dceba4d54',
-  // '63561b9396cda82dceba4d5c',
-  // '63561c5796cda82dceba4d5e',
-  // '63561c9c96cda82dceba4d60',
-  // '63561ce296cda82dceba4d62',
-  // '63561d1e96cda82dceba4d64',
-  // '63561ded96cda82dceba4d66',
-  // '63561e3696cda82dceba4d68',
-  // '63561e6796cda82dceba4d6a',
-  // '63561eae96cda82dceba4d6c']
-  // let abc=[]
-  // ids.forEach((ele,index)=>{
-  //    fetch(`http://localhost:3001/api/themes/getonetheme`, {
-  //     method: "GET",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       themeID: ele,
-  //     },
-  //   })
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       abc.push(data)
-  //       return data
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // })
-  // console.log(abc)
-
   const toastoptions = {
     position: "top-center",
     autoClose: 1000,

@@ -49,7 +49,7 @@ exports.deleteFromCart=async(req,res,next)=>{
                 const removeitem=await Cart.findByIdAndDelete({_id:cartitemID})
                 if(removeitem){
                     return res.status(200).json({
-                        success:false,
+                        success:true,
                         removeitem
                     })
                 }else{
