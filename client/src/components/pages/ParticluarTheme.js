@@ -17,8 +17,8 @@ const ParticluarTheme = () => {
   
   const userID = localStorage.getItem("userID");
   useEffect(() => {
-    fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-    // fetch(`http://localhost:3001/api/themes/getonetheme`, {
+    // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
+    fetch(`http://localhost:3001/api/themes/getonetheme`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -109,8 +109,8 @@ const ParticluarTheme = () => {
       }else{
         setShow(false)
         try {
-          // await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
-          await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
+          await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
+          // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -125,8 +125,8 @@ const ParticluarTheme = () => {
               // console.log("data",data.user.name)
               
               setTimeout(()=>{
-                // fetch(`http://localhost:3001/api/themes/createreview`, {
-                fetch(`https://myknot-official.herokuapp.com/api/themes/createreview`, {
+                fetch(`http://localhost:3001/api/themes/createreview`, {
+                // fetch(`https://myknot-official.herokuapp.com/api/themes/createreview`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -165,6 +165,41 @@ const ParticluarTheme = () => {
   }
   }
 
+
+  function addtoCart() {
+    try {
+      if (userID) {
+        fetch("http://localhost:3001/api/cart/addtocart", {
+        // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            themeID: id,
+            userID: userID,
+          },
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data.success);
+            if (data.success === true) {
+              toast.success("Added to cart successfully", toastoptions);
+            } else {
+              toast.error("Not added to cart", toastoptions);
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        toast.warning("Please login to add to cart", toastoptions);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -196,7 +231,9 @@ const ParticluarTheme = () => {
                 </p>
                 <p className="ptc-ptwo">&#10003; Well Documented</p>
                 <button className="ptc-btntwo">Buy Now</button>
-                <button className="ptc-btntwo">Add to cart</button>
+                <button className="ptc-btntwo" onClick={()=>{
+                  addtoCart()
+                }}>Add to cart</button>
               </div>
             </div>
           </div>

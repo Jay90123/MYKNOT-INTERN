@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Appstate from "./components/context/Appstate";
 import AboutUs from "./components/pages/AboutUs";
 import Admin from "./components/pages/Admin";
+import Cart from "./components/pages/Cart";
 import Collection from "./components/pages/Collection";
 import ContactUs from "./components/pages/ContactUs";
 import Footer from "./components/pages/Footer";
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/register" element={<Register/>}></Route>
             <Route path="/admin" element={<Admin/>}></Route>
             <Route path="/collection" element={<Collection/>}></Route>
+            <Route path="/cart" element={<Cart/>}></Route>
             <Route path="/getparticulartheme/:id" element={<ParticluarTheme/>}></Route>
             <Route path="/" exact={true} element={<Home />}></Route>
           </Routes>

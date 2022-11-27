@@ -22,8 +22,8 @@ const Card = ({ data }) => {
   function addtoCart() {
     try {
       if (userID) {
-        // fetch("http://localhost:3001/api/cart/addtocart", {
-        fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
+        fetch("http://localhost:3001/api/cart/addtocart", {
+        // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

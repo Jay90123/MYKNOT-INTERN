@@ -6,6 +6,8 @@ import "../css/navbar.css"
 const Navbar = () => {
   const mainstate=useContext(Appcontext)
 
+  let checker=localStorage.getItem("userID")
+
   const [show1,setShow1]=useState(false)
   const [show2,setShow2]=useState(false)
   function getScreenWidth(){
@@ -51,7 +53,7 @@ const Navbar = () => {
               <li className="list-ele"></li>
               <li className="list-ele"></li>
               <li className="list-ele"><Link to="/register">Signup</Link></li>
-              <li className="list-ele testing2"><Link to="/login">Login</Link></li>
+              <li className="list-ele testing2">{checker?<Link >Logout</Link>:<Link to="/login">Login</Link>}</li>
               </>: undefined
             }
             {
