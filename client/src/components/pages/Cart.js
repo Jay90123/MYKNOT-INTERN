@@ -72,7 +72,7 @@ const Cart = () => {
             return   <CartItem data={ele} key={index}/>
           }):undefined
         }
-       
+  
       </div>
     </>
   );

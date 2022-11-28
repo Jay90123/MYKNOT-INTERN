@@ -6,27 +6,31 @@ const CartItem = ({data}) => {
   const userID=localStorage.getItem("userID")
 
   // console.log(data)
-  const [theme,setTheme]=useState()
+  const [theme,setTheme]=useState([])
 
   function getThisTheme(){
-     // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-      fetch(`http://localhost:3001/api/themes/getonetheme`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          themeID: data.themeID,
-        },
-      })
-        .then((res) => {
-          return res.json();
+    try {
+       // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
+        fetch(`http://localhost:3001/api/themes/getonetheme`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            themeID: data.themeID,
+          },
         })
-        .then((data) => {
-          // console.log(data.theme);
-          setTheme(data.theme)
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            // console.log(data.theme);
+            setTheme(data.theme)
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   function removeOneTheme(){
@@ -55,7 +59,12 @@ const CartItem = ({data}) => {
       console.log(error)
     }
   }
-
+  function getScreenWidth() {
+    let a = window.screen.width;
+    return a;
+  }
+  let swidth = getScreenWidth();
+ 
   useEffect(()=>{
     getThisTheme()
   },[])
@@ -82,7 +91,7 @@ const CartItem = ({data}) => {
             <p className="cart-buttons remove-btn"  onClick={()=>{
                 removeOneTheme()
               }}>
-              <i className="fa-solid fa-trash-can cart-icon1"></i> Remove from cart
+              <i className="fa-solid fa-trash-can cart-icon1"></i> {swidth>501?"Remove from cart":"Remove"}
             </p>
           </div>
           </>:undefined

@@ -55,21 +55,21 @@ const Card = ({ data }) => {
 
   return (
     <>
-      <div class="card-one">
-        <div class="card-two">
+      <div className="card-one">
+        <div className="card-two">
           <img
             src={data.img}
             alt=""
-            class="card-img1"
+            className="card-img1"
             onClick={() => {
               navigate(`/getparticulartheme/${data._id}`);
             }}
           />
         </div>
-        <div class="card-three">
-          <div class="card-three-child1">
-            <p class="card-p1">{data.title}</p>
-            {/* <p class="card-p2">{data.description}</p> */}
+        <div className="card-three">
+          <div className="card-three-child1">
+            <p className="card-p1">{data.title}</p>
+            {/* <p className="card-p2">{data.description}</p> */}
             <Rating value={4.5} review={2} />
             <div
               className="addtocart"
@@ -77,17 +77,17 @@ const Card = ({ data }) => {
                 addtoCart();
               }}
             >
-              <i class="fa-solid fa-cart-shopping cart-icon"></i>
+              <i className="fa-solid fa-cart-shopping cart-icon"></i>
             </div>
           </div>
-          <div class="card-three-child2">
-            <p class="card-p3">
-              <a href={data.siteurl} target="_blank" class="card-anchor">
+          <div className="card-three-child2">
+            <p className="card-p3">
+              <a href={data.siteurl} target="_blank" className="card-anchor">
                 Live Preview
               </a>
             </p>
-            <p class="card-p4">
-              <a href="" class="card-anchor">
+            <p className="card-p4">
+              <a href="" className="card-anchor">
                 Buy at &#8377; {data.price}
               </a>
             </p>

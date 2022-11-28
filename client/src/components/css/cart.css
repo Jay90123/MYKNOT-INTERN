@@ -85,3 +85,55 @@
     margin-left: 45%;
     cursor: pointer;
 }
+
+@media (max-width:820px){
+    .cart-one{
+        width: 90%;
+    }
+    .cart-two{
+        height: auto;
+    }
+    .cart-twocone{
+        width: 100%;
+        /* border: 1px solid blue; */
+    }
+    .cart-twoctwo{
+        width: 100%;
+        /* border: 1px solid blue; */
+    }
+    .cart-imgone{
+        width: 90%;
+        height: 150px;
+        object-fit: cover;
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    .cart-h3{
+        margin-top: 2px;
+    }
+    .cart-buttons{
+        margin-top: 0;
+        font-weight: bold;
+        width: 48%;
+    }
+    .cart-h4{
+        padding-left: 5%;
+        margin-top: 7px;
+        margin-bottom: 2px;
+    }
+    .cart-h1{
+        display: block;
+        /* border: 1px solid red; */
+    }
+    .cart-btnone{
+        /* display: inline-block; */
+        color: white;
+        background-color: red;
+        border: none;
+        width: 50%;
+        height: 41px;
+        font-size: 17px;
+        margin-left: 0;
+        cursor: pointer;
+    }
+}
