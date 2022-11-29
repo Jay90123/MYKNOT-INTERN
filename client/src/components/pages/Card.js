@@ -1,7 +1,7 @@
 import React from "react";
 import Rating from "./Rating";
 import "../css/card.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -87,9 +87,9 @@ const Card = ({ data }) => {
               </a>
             </p>
             <p className="card-p4">
-              <a href="" className="card-anchor">
+              <Link to={`/payement/clientdetails/${data._id}`} className="card-anchor" >
                 Buy at &#8377; {data.price}
-              </a>
+              </Link>
             </p>
           </div>
         </div>

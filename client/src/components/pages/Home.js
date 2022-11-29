@@ -101,6 +101,18 @@ const Home = () => {
 
   let themes = [
     {
+      "_id": "63863b7c55eee3bc0b13ac8e",
+      "title": "Testing today",
+      "description": "tester321",
+      "img": "http://res.cloudinary.com/dldw2bhin/image/upload/v1669741437/r3ahmfdao7rzxvnfrw4m.png",
+      "price": 1,
+      "category": "Educational",
+      "siteurl": "https://stackoverflow.com/questions/503093/how-do-i-redirect-to-another-webpage",
+      "numOfReviews": 0,
+      "reviews": [],
+      "__v": 0
+    },
+    {
       _id: "635559de876e5125031301cb",
       title: "EduHub",
       description: " Education Community",

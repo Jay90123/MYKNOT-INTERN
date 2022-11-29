@@ -12,6 +12,7 @@ import Login from "./components/pages/Login";
 import Navbar from "./components/pages/Navbar";
 import Overlaynav from "./components/pages/Overlaynav";
 import ParticluarTheme from "./components/pages/ParticluarTheme";
+import Details from "./components/pages/Payement/Details";
 import Register from "./components/pages/Register";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/collection" element={<Collection/>}></Route>
             <Route path="/cart" element={<Cart/>}></Route>
             <Route path="/getparticulartheme/:id" element={<ParticluarTheme/>}></Route>
+            <Route path="/payement/clientdetails/:id" element={<Details/>}></Route>
             <Route path="/" exact={true} element={<Home />}></Route>
           </Routes>
           <Footer />

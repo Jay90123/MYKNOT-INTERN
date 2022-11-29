@@ -2,20 +2,21 @@ const sdk = require("api")("@cashfreedocs-new/v2#5qon17l8k4gqrl");
 const ErrorHandler = require("../utils/ErrorHandler");
 
 exports.getClientDetails = async (req, res, next) => {
-  const { price, email, phone, customerId } = req.body;
-  const order_id = `${Math.random() * 100000000000000000 + "order"}`;
+  const { price, email, phone, customerId ,name} = req.body;
+  // const order_id = `${Math.random() * 100000000000000000 + "order"}`;
   try {
     await sdk.server("https://api.cashfree.com/pg/orders");
     sdk
       .CreateOrder(
         {
-          order_id: `${Math.random() * 100000000000000000 + "or"}`,
+          order_id: `${Math.random() * 100000000000000000 + "order"}`,
           order_amount: price,
           order_currency: "INR",
           customer_details: {
             customer_id: customerId,
             customer_email: email,
             customer_phone: phone,
+            customer_name:name,
           },
           order_meta: {
             return_url: `https://localhost:3000/order_id={order_id}`,
@@ -35,7 +36,7 @@ exports.getClientDetails = async (req, res, next) => {
         if (data) {
           return res.status(200).json({
             success: true,
-            data,
+            data
           });
         }
       })
