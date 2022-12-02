@@ -3,6 +3,8 @@ import Navbar from '../Navbar'
 import "../../css/details.css"
 import "../../css/login.css"
 import { useParams } from 'react-router-dom'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Details = () => {
 
@@ -15,6 +17,16 @@ const Details = () => {
     const [s1,setS1]=useState(false)
     const [s2,setS2]=useState(false)
     const [s3,setS3]=useState(false)
+
+    
+  
+  const toastoptions = {
+    position: "top-center",
+    autoClose: 1000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "dark",
+  };
 
     let userID=localStorage.getItem("userID")
     const { id } = useParams();
@@ -38,7 +50,7 @@ const Details = () => {
             return res.json();
           })
           .then((data) => {
-            console.log(data)
+            // console.log(data)
             setName(data.user.name)
             setEmail(data.user.email)
 
@@ -76,7 +88,11 @@ const Details = () => {
       }, []);
 
    async function proceedHandler(){
-        try {
+        if(!phone){
+          toast.warning("Please enter you phone number",toastoptions)
+        }else{
+
+          try {
             await fetch("http://localhost:3001/api/payement/getclientdetails", {
                 method: "POST",
                 headers: {
@@ -96,7 +112,9 @@ const Details = () => {
                   console.log(error);
                 });
         } catch (error) {
-            
+            console.log(error)
+        }
+
         }
     }
 
@@ -120,7 +138,7 @@ const Details = () => {
                                 setShow(true);
                                 setS1(true)
                             }
-                        }} className="d-button-update" onCl>Update</button>
+                        }} className="d-button-update">Update</button>
                     </div>
                     <div className="d-tc-one">
                         <h3>Email :{email}</h3>
@@ -165,7 +183,7 @@ const Details = () => {
     </div>
 </div>:null
    }
-
+  <ToastContainer/>
     </>
   )
 }

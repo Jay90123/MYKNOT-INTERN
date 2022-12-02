@@ -53,6 +53,16 @@ const Card = ({ data }) => {
     }
   }
 
+  function paymentstatusCheck(){
+    if(userID){
+      navigate(`/payement/clientdetails/${data._id}`)
+    }else{
+      toast.warning("You need to login to proceed",toastoptions)
+      setTimeout(()=>{
+        navigate("login")
+      },2000)
+    }
+  }
   return (
     <>
       <div className="card-one">
@@ -87,9 +97,14 @@ const Card = ({ data }) => {
               </a>
             </p>
             <p className="card-p4">
-              <Link to={`/payement/clientdetails/${data._id}`} className="card-anchor" >
+              {/* <Link to={`/payement/clientdetails/${data._id}`} className="card-anchor" >
                 Buy at &#8377; {data.price}
-              </Link>
+              </Link> */}
+              <p onClick={()=>{
+                paymentstatusCheck()
+              }} className="card-anchor-override" >
+                Buy at &#8377; {data.price}
+              </p>
             </p>
           </div>
         </div>

@@ -59,6 +59,9 @@ const Home = () => {
 
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
+  const [themer,setThemes]=useState()
+
+  let count=0
 
   function getScreenWidth() {
     let a = window.screen.width;
@@ -186,6 +189,37 @@ const Home = () => {
     },
   ];
 
+  async function fullthemes(){
+   try {
+    
+    await fetch("http://localhost:3001/api/themes/getallthemes",{
+      method:"GET",
+      headers: {
+        "Content-type": "application/json"
+      },
+    }).then((res)=>{
+      return res.json()
+    }).then((data)=>{
+      if(data.success==true){
+        console.log(data)
+        setThemes(data.themes)
+        count++
+      }
+    }).catch((error)=>{
+      console.log(error)
+    })
+
+   } catch (error) {
+      console.log(error)
+   }
+  }
+
+  useEffect(()=>{
+    if(count==0){
+      console.log(count)
+      // fullthemes()
+    }
+  },[])
  
   return (
     <>

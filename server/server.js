@@ -29,6 +29,7 @@ app.use("/api/img",require("./routes/imageRoutes.js"))
 app.use("/api/themes",require("./routes/themeRoutes.js"))
 app.use("/api/cart",require("./routes/cartRoutes.js"))
 app.use("/api/payement",require("./routes/payementRoutes.js"))
+app.use("/api/orders",require("./routes/orderRoutes.js"))
 
 app.use(ErrorResponse)
 
