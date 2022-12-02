@@ -10,7 +10,8 @@ const Cart = () => {
 
   function getCartItems(){
     try {
-      fetch("http://localhost:3001/api/cart/getcartitems",{
+      // fetch("http://localhost:3001/api/cart/getcartitems",{
+      fetch("https://myknot-official.herokuapp.com/api/cart/getcartitems",{
         method:"GET",
         headers: {
           "Content-Type": "application/json",
@@ -32,7 +33,8 @@ const Cart = () => {
 
   function emptyCart(){
     try {
-      fetch("http://localhost:3001/api/cart/deleteallfromcart",{
+      // fetch("http://localhost:3001/api/cart/deleteallfromcart",{
+      fetch("https://myknot-official.herokuapp.com/api/cart/deleteallfromcart",{
         method:"DELETE",
         headers: {
           "Content-Type": "application/json",

@@ -25,8 +25,8 @@ const Login = () => {
       return
     }
     try {
-      // await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
-      await fetch("http://localhost:3001/api/auth/login", {
+      await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
+      // await fetch("http://localhost:3001/api/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         // withCredentials:true,

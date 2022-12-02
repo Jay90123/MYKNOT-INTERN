@@ -17,8 +17,8 @@ const ParticluarTheme = () => {
   
   const userID = localStorage.getItem("userID");
   useEffect(() => {
-    // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-    fetch(`http://localhost:3001/api/themes/getonetheme`, {
+    fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
+    // fetch(`http://localhost:3001/api/themes/getonetheme`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -60,8 +60,8 @@ const ParticluarTheme = () => {
       }else{
         setShow(false)
         try {
-          await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
-          // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
+          // await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
+          await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -76,8 +76,8 @@ const ParticluarTheme = () => {
               // console.log("data",data.user.name)
               
               setTimeout(()=>{
-                fetch(`http://localhost:3001/api/themes/createreview`, {
-                // fetch(`https://myknot-official.herokuapp.com/api/themes/createreview`, {
+                // fetch(`http://localhost:3001/api/themes/createreview`, {
+                fetch(`https://myknot-official.herokuapp.com/api/themes/createreview`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -120,8 +120,8 @@ const ParticluarTheme = () => {
   function addtoCart() {
     try {
       if (userID) {
-        fetch("http://localhost:3001/api/cart/addtocart", {
-        // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
+        // fetch("http://localhost:3001/api/cart/addtocart", {
+        fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

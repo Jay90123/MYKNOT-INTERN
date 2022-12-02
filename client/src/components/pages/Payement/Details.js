@@ -38,8 +38,8 @@ const Details = () => {
     }
 
    async function getuserdetails(){
-        await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
-          // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
+        // await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
+          await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -65,8 +65,8 @@ const Details = () => {
     },[])
 
     useEffect(() => {
-        // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-         fetch(`http://localhost:3001/api/themes/getonetheme`, {
+        fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
+        //  fetch(`http://localhost:3001/api/themes/getonetheme`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -93,7 +93,8 @@ const Details = () => {
         }else{
 
           try {
-            await fetch("http://localhost:3001/api/payement/getclientdetails", {
+            // await fetch("http://localhost:3001/api/payement/getclientdetails", {
+            await fetch("https://myknot-official.herokuapp.com/api/payement/getclientdetails", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -103,8 +104,30 @@ const Details = () => {
                 .then((res) => {
                   return res.json();
                 })
-                .then((data) => {
+                .then(async (data) => {
+                  // console.log(data)
                   if(data.success==true){
+                    // console.log(data.data)
+                    try {
+                      
+                    // await fetch("http://localhost:3001/api/orders/createorder", {
+                    await fetch("https://myknot-official.herokuapp.com/api/orders/createorder", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body:JSON.stringify({client_id:userID,name,email,phone,amount:price,created_at:data.data.data.created_at,cf_orderid:data.data.data.cf_order_id, my_orderid:data.data.data.order_id})
+                    }).then((res)=>{
+                        return res.json()
+                      }).then((data)=>{
+                        return data
+                      }).catch((error)=>{
+                        console.log(error)
+                      })
+                    } catch (error) {
+                      console.log(error)
+                    }
+
                     window.location.href = `${data.data.data.payment_link}`
                   }
                 })

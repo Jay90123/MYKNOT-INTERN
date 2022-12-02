@@ -33,6 +33,8 @@ exports.getAllOrders=async(req,res,next)=>{
                 success:true,
                 orders
             })
+        }else{
+            return next(new ErrorHandler("Could not fetch orders",400))
         }
     } catch (error) {
         return next(new ErrorHandler(error,error.status))
