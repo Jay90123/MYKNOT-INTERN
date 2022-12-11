@@ -4,6 +4,8 @@ import "../css/admin.css"
 import Dashboard from './Admin/Dashboard'
 import AdminProducts from './Admin/AdminProducts'
 import CreateTheme from './Admin/CreateTheme'
+import Footer from './Footer'
+import Navbar from './Navbar'
 
 
 const Admin = () => {
@@ -17,6 +19,7 @@ const Admin = () => {
   return (
     
     <>
+    <Navbar/>
     <div className="adm-one">
         <div className="adm-sidebar">
           <div className="adm-s-one">
@@ -57,6 +60,7 @@ const Admin = () => {
         </div>
 
     </div>
+    {/* <Footer/> */}
     </>
 
   )

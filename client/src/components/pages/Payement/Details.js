@@ -38,8 +38,8 @@ const Details = () => {
     }
 
    async function getuserdetails(){
-        // await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
-          await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
+        await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
+          // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -65,8 +65,8 @@ const Details = () => {
     },[])
 
     useEffect(() => {
-        fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-        //  fetch(`http://localhost:3001/api/themes/getonetheme`, {
+        // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
+         fetch(`http://localhost:3001/api/themes/getonetheme`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -93,8 +93,8 @@ const Details = () => {
         }else{
 
           try {
-            // await fetch("http://localhost:3001/api/payement/getclientdetails", {
-            await fetch("https://myknot-official.herokuapp.com/api/payement/getclientdetails", {
+            await fetch("http://localhost:3001/api/payement/getclientdetails", {
+            // await fetch("https://myknot-official.herokuapp.com/api/payement/getclientdetails", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -110,8 +110,8 @@ const Details = () => {
                     // console.log(data.data)
                     try {
                       
-                    // await fetch("http://localhost:3001/api/orders/createorder", {
-                    await fetch("https://myknot-official.herokuapp.com/api/orders/createorder", {
+                    await fetch("http://localhost:3001/api/orders/createorder", {
+                    // await fetch("https://myknot-official.herokuapp.com/api/orders/createorder", {
                       method: "POST",
                       headers: {
                         "Content-Type": "application/json",

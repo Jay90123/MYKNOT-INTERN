@@ -1,8 +1,41 @@
-import React from 'react'
+import React,{useEffect,useContext} from 'react'
 import { Link } from 'react-router-dom'
 import "../css/footer.css"
+import Appcontext from "../context/Appcontext";
 
 const Footer = () => {
+
+    const mainstate = useContext(Appcontext);
+
+
+    async function fullthemes(){
+        try {
+         
+         await fetch("http://localhost:3001/api/themes/getallthemes",{
+           method:"GET",
+           headers: {
+             "Content-type": "application/json"
+           },
+         }).then((res)=>{
+           return res.json()
+         }).then((data)=>{
+           if(data.success==true){
+             console.log(data)
+             mainstate.setThemes(data.themes)
+           }
+         }).catch((error)=>{
+           console.log(error)
+         })
+     
+        } catch (error) {
+           console.log(error)
+        }
+       }
+     
+       useEffect(()=>{
+           fullthemes()
+       },[])
+
   return (
    <>
    
