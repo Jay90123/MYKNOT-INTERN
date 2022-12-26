@@ -4,8 +4,9 @@ import "../css/admin.css"
 import Dashboard from './Admin/Dashboard'
 import AdminProducts from './Admin/AdminProducts'
 import CreateTheme from './Admin/CreateTheme'
-import Footer from './Footer'
+import Productlist from "./Admin/Productlist.js"
 import Navbar from './Navbar'
+import AddCategory from './Admin/AddCategory'
 
 
 const Admin = () => {
@@ -37,11 +38,19 @@ const Admin = () => {
           }}>
           <i className="bi bi-bag-plus-fill adm-icon2"></i> <p className="adm-p2">Add Product</p>
           </div>
+          <div className="adm-child" onClick={()=>{
+            setShowDiv(<AddCategory/>)
+          }}>
+          <i class="bi bi-card-list adm-icon2"></i><p className="adm-p2">Add Category</p>
+          </div>
           <div className="adm-child" >
           <i className="bi bi-bookmark-plus-fill adm-icon2" ></i> <p className="adm-p2">Orders</p>
           </div>
-          <div className="adm-child" onClick={()=>{
+          {/* <div className="adm-child" onClick={()=>{
             setShowDiv(<AdminProducts/>)
+          }}> */}
+          <div className="adm-child"  onClick={()=>{
+            setShowDiv(<Productlist/>)
           }}>
           <i className="bi bi-handbag-fill adm-icon2"></i> <p className="adm-p2">Products</p>
           </div>
@@ -53,7 +62,7 @@ const Admin = () => {
           </div>
           <div className="adm-child">
           <i className="bi bi-person-video2 adm-icon2"></i><p className="adm-p2">Profile</p>
-          </div>
+          </div>         
         </div>
         <div className="adm-two">
           {showdiv}
