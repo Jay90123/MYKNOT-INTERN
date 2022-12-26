@@ -36,7 +36,8 @@ const CreateTheme = () => {
     try {
       await fetch(
         // "https://myknot-official.herokuapp.com/api/themes/createtheme",
-        "http://localhost:3001/api/themes/createtheme",
+        // "http://localhost:3001/api/themes/createtheme",
+        "https://myknot-official.vercel.app/api/themes/createtheme",
         {
           method: "POST",
           body: JSON.stringify({
@@ -69,7 +70,8 @@ const CreateTheme = () => {
     // console.log(base64EncodedImage)
     try {
       // await fetch("https://myknot-official.herokuapp.com/api/img/upload", {
-      await fetch("http://localhost:3001/api/img/upload", {
+      // await fetch("http://localhost:3001/api/img/upload", {
+      await fetch("https://myknot-official.vercel.app/api/img/upload", {
         method: "POST",
         body: JSON.stringify({ data: base64EncodedImage }),
         headers: { "Content-type": "application/json" },
