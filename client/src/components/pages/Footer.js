@@ -11,7 +11,8 @@ const Footer = () => {
     async function fullthemes(){
         try {
          
-         await fetch("http://localhost:3001/api/themes/getallthemes",{
+        //  await fetch("http://localhost:3001/api/themes/getallthemes",{
+         await fetch("https://myknot-official.vercel.app/api/themes/getallthemes",{
            method:"GET",
            headers: {
              "Content-type": "application/json"
