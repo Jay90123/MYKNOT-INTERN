@@ -1,7 +1,7 @@
 .ctheme-one{
     width: 100%;
     height: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .ctheme-h1{
@@ -9,7 +9,7 @@
 }
 
 .ctheme-two{
-    border: 1px solid plum ;
+    /* border: 1px solid plum ; */
     width: 90%;
     margin: auto;
     height: 400px;
@@ -32,6 +32,37 @@
     -moz-box-shadow: 3px 3px 10px 3px #ddd;
     box-shadow: 3px 3px 10px 3px #ddd;
    
+}
+.over{
+  display: block;
+  width: 90%;
+  margin: auto;
+  margin-top: 24%;
+  height: 43px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  text-align: center;
+  -webkit-box-shadow: 3px 3px 10px 3px #ddd;
+  -moz-box-shadow: 3px 3px 10px 3px #ddd;
+  box-shadow: 3px 3px 10px 3px #ddd;
+}
+
+.over2{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  /* background-color: antiquewhite; */
+}
+
+.over2childs{
+  border: 1px solid green;
+  height: 5%;
+  padding: 2%;
+  margin: 0;
+  margin: 2% 2%;
 }
 
 .ctheme-input2{
@@ -116,4 +147,12 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.submit-categorybtn{
+  font-size: 15px;
+  margin: auto;
+  margin-top: 37px;
+  margin-left: 42%;
+  padding: 0% 5%;
 }
