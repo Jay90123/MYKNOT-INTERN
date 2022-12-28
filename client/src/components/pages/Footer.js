@@ -34,7 +34,7 @@ const Footer = () => {
        }
      
        useEffect(()=>{
-           fullthemes()
+          //  fullthemes()
        },[])
 
   return (
