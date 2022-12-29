@@ -106,7 +106,9 @@ const CreateTheme = () => {
     "Healthcare",
     "Electric",
     "Economic",
-    "Hospitality"
+    "Hospitality",
+    "Spa",
+    "Yoga"
   ];
 
   return (
