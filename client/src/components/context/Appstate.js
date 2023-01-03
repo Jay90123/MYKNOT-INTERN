@@ -6,10 +6,10 @@ const Appstate = (props) => {
 
    const [overlay,setOverlay]=useState(false)
    const [themes,setThemes]=useState()
- 
+   const [categories,setCategories]=useState()
 
   return (
-    <Appcontext.Provider value={{overlay,setOverlay,themes,setThemes}}>
+    <Appcontext.Provider value={{overlay,setOverlay,themes,setThemes,categories,setCategories}}>
         {props.children}
     </Appcontext.Provider>
   )

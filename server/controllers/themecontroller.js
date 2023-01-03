@@ -63,14 +63,12 @@ exports.getOneTheme=async(req,res,next)=>{
 exports.updateTheme=async(req,res,next)=>{
     try {
         const themeID=await req.header("themeID")
-
+        const {title,description,category,price}=req.body;
         const theme=await Themes.findById({_id:themeID})
         
         if(theme){
-            
-                let updateTheme=await Themes.findByIdAndUpdate(themeID,req.body,{
-                    new:true,runValidators:true,
-                    useFindAndModify:true})
+                const newTheme={title,description,category,price};
+                let updateTheme=await Themes.findByIdAndUpdate(themeID,{$set:newTheme},{new:true})
                     if(updateTheme){
                         res.status(200).json({
                             success:true,

@@ -19,7 +19,8 @@ exports.getClientDetails = async (req, res, next) => {
             customer_name:name,
           },
           order_meta: {
-            return_url: `https://localhost:3000/order_id={order_id}`,
+            // return_url: `https://localhost:3000/order_id={order_id}`,
+            return_url: `https://wa.me/message/BZCLAKUBIOEWO1`,
             notify_url: "https://b8af79f41056.eu.ngrok.io/webhook.php",
           },
         },

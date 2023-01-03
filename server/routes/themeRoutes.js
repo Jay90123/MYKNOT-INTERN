@@ -1,6 +1,6 @@
 const express=require("express")
-const { createTheme, getAllThemes, updateAllThemes,createThemeReview, deleteThemeReview, getOneTheme,getAllReviews, deleteTheme } = require("../controllers/themecontroller")
-const { isAutheticatedUser,authorizedRole } = require("../middlewares/Authentication")
+const { createTheme, getAllThemes, updateAllThemes,createThemeReview, deleteThemeReview, getOneTheme,getAllReviews, deleteTheme, updateTheme } = require("../controllers/themecontroller")
+// const { isAutheticatedUser,authorizedRole } = require("../middlewares/Authentication")
 
 const router=express.Router()
 
@@ -19,4 +19,7 @@ router.route("/getonetheme").get(getOneTheme)
 router.route("/getallreviews").get(getAllReviews)
 
 router.route("/deletetheme").delete(deleteTheme)
+
+router.route("/updatetheme").put(updateTheme)
+
 module.exports=router

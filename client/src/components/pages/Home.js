@@ -5,8 +5,8 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllThemes } from "../../state/actions/themeActions.js";
+// import { useDispatch, useSelector } from "react-redux";
+// import { getAllThemes } from "../../state/actions/themeActions.js";
 import Appcontext from "../context/Appcontext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,7 +20,7 @@ const Home = () => {
     slidesToShow: 4,
     slidesToScroll: 2,
     initialSlide: 0,
-    autoplay: false,
+    autoplay: true,
     speed: 500,
     autoplaySpeed: 2000,
     pauseOnHover: true,
@@ -90,108 +90,6 @@ const Home = () => {
     localStorage.removeItem("userID")
   }
 
-
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(getAllThemes());
-  // }, []);
-
-  // const { themes, loading } = useSelector((state) => {
-  //   return state.themes;
-  // });
-
-  // let themes = [
-  //   {
-  //     "_id": "63863b7c55eee3bc0b13ac8e",
-  //     "title": "Testing today",
-  //     "description": "tester321",
-  //     "img": "http://res.cloudinary.com/dldw2bhin/image/upload/v1669741437/r3ahmfdao7rzxvnfrw4m.png",
-  //     "price": 1,
-  //     "category": "Educational",
-  //     "siteurl": "https://stackoverflow.com/questions/503093/how-do-i-redirect-to-another-webpage",
-  //     "numOfReviews": 0,
-  //     "reviews": [],
-  //     "__v": 0
-  //   },
-  //   {
-  //     _id: "635559de876e5125031301cb",
-  //     title: "EduHub",
-  //     description: " Education Community",
-  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666537949/bkg9zhz1zblvujiesmps.png",
-  //     price: 9999,
-  //     category: "Educational",
-  //     siteurl: "https://goutham4391.github.io/education-eduhub/",
-  //     __v: 0,
-  //     numOfReviews: 0,
-  //     reviews: [],
-  //   },
-  //   {
-  //     _id: "63555a88876e5125031301cd",
-  //     title: "Perfect Learn",
-  //     description: "College website.",
-  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666538119/f2nnls9pyfd2bjlunos5.png",
-  //     price: 9999,
-  //     category: "Educational",
-  //     siteurl: "https://goutham4391.github.io/education-perfect-learn/",
-  //     __v: 0,
-  //     numOfReviews: 0,
-  //     reviews: [],
-  //   },
-  //   {
-  //     _id: "635572a42c6b7aaf8fbbad7d",
-  //     title: "EduWell",
-  //     description: "Graphics Education website",
-  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666544291/oesoyed4rnkjapoh4hpy.png",
-  //     price: 9999,
-  //     category: "Educational",
-  //     siteurl: "https://goutham4391.github.io/education-eduwell/",
-  //     __v: 0,
-  //     numOfReviews: 0,
-  //     reviews: [],
-  //   },
-  //   {
-  //     _id: "63557a322c6b7aaf8fbbad83",
-  //     title: "Known Education",
-  //     description: "Online Education website.",
-  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546225/mghakbhtwzljozsrx7mp.png",
-  //     price: 9999,
-  //     category: "Educational",
-  //     siteurl: "https://goutham4391.github.io/education-know-edu/",
-  //     __v: 0,
-  //     numOfReviews: 0,
-  //     reviews: [],
-  //   },
-  //   {
-  //     _id: "63557ac42c6b7aaf8fbbad85",
-  //     title: "WebUni",
-  //     description: "Online Course website.",
-  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546371/qj2ahppsvlgfv7y1oxuf.png",
-  //     price: 9999,
-  //     category: "Educational",
-  //     siteurl: "https://goutham4391.github.io/education-webuni/",
-  //     __v: 0,
-  //     numOfReviews: 0,
-  //     reviews: [],
-  //   },
-  //   {
-  //     _id: "63557c962c6b7aaf8fbbad87",
-  //     title: "EduHub",
-  //     description: "Education Community",
-  //     img: "http://res.cloudinary.com/dzfblisi4/image/upload/v1666546836/dqmpej8e1ia6vgo6ho0t.png",
-  //     price: 9999,
-  //     category: "Educational",
-  //     siteurl: "https://goutham4391.github.io/education-eduhub/",
-  //     __v: 0,
-  //     numOfReviews: 0,
-  //     reviews: [],
-  //   },
-  // ];
-
-  // useEffect(()=>{
-  //   setThemes(mainstate.setThemes)
-  // })
- 
   return (
     <>
       <div className="h-one">
@@ -282,197 +180,92 @@ const Home = () => {
 
       <div className="h-three">
         <div className="h-three-flexer">
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-graduation-cap h-icon1"></i>
             <p className="h-p1">Education</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-baseball-bat-ball h-icon1"></i>
             <p className="h-p1">Sports</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-cart-shopping h-icon1"></i>
             <p className="h-p1">Ecommerce</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-user-tag h-icon1"></i>
             <p className="h-p1">Portfolio</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-circle-dollar-to-slot h-icon1"></i>
             <p className="h-p1">Non Profit</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-bell-concierge h-icon1"></i>
             <p className="h-p1">Services</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-plane-departure h-icon1"></i>
             <p className="h-p1">Aerospace</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-flask-vial h-icon1"></i>
             <p className="h-p1">Chemical</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-car-side h-icon1"></i>
             <p className="h-p1">Transport</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-industry h-icon1"></i>
             <p className="h-p1">Manufacturing</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-tractor h-icon1"></i>
             <p className="h-p1">Heavy</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-plug h-icon1"></i>
             <p className="h-p1">Electric</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-suitcase-medical h-icon1"></i>
             <p className="h-p1">Healthcare</p>
           </div>
-          <div className="h-flex-childs">
+          <div className="h-flex-childs" data-aos="fade-out">
             <i className="fa-solid fa-arrow-trend-up h-icon1"></i>
             <p className="h-p1">Economic</p>
           </div>
+          <div className="h-flex-childs" data-aos="fade-out">
+            <i class="fa-solid fa-spa h-icon1"></i>
+            <p className="h-p1">Spa</p>
+          </div>
+          <div className="h-flex-childs" data-aos="fade-out">
+            <i class="fa-solid fa-leaf h-icon1"></i>
+            <p className="h-p1">Yoga</p>
+          </div>
         </div>
       </div>
-      
-      <p className="h-p-mainone" id="education">Educational</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Educational") {
-              return <Card data={ele} key={index}  />;
-     }
-          })}
-      </Slider>
-
-      <p className="h-p-mainone">Non Profit</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Non Profit") {
-              return <Card data={ele}  key={index}/>;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone" id="sports">
-        Sports
-      </p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Sports") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Portfolio</p>
-      <Slider {...settings}>
-        {mainstate.themess &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Portfolio") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Services</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Services") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Ecommerce</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Ecommerce") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Aerospace</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Aerospace") {
-              return <Card data={ele} key={index}   />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Automotive</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Automotive") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Chemical Industry</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Chemical") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Transport Industry</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Transport") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Manufacturing Industry</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Manufacturing") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Heavy Industry</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Heavy") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Healthcare</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Healthcare") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Electric Industry</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Electric") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Hospitality</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Hospitality") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
-      <p className="h-p-mainone">Economic</p>
-      <Slider {...settings}>
-        {mainstate.themes &&
-          mainstate.themes.map((ele, index) => {
-            if (ele.category === "Economic") {
-              return <Card data={ele} key={index}  />;      }
-          })}
-      </Slider>
+      {
+        mainstate.categories ? <>
+       {
+        mainstate.categories.map((ele,index)=>{
+          return  <>
+                   <p className="h-p-mainone" id="education">{ele.name}</p>
+          <Slider {...settings}>
+            {mainstate.themes &&
+              mainstate.themes.map((eles, indexs) => {
+                if (eles.category === `${ele.name}`) {
+                  return <Card data={eles} key={indexs}  />;
+         }
+              })}
+          </Slider>
+          </>
+        })
+       }
+        </>:null
+      }
+    
       <ToastContainer />
     </>
   );

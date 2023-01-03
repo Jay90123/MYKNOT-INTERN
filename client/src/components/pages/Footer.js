@@ -11,8 +11,8 @@ const Footer = () => {
     async function fullthemes(){
         try {
          
-         await fetch("http://localhost:3001/api/themes/getallthemes",{
-        //  await fetch("https://myknot-official.vercel.app/api/themes/getallthemes",{
+        //  await fetch("http://localhost:3001/api/themes/getallthemes",{
+         await fetch("https://myknot-official.vercel.app/api/themes/getallthemes",{
            method:"GET",
            headers: {
              "Content-type": "application/json"
@@ -20,7 +20,7 @@ const Footer = () => {
          }).then((res)=>{
            return res.json()
          }).then((data)=>{
-           if(data.success==true){
+           if(data.success===true){
              console.log(data)
              mainstate.setThemes(data.themes)
            }
@@ -32,9 +32,34 @@ const Footer = () => {
            console.log(error)
         }
        }
+    
+    async function getAllCategories(){
+      try {
+         
+        // await fetch("http://localhost:3001/api/category/getallcategories",{
+        await fetch("https://myknot-official.vercel.app/api/category/getallcategories",{
+          method:"GET",
+          headers: {
+            "Content-type": "application/json"
+          },
+        }).then((res)=>{
+          return res.json()
+        }).then((data)=>{
+          if(data.success===true){
+            mainstate.setCategories(data.categories)
+          }
+        }).catch((error)=>{
+          console.log(error)
+        })
+    
+       } catch (error) {
+          console.log(error)
+       }
+    }
      
        useEffect(()=>{
-          //  fullthemes()
+           fullthemes()
+          getAllCategories()
        },[])
 
   return (
@@ -50,41 +75,41 @@ const Footer = () => {
                 <ul className="f-list">
                     <li className="list-head">Company</li>
                     <li className="f-list-ele"><Link to="/aboutus">About Us</Link></li>
-                    <li className="f-list-ele">Our offering</li>
-                    <li className="f-list-ele">Gift cards</li>
-                    <li className="f-list-ele">Newsroom</li>
-                    <li className="f-list-ele">Blog</li>
-                    <li className="f-list-ele">Investors</li>
-                    <li className="f-list-ele">Careers</li>
+                    <li className="f-list-ele"><Link to="/contact">Contact Us</Link></li>
+                    <li className="f-list-ele"><Link to="/login">Login</Link></li>
+                    <li className="f-list-ele"><Link to="/register">SignUp</Link></li>
+                    {/* <li className="f-list-ele"></li>
+                    <li className="f-list-ele"></li>
+                    <li className="f-list-ele"></li> */}
                 </ul>
             </div>
             <div className="f-three-child">
                 <ul className="f-list">
                     <li className="list-head">Products</li>
-                    <li className="f-list-ele">Fashion</li>
+                    <li className="f-list-ele">Ecommerce</li>
                     <li className="f-list-ele">Sports</li>
-                    <li className="f-list-ele">Electronics</li>
-                    <li className="f-list-ele">Home Applicances</li>
-                    <li className="f-list-ele">Kitchen </li>
+                    <li className="f-list-ele">Services</li>
+                    <li className="f-list-ele">Healthcare</li>
+                    <li className="f-list-ele">Heavy Industry</li>
                 </ul>
             </div>
             <div className="f-three-child">
             <ul className="f-list f-list-lastone ">
                     <li className="list-head">Contact Us</li>
-                    <li className="f-list-ele cutoff">&nbsp;</li>
+                    {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
                     <li className="f-list-ele"></li>
                     <li className="f-list-ele f-l-e-over"><i className="fa-brands fa-instagram f-icon"></i></li>
-                    <li className="f-list-ele cutoff">&nbsp;</li>
+                    {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
                     <li className="f-list-ele f-l-e-over"><i className="fa-brands fa-linkedin f-icon"></i></li>
                 </ul>
             </div>
             <div className="f-three-child">
             <ul className="f-list f-list-lastone">
                     <li className="list-head cutoff">&nbsp;</li>
-                    <li className="f-list-ele cutoff">&nbsp;</li>
+                    {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
                     <li className="f-list-ele cutoff"></li>
                     <li className="f-list-ele "><i className="fa-brands fa-facebook f-icon"></i></li>
-                    <li className="f-list-ele cutoff">&nbsp;</li>
+                    {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
                     <li className="f-list-ele"><i className="fa-solid fa-envelope f-icon"></i></li>
                 </ul>
             </div>

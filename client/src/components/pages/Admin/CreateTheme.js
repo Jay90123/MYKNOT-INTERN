@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/admin/createtheme.css";
 
 const CreateTheme = () => {
@@ -9,6 +9,7 @@ const CreateTheme = () => {
   const [price, setPrice] = useState(9999);
   const [category, setCategory] = useState("");
   const [siteurl, setSiteUrl] = useState("");
+  const [categoryarray,setCategoryarray]=useState()
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
@@ -89,27 +90,27 @@ const CreateTheme = () => {
     }
   };
 
-  let categoryarray = [
-    "Educational",
-    "Sports",
-    "Services",
-    "Non Profit",
-    "Ecommerce",
-    "Portfolio",
-    "Aerospace",
-    "Automotive",
-    "Chemical",
-    "Franchising",
-    "Transport",
-    "Manufacturing",
-    "Heavy",
-    "Healthcare",
-    "Electric",
-    "Economic",
-    "Hospitality",
-    "Spa",
-    "Yoga"
-  ];
+
+  async function getAllCategories(){
+    // await fetch("http://localhost:3001/api/category/getallcategories",{
+    await fetch("https://myknot-official.vercel.app/api/category/getallcategories",{
+      method:"GET",
+      headers: { "Content-type": "application/json" }
+    }).then((res)=>{
+      return res.json()
+    }).then((data)=>{
+      if(data.success===true){
+        setCategoryarray(data.categories)
+        console.log(categoryarray)
+      }
+    }).catch((error)=>{
+      console.log(error)
+    })
+  }
+
+  useEffect(()=>{
+    getAllCategories()
+  },[])
 
   return (
     <>
@@ -156,20 +157,20 @@ const CreateTheme = () => {
             <div className="ctheme-dropdown">
               <button className="ctheme-btn">Category</button>
               <div className="ctheme-dropdown-content">
-                {categoryarray.map((ele, index) => {
+                {categoryarray?categoryarray.map((ele, index) => {
                   return (
                     <>
                       <p
                         className="ctheme-p1"
                         onClick={() => {
-                          setCategory(`${ele}`);
-                        }}
+                          setCategory(`${ele.name}`);
+                        }} key={index}
                       >
-                        {ele}
+                        {ele.name}
                       </p>
                     </>
                   );
-                })}
+                }):null}
                 
               </div>
             </div>

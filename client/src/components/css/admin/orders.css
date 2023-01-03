@@ -60,3 +60,25 @@ tr:nth-child(even) {
     color: red;
 }
 
+.up-screen{
+    width: 82%;
+    height: 540px;
+    position: absolute;
+    background-color:#ffeeee;
+}
+
+.up-input{
+    display: block;
+    padding: 10px;
+    font-size: 15px;
+    margin: 1% 0% 0% 32%;
+    width: 35%;
+}
+
+.up-btn{
+    font-size: 13px;
+    padding: 6px;
+    margin-left: 39%;
+    margin-top: 2%;
+    width: 9%;
+}

@@ -10,6 +10,8 @@ const Navbar = () => {
 
   const [show1,setShow1]=useState(false)
   const [show2,setShow2]=useState(false)
+  const [validate,setValidate]=useState(false)
+
   function getScreenWidth(){
     let a=window.screen.width
     return a
@@ -37,6 +39,35 @@ const Navbar = () => {
     }
   }
 
+ 
+    async function admincheck(userID){
+      try {
+       await fetch("http://localhost:3001/api/auth/getuserdetails",{
+         method:"GET",
+         headers: { "Content-type": "application/json",userID:userID },
+
+       }).then((res)=>{
+         return res.json()
+       }).then((data)=>{
+         if(data.success===true){
+          if(data.user.role==="admin"){
+            setValidate(true)
+          }
+         }
+       }).catch((error)=>{
+         console.log(error)
+       })
+     
+      } catch (error) {
+       console.log(error)
+      }
+       }
+  
+
+    if(checker){
+        admincheck(checker)
+    }
+
   return (
     <>
     
@@ -48,7 +79,7 @@ const Navbar = () => {
               <li className="list-ele"><Link to="/">Home</Link></li>
               <li className="list-ele"><Link to="/aboutus">About Us</Link></li>
               <li className="list-ele"><Link to="/contact">Contact Us</Link></li>
-              <li className="list-ele"><Link to="/admin">Become a seller</Link></li>
+              <li className="list-ele"><Link to="/admin">{validate?"Become a seller":null}</Link></li>
               <li className="list-ele"></li>
               <li className="list-ele"></li>
               <li className="list-ele"></li>
