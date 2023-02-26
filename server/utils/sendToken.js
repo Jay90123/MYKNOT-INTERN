@@ -1,3 +1,4 @@
+const { response } = require("express")
 
 
 const sendToken=async (user,statusCode,res)=>{
@@ -10,13 +11,13 @@ const sendToken=async (user,statusCode,res)=>{
             Date.now() +process.env.COOKIE_EXPIRE * 24 *60 *60 *1000
         ),
         httpOnly:true,
-        // sameSite:"lax",
-        sameSite:"none",
+        sameSite:"None",
+        // path:"/",
+        domain:"localhost:3000",
         secure:true
     }
 
-    
-    res.status(statusCode||200).cookie("token",token,options).json({
+     res.status(statusCode||200).cookie("token",token,options).json({
         success:true,
         token,
         user

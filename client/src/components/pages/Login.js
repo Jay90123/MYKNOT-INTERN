@@ -26,15 +26,19 @@ const Login = () => {
     }
     try {
       // await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
-      // await fetch("http://localhost:3001/api/auth/login", {
-      await fetch("https://myknot-official.vercel.app/api/auth/login", {
+      await fetch("http://localhost:3001/api/auth/login", {
+      // await fetch("https://myknot-official.vercel.app/api/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         // withCredentials:true,
         // credentials:"include",
+   
         headers: {
+          credentials:"include",
           "Content-type": "application/json",
-          "Access-Control-Allow-Credentials": true,
+          "Access-Control-Allow-Credentials": "true",
+          // "Sec-Fetch-Site": "cross-site",
+          // "Access-Control-Expose-Headers":"Set-cookie"
         },
       })
         .then((res) => {
@@ -45,6 +49,8 @@ const Login = () => {
             toast.error("Please enter valid email or password", toastoptions);
             return;
           } else {
+            
+           document.cookie=`token=${data.token};max-age=1000;HttpOnly=true;`
             localStorage.setItem("userID", data.user._id);
             toast.success("Logged in successfully", toastoptions);
             navigate("/");
