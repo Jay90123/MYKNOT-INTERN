@@ -76,6 +76,12 @@ body{
     width: 4%;
     
 }
+.nav-btn{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
 
 a{
     text-decoration: none;

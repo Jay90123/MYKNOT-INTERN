@@ -59,8 +59,7 @@ const Home = () => {
 
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
-  const [themes,setThemes]=useState()
-
+  const [themes, setThemes] = useState();
 
   function getScreenWidth() {
     let a = window.screen.width;
@@ -86,12 +85,12 @@ const Home = () => {
     }
   }
 
-  function  userLogout(){
-    localStorage.removeItem("userID")
+  function userLogout() {
+    localStorage.removeItem("userID");
   }
 
   return (
-    <>
+    <div >
       <div className="h-one">
         <img
           src="https://cdn.pixabay.com/photo/2015/03/13/17/39/road-672036_960_720.jpg"
@@ -103,171 +102,209 @@ const Home = () => {
         />
         <div className="h-two"></div>
       </div>
+
       <nav className="n-one">
+        {/* <div className="n-one-one"> */}
         <div className="n-two">
-          <img
-            src="https://www.myknot.club/images/logo%20black.png"
-            alt=""
-            className="n-img1"
-          />
+          {/* <img
+              src="https://www.myknot.club/images/logo%20black.png"
+              alt=""
+              className="n-img1"
+            /> */}
         </div>
-        <div className="n-three">
-          <ul className="h-listcontrol">
-            {show1 === true ? (
-              <>
-                <li className="h-list-item">
-                  <Link to="/">Home</Link>
-                </li>
-                <li className="h-list-item">
-                  <Link to="/aboutus">About Us</Link>
-                </li>
-                <li className="h-list-item">
-                  <Link to="/contact">Contact Us</Link>
-                </li>
-                <li className="h-list-item nav-extra">
-                  {localStorage.getItem("userID") ? (
-                    <Link onClick={()=>{
-                      userLogout()
-                    }}>Logout</Link>
-                  ) : (
-                    <Link to="/login">Login</Link>
-                  )}
-                </li>
-                <li className="h-list-item nav-extra">
-                  {localStorage.getItem("userID") ? (
-                    <Link to="/cart">Cart</Link>
-                  ) : (
-                    <Link to="/register">Signup</Link>
-                  )}
-                </li>
-              </>
-            ) : undefined}
+        <div className="nav-c">
+          {show1 === true ? (
+            <div className="nav-d">
+              <div className="n-three">
+                <ul className="h-listcontrol">
+                  <>
+                    <li className="h-list-item">
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li className="h-list-item">
+                      <Link to="/aboutus">About Us</Link>
+                    </li>
+                    <li className="h-list-item">
+                      <Link to="/contact">Contact Us</Link>
+                    </li>
+                    <li className="h-list-item">
+                      <Link to="/cat">Other</Link>
+                    </li>
+                    <li className="h-list-item">
+                      <Link to="categories" smooth={true}>Other</Link>
+                    </li>
+                  </>
 
-            {show2 === true ? (
-              <>
-                <li className="list-ele m-nav-overrider1"></li>
-                <li
-                  className="list-ele m-nav-overrider2"
-                  onClick={() => {
-                    overlayset();
-                  }}
-                >
-                  Menu
-                </li>
-              </>
-            ) : undefined}
-          </ul>
+                  {/* </div> */}
+                  <div className="nav-btn">
+                    <li className="h-list-item nav-extra">
+                      {localStorage.getItem("userID") ? (
+                        <Link
+                          onClick={() => {
+                            userLogout();
+                          }}
+                        >
+                          Logout
+                        </Link>
+                      ) : (
+                        <Link to="/login">Login</Link>
+                      )}
+                    </li>
+                    <li className="h-list-item nav-extra">
+                      {localStorage.getItem("userID") ? (
+                        <Link to="/cart">Cart</Link>
+                      ) : (
+                        <Link to="/register">Signup</Link>
+                      )}
+                    </li>
+                    {/* </ul> */}
+                  </div>
+                </ul>
+              </div>
+            </div>
+          ) : undefined}
+          {/* </div>  */}
         </div>
-        <h1 className="h-h1">Your dream websites and instant apps awaits !</h1>
-        {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
-        <p className="h-p2">
-          Welcome to our fresh collection of themes. Hope you find your dream
-          website and instant apps here. Start your journey with our themes.
-        </p>
-        <div className="h-four">
-          <button
-            className="h-btn1"
-            onClick={() => {
-              navigate("/collection");
-            }}
-          >
-            View Collection
-          </button>
-        </div>
+
+        {show2 === true ? (
+          <>
+            <li className="list-ele m-nav-overrider1"></li>
+            <li
+              className="list-ele m-nav-overrider2"
+              onClick={() => {
+                overlayset();
+              }}
+            >
+              Menu
+            </li>
+          </>
+        ) : undefined}
+        {/* </div> */}
       </nav>
-
-      <p className="h-pmain">Our categories</p>
-
-      <div className="h-three">
-        <div className="h-three-flexer">
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-graduation-cap h-icon1"></i>
-            <p className="h-p1">Education</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-baseball-bat-ball h-icon1"></i>
-            <p className="h-p1">Sports</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-cart-shopping h-icon1"></i>
-            <p className="h-p1">Ecommerce</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-user-tag h-icon1"></i>
-            <p className="h-p1">Portfolio</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-circle-dollar-to-slot h-icon1"></i>
-            <p className="h-p1">Non Profit</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-bell-concierge h-icon1"></i>
-            <p className="h-p1">Services</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-plane-departure h-icon1"></i>
-            <p className="h-p1">Aerospace</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-flask-vial h-icon1"></i>
-            <p className="h-p1">Chemical</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-car-side h-icon1"></i>
-            <p className="h-p1">Transport</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-industry h-icon1"></i>
-            <p className="h-p1">Manufacturing</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-tractor h-icon1"></i>
-            <p className="h-p1">Heavy</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-plug h-icon1"></i>
-            <p className="h-p1">Electric</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-suitcase-medical h-icon1"></i>
-            <p className="h-p1">Healthcare</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i className="fa-solid fa-arrow-trend-up h-icon1"></i>
-            <p className="h-p1">Economic</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i class="fa-solid fa-spa h-icon1"></i>
-            <p className="h-p1">Spa</p>
-          </div>
-          <div className="h-flex-childs" data-aos="fade-out">
-            <i class="fa-solid fa-leaf h-icon1"></i>
-            <p className="h-p1">Yoga</p>
+      <div className="content-container">
+        <div className="content">
+          <h1 className="h-h1">
+            <p className="text">
+            Your dream websites and <span>instant apps awaits !</span>
+            </p>
+          </h1>
+          {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
+          <p className="h-p2">
+            Welcome to our fresh collection of themes. Hope you find your dream
+            website and instant apps here. Start your journey with our themes..
+          </p>
+          <div className="h-four">
+            <button
+              className="h-btn1"
+              onClick={() => {
+                navigate("/collection");
+              }}
+            >
+              View Collection
+            </button>
           </div>
         </div>
       </div>
-      {
-        mainstate.categories ? <>
-       {
-        mainstate.categories.map((ele,index)=>{
-          return  <>
-                   <p className="h-p-mainone" id="education">{ele.name}</p>
-          <Slider {...settings}>
-            {mainstate.themes &&
-              mainstate.themes.map((eles, indexs) => {
-                if (eles.category === `${ele.name}`) {
-                  return <Card data={eles} key={indexs}  />;
-         }
-              })}
-          </Slider>
+      <div>
+        <p className="h-pmain">Our categories</p>
+
+        <div className="h-three">
+          <div className="h-three-flexer">
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-graduation-cap h-icon1"></i>
+              <p className="h-p1">Education</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-baseball-bat-ball h-icon1"></i>
+              <p className="h-p1">Sports</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-cart-shopping h-icon1"></i>
+              <p className="h-p1">Ecommerce</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-user-tag h-icon1"></i>
+              <p className="h-p1">Portfolio</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-circle-dollar-to-slot h-icon1"></i>
+              <p className="h-p1">Non Profit</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-bell-concierge h-icon1"></i>
+              <p className="h-p1">Services</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-plane-departure h-icon1"></i>
+              <p className="h-p1">Aerospace</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-flask-vial h-icon1"></i>
+              <p className="h-p1">Chemical</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-car-side h-icon1"></i>
+              <p className="h-p1">Transport</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-industry h-icon1"></i>
+              <p className="h-p1">Manufacturing</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-tractor h-icon1"></i>
+              <p className="h-p1">Heavy</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-plug h-icon1"></i>
+              <p className="h-p1">Electric</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-suitcase-medical h-icon1"></i>
+              <p className="h-p1">Healthcare</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i className="fa-solid fa-arrow-trend-up h-icon1"></i>
+              <p className="h-p1">Economic</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i class="fa-solid fa-spa h-icon1"></i>
+              <p className="h-p1">Spa</p>
+            </div>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i class="fa-solid fa-leaf h-icon1"></i>
+              <p className="h-p1">Yoga</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="categories">
+        {mainstate.categories ? (
+          < >
+            {mainstate.categories.map((ele, index) => {
+              return (
+                <>
+                  <div className="card-container-title">
+                    <p className="h-p-mainone" id="education">
+                      {ele.name}
+                    </p>
+                    <p>hh</p>
+                  </div>
+                  <Slider {...settings}>
+                    {mainstate.themes &&
+                      mainstate.themes.map((eles, indexs) => {
+                        if (eles.category === `${ele.name}`) {
+                          return <Card data={eles} key={indexs} />;
+                        }
+                      })}
+                  </Slider>
+                </>
+              );
+            })}
           </>
-        })
-       }
-        </>:null
-      }
-    
+        ) : null}
+      </div>
       <ToastContainer />
-    </>
+    </div>
   );
 };
 
