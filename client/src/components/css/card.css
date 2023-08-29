@@ -5,9 +5,11 @@
     width: 319px;
     height: 260px;
     border-radius: 10px;
-    -webkit-box-shadow: 3px 3px 10px 3px rgb(196, 196, 196);
+    /* -webkit-box-shadow: 3px 3px 10px 3px rgb(196, 196, 196); */
+    /* -webkit-box-shadow: 3px 3px 10px 3px black; */
+  
     -moz-box-shadow: 3px 3px 10px 3px rgb(196, 196, 196);
-    box-shadow: 3px 3px 10px 3px rgb(196, 196, 196);
+    box-shadow: 3px 3px 10px 3px black;
     margin-bottom: 15px;
     margin-left: 28px;
 }
@@ -20,6 +22,7 @@
     height: 65%;
     /* border: 1px solid blue; */
     border-radius: 10px;
+    box-shadow: 3px 3px 10px 3px black; 
 }
 
 .card-img1{

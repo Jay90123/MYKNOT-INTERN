@@ -85,7 +85,7 @@ const Navbar = () => {
               <li className="list-ele"></li>
               <div className='nav-btn'>
               <li className="list-ele"><Link to="/register">Signup</Link></li>
-              <li className="list-ele testing2">{checker?<Link >Logout</Link>:<Link to="/login">Login</Link>}</li>
+              <li className="list-ele ">{checker?<Link >Logout</Link>:<Link to="/login">Login</Link>}</li>
               </div>
               </>: undefined
             }

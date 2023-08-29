@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .html {
@@ -37,7 +38,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(98, 133, 206, 0.5);
+    background-color: rgb(108 156 255 / 50%);;
 }
 
 .n-one {
@@ -53,16 +54,10 @@ body {
     justify-content: center;
 
     z-index: 2;
-    margin: 5px;
+    
 }
 
-/* .n-one-one {
-    color: #FFFFFF;
-    border-radius: 22px;
-    margin: 5px;
-    box-shadow: rgba(28, 30, 31, 0.5) 3px 5px 5px 0px;
-    width: 80%;
-} */
+
 
 .nav-c {
     width: 100%;
@@ -77,21 +72,13 @@ body {
 
 .nav-btn {
     display: flex;
-    /* float: right; */
+   
     justify-content: flex-end;
     align-items: center;
-    /* width: 100%; */
+    
 }
 
-/* .n-two {
 
-    display: flex;
-    background-image: url("https://www.myknot.club/images/logo%20black.png");
-    
-    background-size: cover;
-    background-position: center;
-    width: 90%;
-} */
 
 .n-three {
 
@@ -130,12 +117,30 @@ body {
     display: flex;
     top: 0;
     background-color: #0074D9;
-    color: #FFFFFF;
+    color: black;
 
-
+    margin: 5px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     justify-content: center;
 }
+.nav-btn li:hover{
+    
+    color:#0074D9;
+    background-color: white;
+}
+.nav-btn li a:hover{
+    color :#0074D9;
+}
+.menu-btn{
+    /* background-color: pink; */
+}
+.h-listcontrol li a:hover{
+    color: #0074D9;
 
+}
 .h-list-item {
     display: flex;
 
@@ -162,7 +167,7 @@ body {
 
     color: white;
     width: 100%;
-    margin: 58px;
+    /* margin: 58px; */
     margin-left: 20px;
     font-size: 2.9rem;
     display: inline-block;
@@ -176,6 +181,7 @@ body {
     overflow: hidden;
     animation: typing 5s steps(44),
         cursor .4s step-end infinite alternate;
+        color:black
 }
 
 @keyframes cursor {
@@ -192,10 +198,16 @@ body {
 
 
 
-
+.full-section{
+    background-image: linear-gradient(rgb(68 132 254 / 50%), white);
+}
 
 .text span {
-    color: rgb(8 92 169);
+    color: #0600c7;;
+}
+.h-flex-childs{
+    background-color: white;
+    box-shadow: black 3px 5px 5px 0px;
 }
 
 .content-container {
@@ -210,20 +222,24 @@ body {
 }
 
 .content {
+    align-items: center;
     text-align: center;
     color: white;
-    margin-right: 25px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
     z-index: 1;
 }
 
 
 .h-p2 {
     text-align: center;
-    width: 100%;
+    width: 62rem;
+    padding:10px;
 
     font-size: 26px;
     color: whitesmoke;
-    margin: 15px;
+    /* margin: 15px; */
 }
 
 
@@ -238,27 +254,38 @@ body {
 .h-btn1 {
     margin: auto;
     padding: 11px;
-    width: 13%;
+    width:10rem;
     font-size: 16px;
     border-radius: 6px;
     border: none;
-    background: #eded80;
-    color: black;
+    background: rgb(71, 127, 176);
+    color:white;
     cursor: pointer;
 }
 
-.h-btn1:hover {
+
+.h-btn1:hover{
     transform: translateY(-5px);
+    color:rgb(71, 127, 176);
+    background-color: white;
 }
 
 
 .h-three {
 
-    height: auto;
-    width: 100vw;
-    margin: 0;
-    margin-top: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+.h-three-child {
+    padding: 60px;
+    /* margin: 30px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -280,7 +307,7 @@ body {
     border-radius: 9px;
     -webkit-box-shadow: 3px 3px 10px 3px #ddd;
     -moz-box-shadow: 3px 3px 10px 3px #ddd;
-    box-shadow: 3px 3px 10px 3px #ddd;
+    box-shadow: 3px 3px 10px 3px black;
     cursor: pointer;
     margin: 16px 15px;
 }
@@ -301,6 +328,8 @@ body {
 .h-pmain {
     text-align: center;
     font-size: 35px;
+    margin: 0px;
+    padding: 6px;
 }
 
 .h-p-mainone {
@@ -377,7 +406,7 @@ body {
 
         .content {
             margin-top: -165px;
-        }
+        }}
 
         .h-btn1 {
             padding: 1%;
@@ -392,7 +421,7 @@ body {
             cursor: pointer;
         }
 
-    }
+    
 
     .content {
         margin-top: -615px;
@@ -417,13 +446,7 @@ body {
 
     }
 
-    .nav-btn li {
-        margin: 5px;
-        padding: 2px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+   
 
     .n-one {
         padding: 0px;
@@ -475,7 +498,9 @@ body {
         align-items: center;
         justify-content: center;
     }
-
+.card-two{
+    box-shadow: 3px 3px 10px 3px black;
+}
     .h-flex-childs {
         width: 25%;
         height: 8%;
@@ -500,15 +525,15 @@ body {
     .h-h1 {
 
         margin-top: -261px;
-        font-size: 0.9rem;
+        font-size: 0.33rem;
     }
 
     .h-btn1 {
         /* padding: 3%;  */
 
         padding: 5px;
-        width: 13%;
-        font-size: 6px;
+        width: 4rem;
+        font-size: 5px;
         border-radius: 6px;
         border: none;
         background: #eded80;
@@ -519,6 +544,7 @@ body {
 
     .h-p2 {
         font-size: 7px;
+        width: 200px;
     }
 
     .content {

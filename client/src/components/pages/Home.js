@@ -90,7 +90,7 @@ const Home = () => {
   }
 
   return (
-    <div >
+    <div>
       <div className="h-one">
         <img
           src="https://cdn.pixabay.com/photo/2015/03/13/17/39/road-672036_960_720.jpg"
@@ -131,7 +131,9 @@ const Home = () => {
                       <Link to="/cat">Other</Link>
                     </li>
                     <li className="h-list-item">
-                      <Link to="categories" smooth={true}>Other</Link>
+                      <Link to="categories" smooth={true}>
+                        Other
+                      </Link>
                     </li>
                   </>
 
@@ -169,23 +171,26 @@ const Home = () => {
         {show2 === true ? (
           <>
             <li className="list-ele m-nav-overrider1"></li>
-            <li
-              className="list-ele m-nav-overrider2"
-              onClick={() => {
-                overlayset();
-              }}
-            >
-              Menu
-            </li>
+            <div className="menu-btn">
+              <li
+                className="list-ele m-nav-overrider2"
+                onClick={() => {
+                  overlayset();
+                }}
+              >
+                Menu
+              </li>
+            </div>
           </>
         ) : undefined}
         {/* </div> */}
       </nav>
+
       <div className="content-container">
         <div className="content">
           <h1 className="h-h1">
             <p className="text">
-            Your dream websites and <span>instant apps awaits !</span>
+              Your dream websites and <span>instant apps awaits !</span>
             </p>
           </h1>
           {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
@@ -205,7 +210,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className="full-section">
         <p className="h-pmain">Our categories</p>
 
         <div className="h-three">
@@ -266,7 +271,7 @@ const Home = () => {
               <i className="fa-solid fa-arrow-trend-up h-icon1"></i>
               <p className="h-p1">Economic</p>
             </div>
-            <div className="h-flex-childs" data-aos="fade-out">
+            <div className="h-flex-childs"  data-aos="fade-out">
               <i class="fa-solid fa-spa h-icon1"></i>
               <p className="h-p1">Spa</p>
             </div>
@@ -276,34 +281,34 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div id="categories">
+          {mainstate.categories ? (
+            <>
+              {mainstate.categories.map((ele, index) => {
+                return (
+                  <>
+                    <div className="card-container-title">
+                      <p className="h-p-mainone" id="education">
+                        {ele.name}
+                      </p>
+                      <p>hh</p>
+                    </div>
+                    <Slider {...settings}>
+                      {mainstate.themes &&
+                        mainstate.themes.map((eles, indexs) => {
+                          if (eles.category === `${ele.name}`) {
+                            return <Card data={eles} key={indexs} />;
+                          }
+                        })}
+                    </Slider>
+                  </>
+                );
+              })}
+            </>
+          ) : null}
+        </div>
+        <ToastContainer />
       </div>
-      <div id="categories">
-        {mainstate.categories ? (
-          < >
-            {mainstate.categories.map((ele, index) => {
-              return (
-                <>
-                  <div className="card-container-title">
-                    <p className="h-p-mainone" id="education">
-                      {ele.name}
-                    </p>
-                    <p>hh</p>
-                  </div>
-                  <Slider {...settings}>
-                    {mainstate.themes &&
-                      mainstate.themes.map((eles, indexs) => {
-                        if (eles.category === `${ele.name}`) {
-                          return <Card data={eles} key={indexs} />;
-                        }
-                      })}
-                  </Slider>
-                </>
-              );
-            })}
-          </>
-        ) : null}
-      </div>
-      <ToastContainer />
     </div>
   );
 };

@@ -19,7 +19,7 @@ const Admin = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="adm-one">
         <div className="adm-sidebar">
           <div className="adm-s-one">

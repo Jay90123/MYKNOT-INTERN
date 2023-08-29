@@ -108,9 +108,9 @@ const Footer = () => {
                     <li className="list-head cutoff">&nbsp;</li>
                     {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
                     <li className="f-list-ele cutoff"></li>
-                    <li className="f-list-ele "><i className="fa-brands fa-facebook f-icon"></i></li>
+                    <li className="f-list-ele f-l-e-over"><i className="fa-brands fa-facebook f-icon"></i></li>
                     {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
-                    <li className="f-list-ele"><i className="fa-solid fa-envelope f-icon"></i></li>
+                    <li className="f-list-ele f-l-e-over"><i className="fa-solid fa-envelope f-icon"></i></li>
                 </ul>
             </div>
         </div>

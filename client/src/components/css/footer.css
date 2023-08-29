@@ -1,16 +1,24 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@500&display=swap');
+
+
 .f-one{
     width: 100vw;
     height: 600px;
-    background-color:#252323;
+    /* background-color:rgb(71, 127, 176); */
+    background-color:rgb(70, 140, 202);
     color: white;
-    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .f-two{
-    width: 85%;
+    /* width: 85%;
     height: 100%;
-    /* border: 2px solid white; */
-    margin: auto;
+    margin: auto; */
 }
 
 .f-p1{
@@ -21,22 +29,24 @@
 }
 
 .f-p2{
-    margin-top: 28px;
+   margin: 10px;
+   display: flex; 
+   align-items: center;
+   justify-content: center;
 }
 
 .f-three{
-    width: 100%;
-    height: 60%;
-   /* border: 1px solid red; */
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   margin-top: 58px;
+    
+
+
+    display: flex; 
+   
+ 
 }
 .f-three-child{
-    width: 24%;
-    height: 100%;
-    /* border: 3px solid lightgreen; */
+    margin: 44px;
+    padding: 44px;
+    
 }
 
 .f-list{
@@ -46,29 +56,30 @@
 
 .list-head{
     font-weight: 600;
-    font-size: 19px;
+    font-size: 28px;
+    padding: 6px;
 }
 
 .f-list-ele{
     margin: 16px 0px;
-    padding: 5px;
-    /* text-align: center; */
+    padding: 7px;
+  
 }
 
 .f-list-ele:hover{
-    background-color: #696767;
+    /* background-color: #696767; */
     cursor: pointer;
-    width: 100px;
-    border-radius: 100px;
+    color:black;
+    /* width: 100px; */
+    /* border-radius: 100px; */
     
 }
-
+.f-list-ele i:hover{
+    color: black;
+}
 .f-icon{
     color: white;
     font-size: 50px;
-}
-.f-l-e-over{
-    /* text-align: center; */
 }
 
 .f-last-p{
