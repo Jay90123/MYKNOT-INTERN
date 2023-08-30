@@ -45,7 +45,7 @@
 }
 .f-three-child{
     margin: 44px;
-    padding: 44px;
+    padding: 33px;
     
 }
 
@@ -90,6 +90,17 @@
     font-weight: 200;
 }
 
+@media (max-width:420px){
+    .f-three-child {
+        padding:0px;
+    }
+}
+
+@media (max-width:1000px){
+    .f-three-child {
+        padding:0px;
+    }
+}
 @media (max-width:820px){
     .f-one{
         height: auto;
@@ -103,7 +114,8 @@
         flex-direction: column;
     }
     .f-three-child{
-        width: 100%;
+        /* width: 100%; */
+        /* padding: 0px; */
     }
     .f-list-ele{
         margin:5px 0px;

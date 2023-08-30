@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Appcontext from "../context/Appcontext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Img from "../utils/img/bg-img.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -104,41 +105,28 @@ const Home = () => {
       </div>
 
       <nav className="n-one">
-        {/* <div className="n-one-one"> */}
-        <div className="n-two">
+        <div className="nav-emp">
+          {/* <div className="n-one-one"> */}
+          {/* <div className="n-two"> */}
           {/* <img
               src="https://www.myknot.club/images/logo%20black.png"
               alt=""
               className="n-img1"
             /> */}
-        </div>
-        <div className="nav-c">
-          {show1 === true ? (
-            <div className="nav-d">
-              <div className="n-three">
+          {/* </div> */}
+          <div className="nav-c">
+            {show1 === true ? (
+              <div className="nav-d">
+                {/* <div className="n-three"> */}
                 <ul className="h-listcontrol">
-                  <>
-                    <li className="h-list-item">
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li className="h-list-item">
-                      <Link to="/aboutus">About Us</Link>
-                    </li>
-                    <li className="h-list-item">
-                      <Link to="/contact">Contact Us</Link>
-                    </li>
-                    <li className="h-list-item">
-                      <Link to="/cat">Other</Link>
-                    </li>
-                    <li className="h-list-item">
-                      <Link to="categories" smooth={true}>
-                        Other
-                      </Link>
-                    </li>
-                  </>
-
                   {/* </div> */}
+                  <div className="logo">
+                    <li className="list-ele nav-heading">
+                      <Link to="/">Myknot</Link>
+                    </li>
+                  </div>
                   <div className="nav-btn">
+                    {" "}
                     <li className="h-list-item nav-extra">
                       {localStorage.getItem("userID") ? (
                         <Link
@@ -163,34 +151,56 @@ const Home = () => {
                   </div>
                 </ul>
               </div>
-            </div>
-          ) : undefined}
-          {/* </div>  */}
-        </div>
+            ) : // </div>
+            undefined}
+            {/* </div>  */}
+          </div>
 
-        {show2 === true ? (
-          <>
-            <li className="list-ele m-nav-overrider1"></li>
-            <div className="menu-btn">
-              <li
-                className="list-ele m-nav-overrider2"
-                onClick={() => {
-                  overlayset();
-                }}
-              >
-                Menu
+          {show2 === true ? (
+            <>
+              <li className="list-ele m-nav-overrider1"></li>
+              <div className="menu-btn">
+                <li
+                  className="list-ele m-nav-overrider2"
+                  onClick={() => {
+                    overlayset();
+                  }}
+                >
+                  Menu
+                </li>
+              </div>
+            </>
+          ) : undefined}
+          {/* </div> */}
+          <div className="list-nav">
+            <>
+              <li className="h-list-item">
+                <Link to="/">Home</Link>
               </li>
-            </div>
-          </>
-        ) : undefined}
-        {/* </div> */}
+              <li className="h-list-item">
+                <Link to="/aboutus">About Us</Link>
+              </li>
+              <li className="h-list-item">
+                <Link to="/contact">Contact Us</Link>
+              </li>
+              <li className="h-list-item">
+                <Link to="/cat">Other</Link>
+              </li>
+              <li className="h-list-item">
+                <Link to="categories" smooth={true}>
+                  Other
+                </Link>
+              </li>
+            </>
+          </div>
+        </div>
       </nav>
 
       <div className="content-container">
         <div className="content">
           <h1 className="h-h1">
             <p className="text">
-              Your dream websites and <span>instant apps awaits !</span>
+              Your dream websites and instant apps awaits !
             </p>
           </h1>
           {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
@@ -209,6 +219,9 @@ const Home = () => {
             </button>
           </div>
         </div>
+        {/* <div className="img">
+          <img src={Img}></img>
+        </div> */}
       </div>
       <div className="full-section">
         <p className="h-pmain">Our categories</p>
@@ -271,7 +284,7 @@ const Home = () => {
               <i className="fa-solid fa-arrow-trend-up h-icon1"></i>
               <p className="h-p1">Economic</p>
             </div>
-            <div className="h-flex-childs"  data-aos="fade-out">
+            <div className="h-flex-childs" data-aos="fade-out">
               <i class="fa-solid fa-spa h-icon1"></i>
               <p className="h-p1">Spa</p>
             </div>
