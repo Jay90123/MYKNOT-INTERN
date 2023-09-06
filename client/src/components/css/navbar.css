@@ -184,7 +184,9 @@ a {
         height: 7px;
         background: rgb(59, 59, 235);
         display: flex;
-        padding: 3px;
+        color: white;
+        font-size: 10px;
+        padding: 6px;
 
     }
 
@@ -194,5 +196,11 @@ a {
 
     .testing {
         margin-left: 3%;
+    }
+}
+@media (max-width:450px) {
+    .nav-1{margin: 14px;}
+    .list-ele{margin: 0px;
+
     }
 }

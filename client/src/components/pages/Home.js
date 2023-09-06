@@ -225,7 +225,7 @@ const Home = () => {
           <div className="text-content">
             <h1 className="h-h1">
               <p className="text">
-                Your dream websites and instant apps awaits !
+              Discover, Explore, Connect, Thrive 
               </p>
             </h1>
             {/* <p className="h-p2">Select your dream website from our rich collection</p> */}

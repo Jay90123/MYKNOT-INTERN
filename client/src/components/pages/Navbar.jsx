@@ -108,13 +108,16 @@ const Navbar = () => {
             </div>
             {
               show2 === true ? <><li className="list-ele m-nav-overrider1"></li>
+              <div className='nav-menu-btn'>
                 <li className="list-ele m-nav-overrider2" onClick={() => {
                   overlayset()
-                }}>Menue</li></> : undefined
+                }}>Menu</li></div></> : undefined
+                
             }
             {/* <li className="list-ele testing"><p className="nav-p1"><i className="bi bi-person-circle nav-icon1"></i>Leston Aaron Salis</p></li> */}
           </ul>
         </div></div>
+        
 
     </>
   )

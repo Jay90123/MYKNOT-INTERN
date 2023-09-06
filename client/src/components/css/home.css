@@ -209,7 +209,7 @@ body {
     justify-content: center;
     background-color: white;
     color: black;
-   
+
 }
 
 .last-nav li a {
@@ -234,7 +234,7 @@ body {
 }
 
 .text {
-    letter-spacing: 5px;
+    letter-spacing: 4px;
     border-right: 2px solid;
     margin: 10px;
     width: 100%;
@@ -750,12 +750,25 @@ body {
         display: flex;
 
     }
+.text{
+    /* margin:9px; */
+    font-size: 10px;
+    margin: 0px;
+}
+    .text-content {
+        width: 76%;
+    }
+
+    .content-container {
+        height: 72vh;
+    }
 
     .h-list-item {
         padding-top: 0px;
         margin: 0 15px;
     }
-    .list-nav li:hover{
+
+    .list-nav li:hover {
         background-color: pink;
     }
 
@@ -767,12 +780,19 @@ body {
         font-size: 5px;
         /* border-radius: 6px; */
         border: none;
-        background: #eded80;
-        color: black;
+        background: rgb(7 7 99);
+        color: white;
         cursor: pointer;
 
     }
-
+    .h-btn1 :hover{
+        color:rgb(7 7 99);
+        background-color: white;
+        border: 1px solid rgb(7 7 99);
+    }
+.h-four{
+    margin: 17px;
+}
     .list-nav {
         padding: 10px;
     }
@@ -783,11 +803,14 @@ body {
 
     .search-form {
         width: 340px;
+        margin: 10px;
     }
 
     .h-p2 {
         font-size: 7px;
         /* width: 200px; */
+        padding-left: 38px;
+        padding-right: 38px;
     }
 
     .content {
