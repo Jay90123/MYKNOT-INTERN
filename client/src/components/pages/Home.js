@@ -10,7 +10,8 @@ import { useNavigate } from "react-router-dom";
 import Appcontext from "../context/Appcontext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Img from "../utils/img/bg-img.jpg";
+import Img from "../utils/img/bg-img.png";
+import { BsSearch } from "react-icons/bs";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -92,17 +93,17 @@ const Home = () => {
 
   return (
     <div>
-      <div className="h-one">
-        <img
+      {/* <div className="h-one"> */}
+      {/* <img
           src="https://cdn.pixabay.com/photo/2015/03/13/17/39/road-672036_960_720.jpg"
           alt=""
           className="h-img1"
           onClick={() => {
             navigate("/");
           }}
-        />
-        <div className="h-two"></div>
-      </div>
+        /> */}
+      <div className="h-two"></div>
+      {/* </div> */}
 
       <nav className="n-one">
         <div className="nav-emp">
@@ -193,35 +194,73 @@ const Home = () => {
               </li>
             </>
           </div>
+          <div className="last-nav">
+            <div className="list-nav">
+              <>
+                <li className="h-list-item">
+                  <Link to="/">Page</Link>
+                </li>
+                <li className="h-list-item">
+                  <Link to="/aboutus">page2</Link>
+                </li>
+                <li className="h-list-item">
+                  <Link to="/contact"> page3</Link>
+                </li>
+                <li className="h-list-item">
+                  <Link to="/cat">page4</Link>
+                </li>
+                <li className="h-list-item">
+                  <Link to="categories" smooth={true}>
+                    Other
+                  </Link>
+                </li>
+              </>
+            </div>
+          </div>
         </div>
       </nav>
 
       <div className="content-container">
         <div className="content">
-          <h1 className="h-h1">
-            <p className="text">
-              Your dream websites and instant apps awaits !
+          <div className="text-content">
+            <h1 className="h-h1">
+              <p className="text">
+                Your dream websites and instant apps awaits !
+              </p>
+            </h1>
+            {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
+            <p className="h-p2">
+              Welcome to our fresh collection of themes. Hope you find your
+              dream website and instant apps here. Start your journey with our
+              themes..
             </p>
-          </h1>
-          {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
-          <p className="h-p2">
-            Welcome to our fresh collection of themes. Hope you find your dream
-            website and instant apps here. Start your journey with our themes..
-          </p>
-          <div className="h-four">
-            <button
-              className="h-btn1"
-              onClick={() => {
-                navigate("/collection");
-              }}
-            >
-              View Collection
-            </button>
+            <div className="search">
+              <form action="" className="search-form">
+                <input
+                  type="text"
+                  placeholder="ex. yoga"
+                  name="search-bar"
+                ></input>
+                <button type="submit">
+                  <BsSearch />{" "}
+                </button>
+              </form>
+            </div>
+            <div className="h-four">
+              <button
+                className="h-btn1"
+                onClick={() => {
+                  navigate("/collection");
+                }}
+              >
+                View Collection
+              </button>
+            </div>
           </div>
         </div>
-        {/* <div className="img">
+        <div className="img">
           <img src={Img}></img>
-        </div> */}
+        </div>
       </div>
       <div className="full-section">
         <p className="h-pmain">Our categories</p>
@@ -304,7 +343,7 @@ const Home = () => {
                       <p className="h-p-mainone" id="education">
                         {ele.name}
                       </p>
-                      <p>hh</p>
+                    
                     </div>
                     <Slider {...settings}>
                       {mainstate.themes &&

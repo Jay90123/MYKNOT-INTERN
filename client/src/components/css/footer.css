@@ -5,8 +5,9 @@
 .f-one{
     width: 100vw;
     height: 600px;
-    /* background-color:rgb(71, 127, 176); */
-    background-color:rgb(70, 140, 202);
+   
+    /* background-color:rgb(70, 140, 202); */
+    background-color:rgb(7 7 99);;
     color: white;
     display: flex;
     align-items: center;
