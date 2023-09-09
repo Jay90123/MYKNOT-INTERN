@@ -218,19 +218,17 @@ body {
 
 .last-nav li a:hover {
     color: black;
-    /* font-weight: 500; */
+ 
 }
 
 .h-h1 {
     text-align: center;
-    /* font-family: 'Lato', sans-serif; */
     color: white;
     width: 100%;
     font-family: 'Roboto', sans-serif;
-    /* margin: 10px; */
-    /* margin-left: 20px; */
+   
     font-size: 1.3rem;
-    /* display: inline-block; */
+    
 }
 
 .text {
@@ -326,7 +324,8 @@ body {
     /* padding: 10px; */
 
     font-size: 20px;
-    color: black;
+    font-weight: 600;
+    color: rgb(14, 112, 172);
     /* margin: 15px; */
 }
 

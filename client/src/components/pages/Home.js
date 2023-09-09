@@ -185,7 +185,11 @@ const Home = () => {
                 <Link to="/contact">Contact Us</Link>
               </li>
               <li className="h-list-item">
-                <Link to="/cat">Other</Link>
+                {localStorage.getItem("userID") ? (
+                  <Link to="/cart">Cart</Link>
+                ) : (
+                  <Link to="/register">Signup</Link>
+                )}
               </li>
               <li className="h-list-item">
                 <Link to="categories" smooth={true}>
@@ -224,9 +228,7 @@ const Home = () => {
         <div className="content">
           <div className="text-content">
             <h1 className="h-h1">
-              <p className="text">
-              Discover, Explore, Connect, Thrive 
-              </p>
+              <p className="text">Discover, Explore, Connect, Thrive</p>
             </h1>
             {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
             <p className="h-p2">
@@ -343,7 +345,6 @@ const Home = () => {
                       <p className="h-p-mainone" id="education">
                         {ele.name}
                       </p>
-                    
                     </div>
                     <Slider {...settings}>
                       {mainstate.themes &&
