@@ -118,17 +118,25 @@
 .dd-two{
     width: 34%;
     margin: auto;
+    font-weight: 900;
     height: 55%;
+    color: white;
     text-align: center;
     border: 1px solid green;
     margin: 12% auto;
     border-radius: 15px;
-    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    background-image: linear-gradient(to right, rgb(63, 112, 176),rgb(75, 75, 210) ,  #121988);
+}
+.dd-two textarea{
+    border-radius: 6px;
+    font: bold;
+    border: none;
 }
 .d-h4-one{
     margin: 3% 0%;
     font-size: 25px;
-    border-bottom: 5px solid teal;
+    border-bottom: 5px solid white;
 }
 .main-set{
     width: 100vw;
@@ -142,7 +150,11 @@
     height: 9%;
     background-color: #cfd9d9;
     border: 2px solid teal;
+    border-radius: 6px;
     cursor: pointer;
+}
+.dd-button:hover{
+    background-color: rgb(162, 162, 230);
 }
 .d-button-update{
     width: 15%;
