@@ -1,37 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Nunito+Sans:ital,opsz,wght@1,6..12,300&family=Playfair+Display&family=Roboto:wght@500&display=swap');
-.d-one{
+
+.d-one {
     width: 66%;
     /* height: 600px; */
     margin: auto;
-    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.7);
     border-radius: 12px;
-    margin:15px;
-  
+    margin: 15px;
+
 }
-.details-section{
+
+.details-section {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.d-two{
+
+.d-two {
     width: 100%;
     height: 12%;
     height: auto;
- 
+
     text-align: center;
 }
-.icons{
+
+.icons {
     font-size: 34px;
     filter: drop-shadow(1px 2px 3px black);
-    margin:10px;
+    margin: 10px;
 }
-.details{
+
+.details {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.d-three{
-/*     
+
+.d-three {
+    /*     
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -39,20 +45,22 @@
     height: 87%; */
 }
 
-.d-three-childone{
+.d-three-childone {
     width: 100%;
     /* border-right: 3px solid teal; */
     /* height: 100%; */
     border-top: 5px solid teal;
     font-family: 'Lato', sans-serif;
 }
-.d-three-childtwo{
+
+.d-three-childtwo {
     width: 100%;
-    
+
     height: 100%;
     border-top: 2px solid teal;
 }
-.d-tc-one{
+
+.d-tc-one {
     /* width: 100%;  */
     height: 24%;
     border: 1px solid teal;
@@ -62,30 +70,34 @@
     flex-wrap: wrap;
     border-radius: 7px;
     align-items: center;
-   
+
 
 
     font-family: 'Roboto', sans-serif;
-  
+
 
 }
-.d-tc-one h4{
+
+.d-tc-one h4 {
     margin-left: 1%;
     font-family: 'Nunito Sans', sans-serif;
     /* font-weight: normal; */
 }
-.d-tc-one button{
+
+.d-tc-one button {
     margin-left: auto;
     margin-right: 10px;
 
 }
-.d-h1{
+
+.d-h1 {
     font-family: 'Playfair Display', serif;
 }
-.d-btn2{
-    
-    background-image: linear-gradient(to right, rgb(63, 112, 176),rgb(75, 75, 210) ,  #121988);
-    border: 2px solid  #121988;
+
+.d-btn2 {
+
+    background-image: linear-gradient(to right, rgb(63, 112, 176), rgb(75, 75, 210), #121988);
+    border: 2px solid #121988;
     cursor: pointer;
     height: 7%;
     width: 23%;
@@ -95,16 +107,18 @@
     opacity: 80%;
     color: white;
 }
-.d-btn2:hover{
+
+.d-btn2:hover {
     opacity: 100%;
 }
-.d-btn2-area{
+
+.d-btn2-area {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dd-one{
+.dd-one {
     width: 100%;
     height: 600px;
     border: 1px solid violet;
@@ -112,10 +126,11 @@
     top: 10%;
     left: 0;
     z-index: 3;
-    background-color: rgb(0, 0, 0,0.8);
- 
+    background-color: rgb(0, 0, 0, 0.8);
+
 }
-.dd-two{
+
+.dd-two {
     width: 34%;
     margin: auto;
     font-weight: 900;
@@ -126,54 +141,93 @@
     margin: 12% auto;
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(to right, rgb(63, 112, 176),rgb(75, 75, 210) ,  #121988);
+    background-image: linear-gradient(to right, rgb(63, 112, 176), rgb(75, 75, 210), #121988);
 }
-.dd-two textarea{
+
+.dd-two textarea {
     border-radius: 6px;
     font: bold;
     border: none;
+    width: 100%;;
 }
-.d-h4-one{
+
+.d-h4-one {
     margin: 3% 0%;
     font-size: 25px;
     border-bottom: 5px solid white;
+    width: 100%;
 }
-.main-set{
+
+.main-set {
     width: 100vw;
     height: 100vh;
 }
 
-.dd-button{
-    display: block;
-    margin-left: 42%;
-    width: 20%;
+.dd-button {
+    /* display: block; */
+    /* margin-left: 42%; */
+    width: auto;
     height: 9%;
     background-color: #cfd9d9;
     border: 2px solid teal;
     border-radius: 6px;
     cursor: pointer;
 }
-.dd-button:hover{
+
+.dd-button:hover {
     background-color: rgb(162, 162, 230);
 }
-.d-button-update{
+
+.d-button-update {
     width: 15%;
     height: 2rem;
-    color:  white;
-    background-image: linear-gradient(to right, rgb(63, 112, 176),rgb(75, 75, 210) ,  #121988);
+    color: white;
+    background-image: linear-gradient(to right, rgb(63, 112, 176), rgb(75, 75, 210), #121988);
     /* border: 2px solid teal; */
     cursor: pointer;
     border: none;
-border-radius: 6px;
+    border-radius: 6px;
 
 }
-.d-button-update:hover{
-  
+
+.d-button-update:hover {
+
     opacity: 80%;
 }
 
-.d-h2{
+.d-h2 {
     text-align: center;
     /* margin-top: 53%; */
     font-weight: 400;
+}
+
+@media (max-width:450px) {
+    .d-h1{
+        font-size: 18px;
+    }
+    .d-h2{
+        font-size: 11px;
+    }
+
+    .details h4{
+        font-size: 10px;
+    }
+
+    .icons {
+        font-size: 18px;
+    }
+    .d-h4-one {
+        font-size: 17px;
+    }
+    .d-button-update{
+        width: auto;
+        font: 9px sans-serif;
+        height: 1.5rem;
+    }
+    .dd-two textarea{
+        width: 78%;
+    }
+    .d-btn2{
+        width: auto;
+    }
 }
