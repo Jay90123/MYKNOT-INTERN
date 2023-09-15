@@ -2,6 +2,7 @@ import React from 'react'
 import "../css/aboutus.css"
 import "../css/contact.css"
 import Navbar from './Navbar'
+import { MdOutlineMailOutline ,MdSmartphone,MdOutlineHomeWork} from 'react-icons/md';
 
 const ContactUs = () => {
   return (
@@ -19,8 +20,9 @@ const ContactUs = () => {
             <div className="ct-s-1" data-aos="fade-up">
                 <div className="ct-s-child">
                     <div className="ct-s-child1">
-                    <i class="bi bi-envelope ct-icon1"></i>
-                    <p className="ct-p-1">EMAIL</p>
+                    {/* <i class="bi bi-envelope ct-icon1"></i> */}
+                    <MdOutlineMailOutline className='icons'></MdOutlineMailOutline>
+                    {/* <p className="ct-p-1">EMAIL</p> */}
                     </div>
                     <div className="ct-s-child2">
                     <p className="ct-p-2">&#183; shopxprivatelimit@gmail.com</p>
@@ -31,8 +33,9 @@ const ContactUs = () => {
             <div className="ct-s-1" data-aos="fade-up">
             <div className="ct-s-child">
                     <div className="ct-s-child1">
-                    <i class="bi bi-headset ct-icon1"></i>
-                    <p className="ct-p-1">PHONE IN</p>
+                    {/* <i class="bi bi-headset ct-icon1"></i> */}
+                    <MdSmartphone className='icons'></MdSmartphone>
+                    {/* <p className="ct-p-1">PHONE IN</p> */}
                     </div>
                     <div className="ct-s-child2">
                     <p className="ct-p-2">&#183; 9685347210</p>
@@ -44,8 +47,9 @@ const ContactUs = () => {
             <div className="ct-s-1" data-aos="fade-up">
             <div className="ct-s-child">
                     <div className="ct-s-child1">
-                    <i class="bi bi-person-lines-fill ct-icon1"></i>
-                    <p className="ct-p-1">ADDRESS</p>
+                    {/* <i class="bi bi-person-lines-fill ct-icon1"></i> */}
+                    <MdOutlineHomeWork className='icons'></MdOutlineHomeWork>
+                    {/* <p className="ct-p-1">ADDRESS</p> */}
                     </div>
                     <div className="ct-s-child2">
                     <p className="ct-p-2"> Kulur Ferry Rd, Kottara, Mangaluru, Karnataka 575006</p>

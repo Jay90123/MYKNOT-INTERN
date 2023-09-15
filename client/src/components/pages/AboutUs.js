@@ -3,10 +3,12 @@ import "../css/aboutus.css"
 import "../css/home.css"
 import founder from "../utils/img/founder3.jpg"
 import Navbar from './Navbar'
+import {ImOffice} from 'react-icons/im';
 
 const AboutUs = () => {
   return (
-    <>
+    
+    <div  className='aboutus'>
     <Navbar/>
     <div className="abt-one">
     <div className="abt-two">
@@ -19,21 +21,23 @@ const AboutUs = () => {
       <p className='abt-p-1' data-aos="fade-up">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque iure voluptates accusamus dolorum repellat laborum magnam rem quibusdam, praesentium ducimus consequatur omnis nam fugit distinctio pariatur minima porro illo enim odit hic recusandae. Ullam sequi, nemo quis cumque accusamus molestiae quidem quo unde quibusdam rem obcaecati esse molestias beatae illum eos voluptas ea minima. Eaque libero ducimus asperiores commodi fuga provident ipsam assumenda, quod sit incidunt totam dolorem distinctio! Laborum vitae aliquid amet, possimus debitis quisquam doloribus, a unde dolorum molestiae deserunt quasi, placeat vel. Eum consequatur repellat eos in, nulla, labore vitae eveniet sit quibusdam ipsa impedit sequi sunt?</p>
     </div>
 
-    <div className="h-three setter">
-        <div className="h-three-child" data-aos="fade-up" >
-        <i className="fa-solid fa-user-tie d-icon" style={{"marginBottom":"22px"}}></i>
-            <p className='h-three-p1'>24+</p>
-            <p className='h-three-p2'>EMPLOYEES</p>
+    <div className="h-three-contact setter">
+      <div className="h-three-inner">
+        <div className="h-three-contact-child" data-aos="fade-up" >
+        <i className="fa-solid fa-user-tie d-icon" ></i>
+            <p className='h-three-contact-p1'>24+</p>
+            <p className='h-three-contact-p2'>EMPLOYEES</p>
             </div>
-        <div className="h-three-child"  data-aos="fade-up">
-            <i className="bi bi-building d-icon"></i>
-            <p className='h-three-p1'>2+</p>
-            <p className='h-three-p2'>OFFICES</p>
+        <div className="h-three-contact-child"  data-aos="fade-up">
+        <ImOffice className="fa-solid fa-tree-city d-icon"></ImOffice>
+            <p className='h-three-contact-p1'>2+</p>
+            <p className='h-three-contact-p2'>OFFICES</p>
             </div>
-        <div className="h-three-child"  data-aos="fade-up">
+        <div className="h-three-contact-child"  data-aos="fade-up">
         <i className="fa-solid fa-tree-city d-icon"></i>
-            <p className='h-three-p1'>23+</p>
-            <p className='h-three-p2'>CITIES</p>
+            <p className='h-three-contact-p1'>23+</p>
+            <p className='h-three-contact-p2'>CITIES</p>
+        </div>
         </div>
     </div>
 
@@ -73,7 +77,8 @@ const AboutUs = () => {
         </div>
     </div>
 
-    </>
+    </div>
+   
   )
 }
 

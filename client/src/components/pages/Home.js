@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Img from "../utils/img/bg-img.png";
 import { BsSearch } from "react-icons/bs";
+import { motion } from "framer-motion"
 
 const Home = () => {
   const navigate = useNavigate();
@@ -225,7 +226,11 @@ const Home = () => {
       </nav>
 
       <div className="content-container">
-        <div className="content">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4 }}
+           className="content">
           <div className="text-content">
             <h1 className="h-h1">
               <p className="text">Discover, Explore, Connect, Thrive</p>
@@ -259,10 +264,15 @@ const Home = () => {
               </button>
             </div>
           </div>
-        </div>
-        <div className="img">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 2 }}
+          className="img"
+        >
           <img src={Img}></img>
-        </div>
+        </motion.div>
       </div>
       <div className="full-section">
         <p className="h-pmain">Our categories</p>
