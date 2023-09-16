@@ -745,9 +745,10 @@ body {
         align-items: center;
         justify-content: center;
         height: 20px;
-        background: rgb(7 7 99);
+        background:#008080;
         ;
         display: flex;
+        border-bottom: 1px solid gray;
 
     }
 .text{
@@ -780,7 +781,7 @@ body {
         font-size: 5px;
         /* border-radius: 6px; */
         border: none;
-        background: rgb(7 7 99);
+        background:#008080;
         color: white;
         cursor: pointer;
 

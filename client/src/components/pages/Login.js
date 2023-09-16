@@ -3,8 +3,18 @@ import "../css/login.css";
 import Navbar from "./Navbar";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  FaFacebookF,
+  FaRegEnvelope,
+  FaLinkedinIn,
+  FaGoogle,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { GoogleOAuthProvider, GoogleLogin,googleLogout } from "@react-oauth/google";
+import {
+  GoogleOAuthProvider,
+  GoogleLogin,
+  googleLogout,
+} from "@react-oauth/google";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -71,6 +81,32 @@ const Login = () => {
           <div className="heading">
             <h1>Login</h1>
           </div>
+          <div className="icons-div">
+            <div className="login-icons">
+              <FaFacebookF className="text-sm"></FaFacebookF>
+            </div>
+            <div className="login-icons">
+              <FaLinkedinIn className="text-sm" />
+            </div>
+            <div className="login-icons">
+                <div className="google-auth">
+              <FaGoogle className="text-sm">
+                  {/* <GoogleOAuthProvider clientId="212716727274-kqbuov865c4pts6951k5dqv045fdebd6.apps.googleusercontent.com">
+                    <GoogleLogin
+                      onSuccess={(credentialResponse) => {
+                        console.log(credentialResponse);
+                        navigate("/");
+                      }}
+                      onError={() => {
+                        console.log("Login Failed");
+                      }}
+                    />
+                    <googleLogout></googleLogout>
+                  </GoogleOAuthProvider> */}
+              </FaGoogle>
+                </div>
+            </div>
+          </div>
           <div className="l-form">
             <div className="l-input-control">
               <input
@@ -111,11 +147,7 @@ const Login = () => {
                       console.log("Login Failed");
                     }}
                   />
-                  <googleLogout>
-                   
-                    
-                  </googleLogout>
-                
+                  <googleLogout></googleLogout>
                 </GoogleOAuthProvider>
               </div>
             </div>

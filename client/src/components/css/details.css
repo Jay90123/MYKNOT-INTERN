@@ -96,7 +96,7 @@
 
 .d-btn2 {
 
-    background-image: linear-gradient(to right, rgb(63, 112, 176), rgb(75, 75, 210), #121988);
+    background-image: linear-gradient(to right, #88ccc3, #418880, #0f7065);
     border: 2px solid #121988;
     cursor: pointer;
     height: 7%;
@@ -141,7 +141,7 @@
     margin: 12% auto;
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(to right, rgb(63, 112, 176), rgb(75, 75, 210), #121988);
+    background-image: linear-gradient(to right, #88ccc3, #418880, #0f7065);
 }
 
 .dd-two textarea {
@@ -182,7 +182,7 @@
     width: 15%;
     height: 2rem;
     color: white;
-    background-image: linear-gradient(to right, rgb(63, 112, 176), rgb(75, 75, 210), #121988);
+    background-image: linear-gradient(to right, #88ccc3, #418880, #0f7065);
     /* border: 2px solid teal; */
     cursor: pointer;
     border: none;
