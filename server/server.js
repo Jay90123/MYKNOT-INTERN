@@ -15,7 +15,7 @@ const app=express()
 //     // credentials: true
 // }))
 app.use(cors({
-    origin: ["https://myknot-pstc.vercel.app", "http://localhost:3001"],
+    origin: ["https://myknot-pstc.vercel.app","https://myknot-intern-kuvc.vercel.app/", "http://localhost:3001"],
     credentials: true
 }))
 app.use("/public",express.static(path.join(__dirname, '/public')));
