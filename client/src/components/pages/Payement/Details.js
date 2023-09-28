@@ -38,7 +38,7 @@ const Details = () => {
   }
 
   async function getuserdetails() {
-    await fetch(`https://myknot-official.vercel.app/api/auth/getuserdetails`, {
+    await fetch(`https://myknot-intern-kuvc.vercel.app/api/auth/getuserdetails`, {
       // await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
       // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
       method: "GET",
