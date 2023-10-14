@@ -150,7 +150,7 @@ const Home = () => {
                   {/* </div> */}
                   <div className="logo">
                     <li className="list-ele nav-heading">
-                      <Link to="/">Myknot</Link>
+                      <Link to="/admin">Myknot</Link>
                     </li>
                   </div>
                   <div className="nav-btn">
@@ -219,7 +219,7 @@ const Home = () => {
                 )}
               </li>
               <li className="h-list-item">
-                <Link to="categories" smooth={true}>
+                <Link to="admin" smooth={true}>
                   Other
                 </Link>
               </li>
