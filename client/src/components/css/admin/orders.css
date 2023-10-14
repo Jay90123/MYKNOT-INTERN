@@ -1,17 +1,22 @@
 .o-one{
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 100%;
     height: 100%;
 }
 
 .o-two{
-    border: 3px solid red;
+    /* border: 3px solid red; */
     width: 100%;
     height: 100%;
 }
 
 table,th,td{
-    border:1px solid black
+    color: black;
+    
+}
+tr{
+    color: white !important;
+    font-size: 13px;
 }
 
 .o-table-control{
@@ -32,7 +37,14 @@ table,th,td{
 }
 
 tr:nth-child(even) {
-    background-color: rgb(247, 192, 192);
+    background-color: rgb(216, 206, 206);
+}
+/* tr:nth-child(odd) {
+    background-color: white;
+} */
+
+thead tr{
+  color:white;
 }
 
 .o-table-data-process{

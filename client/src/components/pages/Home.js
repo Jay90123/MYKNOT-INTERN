@@ -12,7 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Img from "../utils/img/bg-img.png";
 import { BsSearch } from "react-icons/bs";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -91,7 +91,33 @@ const Home = () => {
   function userLogout() {
     localStorage.removeItem("userID");
   }
+  const scrollToCategory = (categoryName) => {
+    const categoryElement = document.getElementById(categoryName);
 
+    if (categoryElement) {
+      window.scrollTo({
+        top: categoryElement.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredCategories, setFilteredCategories] = useState([]);
+  const handleSearch = (query) => {
+    setSearchTerm(query);
+  
+    // Filter categories based on the search query
+    const filtered = mainstate.categories.filter((ele) =>
+      ele.name.toLowerCase().includes(query.toLowerCase())
+    );
+  
+    setFilteredCategories(filtered);
+  };
+  
+  const clearSearch = () => {
+    setSearchTerm("");
+    setFilteredCategories([]);
+  };
   return (
     <div>
       {/* <div className="h-one"> */}
@@ -230,7 +256,8 @@ const Home = () => {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
-           className="content">
+          className="content"
+        >
           <div className="text-content">
             <h1 className="h-h1">
               <p className="text">Discover, Explore, Connect, Thrive</p>
@@ -281,78 +308,85 @@ const Home = () => {
           <div className="h-three-flexer">
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-graduation-cap h-icon1"></i>
-              <p className="h-p1">Education</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Educational")}>
+                education
+              </p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-baseball-bat-ball h-icon1"></i>
-              <p className="h-p1">Sports</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Sports")}>Sports</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-cart-shopping h-icon1"></i>
-              <p className="h-p1">Ecommerce</p>
+              
+              <p className="h-p1" onClick={() => scrollToCategory("category-Ecommerce")}>Ecommerce</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-user-tag h-icon1"></i>
-              <p className="h-p1">Portfolio</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Portfolio")}>Portfolio</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-circle-dollar-to-slot h-icon1"></i>
-              <p className="h-p1">Non Profit</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Non Profit")}>Non Profit</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-bell-concierge h-icon1"></i>
-              <p className="h-p1">Services</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Services")}>Services</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-plane-departure h-icon1"></i>
-              <p className="h-p1">Aerospace</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Aerospace")}>Aerospace</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-flask-vial h-icon1"></i>
-              <p className="h-p1">Chemical</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Chemical")}>
+               chemical
+              </p>
+          
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-car-side h-icon1"></i>
-              <p className="h-p1">Transport</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Transport")}>Transport</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-industry h-icon1"></i>
-              <p className="h-p1">Manufacturing</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Manufacturing")}>Manufacturing</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-tractor h-icon1"></i>
-              <p className="h-p1">Heavy</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Heavy")}>Heavy</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-plug h-icon1"></i>
-              <p className="h-p1">Electric</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Electric")}>Electric</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-suitcase-medical h-icon1"></i>
-              <p className="h-p1">Healthcare</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Healthcare")}>Healthcare</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i className="fa-solid fa-arrow-trend-up h-icon1"></i>
-              <p className="h-p1">Economic</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Economic")}>Economic</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i class="fa-solid fa-spa h-icon1"></i>
-              <p className="h-p1">Spa</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Spa")}>Spa</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
               <i class="fa-solid fa-leaf h-icon1"></i>
-              <p className="h-p1">Yoga</p>
+              <p className="h-p1" onClick={() => scrollToCategory("category-Yoga")}>Yoga</p>
             </div>
           </div>
         </div>
         <div id="categories">
           {mainstate.categories ? (
             <>
+            
               {mainstate.categories.map((ele, index) => {
                 return (
                   <>
-                    <div className="card-container-title">
-                      <p className="h-p-mainone" id="education">
+                    <div className="card-container-title"  >
+                      <p className="h-p-mainone"  id={`category-${ele.name}`}>
                         {ele.name}
                       </p>
                     </div>

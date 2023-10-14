@@ -10,8 +10,8 @@ const Productlist = () => {
   
   async function getAllOrders(){
    try {
-    // await fetch("http://localhost:3001/api/orders/getallorders",{
-    await fetch("https://myknot-official.vercel.app/api/orders/getallorders",{
+    await fetch("http://localhost:5000/api/orders/getallorders",{
+    // await fetch("http://localhost:5000/api/orders/getallorders",{
         method:"GET",
         headers: { "Content-type": "application/json"},
       }).then((res)=>{

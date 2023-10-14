@@ -8,7 +8,7 @@ const AddCategory = () => {
 
   async function getAllCategories(){
     // await fetch("http://localhost:3001/api/category/getallcategories",{
-    await fetch("https://myknot-official.vercel.app/api/category/getallcategories",{
+    await fetch("http://localhost:5000/api/category/getallcategories",{
       method:"GET",
       headers: { "Content-type": "application/json" }
     }).then((res)=>{
@@ -31,7 +31,7 @@ const AddCategory = () => {
     try {
      if(category){
       // await fetch("http://localhost:3001/api/category/createcategory",{
-      await fetch("https://myknot-official.vercel.app/api/category/createcategory",{
+      await fetch("http://localhost:5000/api/category/createcategory",{
         method:"POST",
         headers: { "Content-type": "application/json" },
         body:JSON.stringify({
@@ -52,8 +52,8 @@ const AddCategory = () => {
 
 async function  deleteHandler(catID){
   try {
-    // await fetch("http://localhost:3001/api/category/deletecategory",{
-    await fetch("https://myknot-official.vercel.app/api/category/deletecategory",{
+    await fetch("http://localhost:5000/api/category/deletecategory",{
+    // await fetch("http://localhost:5000/api/category/deletecategory",{
       method:"DELETE",
       headers: { "Content-type": "application/json",catID },
     }).then((res)=>{

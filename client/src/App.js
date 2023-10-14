@@ -14,7 +14,9 @@ import Overlaynav from "./components/pages/Overlaynav";
 import ParticluarTheme from "./components/pages/ParticluarTheme";
 import Details from "./components/pages/Payement/Details";
 import Register from "./components/pages/Register";
-
+import CardList from "../src/components/pages/cart/CardList"
+import ThemesForm from "../src/components/pages/cart/ThemesForm"
+import "./index.css";
 const App = () => {
   return (
     <div>
@@ -33,6 +35,8 @@ const App = () => {
             <Route path="/getparticulartheme/:id" element={<ParticluarTheme/>}></Route>
             <Route path="/payement/clientdetails/:id" element={<Details/>}></Route>
             <Route path="/" exact={true} element={<Home />}></Route>
+            <Route path="/cardlist" exact={true} element={<CardList/>}></Route>
+            <Route path="/themesform" exact={true} element={<ThemesForm/>}></Route>
           </Routes>
           <Footer />
         </Router>

@@ -1,11 +1,6 @@
 .adm-one{
-    width:98vw;
-    /* height: 1000px; */
-    height: auto;
-    /* border: 1px solid red; */
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  /* align-items: center; */
 }
 
 .adm-sidebar{
@@ -13,7 +8,7 @@
     /* height: 100%; */
     height: auto;
     /* border: 1px solid blue; */
-    background-color:rgb(7 7 99);
+    background-color: #008080;;
     color: white;
 }
 
@@ -29,14 +24,14 @@
     height: 60px;
     /* border: 1px solid blue; */
     margin: auto;
-    background-color:white;
-    margin-top: 10px;
+    background-color: white;
+    margin-top: 5px;
     border-radius: 10px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     display: flex;
-    color:rgb(70, 140, 202);
+    color: rgb(70, 140, 202);
     flex-direction: row;
-    flex-wrap: wrap;
+  
 }
 
 .adm-icon1{
@@ -45,37 +40,35 @@
     color: greenyellow;
 }
 
-.adm-p1{
-    display: inline-block;
-    margin-bottom: 0;
-    margin-top: 10px;
-}
 
-.adm-p3{
-    font-size: 13px;
-    margin: 0;
-}
+
 
 .adm-s-one1{
-    display:inline-block;
+    font-size: 41px;
+   
     height: 100%;
     width: 23%;
     text-align: center;
+    display: contents;
+    display: flex;
+    align-items: center;
+    justify-content: center;
    
 }
 .adm-s-one2{
-    display:inline-block;
-    height: 100%;
-    width: 77%;
-    text-align: center;
+    display: inline-block; 
+   
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 11px;
 }
 
-/* .adm-p{
-    display: inline-block;
- } */
 
 .adm-child{
-    /* border: 1px solid white; */
+    
     color: white;
     margin-top: 15px;
 }

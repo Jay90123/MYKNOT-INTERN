@@ -175,8 +175,10 @@
     /* border:1px solid white;  */
     width: 69%;
     height: 100%;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .abt-img1 {
@@ -300,10 +302,17 @@
 
     .abt-four-ss1 {
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .abt-four-ss2 {
+      
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .abt-img1 {

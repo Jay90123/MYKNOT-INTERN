@@ -12,7 +12,7 @@ const Footer = () => {
         try {
          
         //  await fetch("http://localhost:3001/api/themes/getallthemes",{
-         await fetch("https://myknot-official.vercel.app/api/themes/getallthemes",{
+         await fetch("http://localhost:5000/api/themes/getallthemes",{
            method:"GET",
            headers: {
              "Content-type": "application/json"
@@ -37,7 +37,7 @@ const Footer = () => {
       try {
          
         // await fetch("http://localhost:3001/api/category/getallcategories",{
-        await fetch("https://myknot-official.vercel.app/api/category/getallcategories",{
+        await fetch("http://localhost:5000/api/category/getallcategories",{
           method:"GET",
           headers: {
             "Content-type": "application/json"

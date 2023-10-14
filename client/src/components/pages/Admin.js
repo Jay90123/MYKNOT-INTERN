@@ -8,6 +8,7 @@ import Productlist from "./Admin/Productlist.js";
 import Navbar from "./Navbar";
 import AddCategory from "./Admin/AddCategory";
 import Orders from "./Admin/Orders.js"
+import { FcBusinessman } from "react-icons/fc";
 
 const Admin = () => {
   const [adminDisplay, setAdminDisplay] = useState("Dashboard");
@@ -24,7 +25,7 @@ const Admin = () => {
         <div className="adm-sidebar">
           <div className="adm-s-one">
             <div className="adm-s-one1">
-              <i className="bi bi-person-circle adm-icon1"></i>
+            <FcBusinessman/>
             </div>
             <div className="adm-s-one2">
               <p className="adm-p1">Leston Aaron Salis</p>
