@@ -25,8 +25,8 @@ const ContactUs = () => {
                     {/* <p className="ct-p-1">EMAIL</p> */}
                     </div>
                     <div className="ct-s-child2">
-                    <p className="ct-p-2">&#183; shopxprivatelimit@gmail.com</p>
-                    <p className="ct-p-2">&#183; shopxprivatelimit@gmail.com</p>
+                    <p className="ct-p-2">&#183; hillborntechnologies@gmail.com</p>
+                    <p className="ct-p-2">&#183;  info@hillborn.tech</p>
                     </div>
                 </div>
             </div>
@@ -38,8 +38,8 @@ const ContactUs = () => {
                     {/* <p className="ct-p-1">PHONE IN</p> */}
                     </div>
                     <div className="ct-s-child2">
-                    <p className="ct-p-2">&#183; 9685347210</p>
-                    <p className="ct-p-2">&#183; 4817874815</p>
+                    <p className="ct-p-2">&#183;9353690229</p>
+                    <p className="ct-p-2">&#183; 7676002844</p>
                     
                     </div>
                 </div>
@@ -52,7 +52,7 @@ const ContactUs = () => {
                     {/* <p className="ct-p-1">ADDRESS</p> */}
                     </div>
                     <div className="ct-s-child2">
-                    <p className="ct-p-2"> Kulur Ferry Rd, Kottara, Mangaluru, Karnataka 575006</p>
+                    <p className="ct-p-2"> 1955, H V HALL RR NAGARA BENGALURU Bangalore KA 560098 IN</p>
                     </div>
                 </div>
             </div>

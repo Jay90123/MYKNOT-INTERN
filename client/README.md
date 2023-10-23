@@ -68,3 +68,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+//changes:
+
+Hillbon Website changes
+
+after logging in also its not showing as logged in
+other social media handles login and where is the data stored after logging in admin panel
+signup also try using google and other social media accounts
+also add a space that the app is also available for all websites which can be instantly launched
+educational, services, manufacturing, healthcare, spa, non-profit, yoga, gym.
+Welcome to our new collection of websites and apps for all your projects. We hope you discover the website or instant app of your dreams here. Begin your journey with our carefully curated selections
+add services page
+hillborntechnologies@gmail.com, info@hillborn.tech
+9353690229, 7676002844
+1955, H V HALL RR NAGARA BENGALURU Bangalore KA 560098 IN
+facebook link- https://www.facebook.com/profile.php?id=100092124730505
+instagram link- https://instagram.com/hillborn_technologies?igshid=OGQ5ZDc2ODk2ZA==
+https://www.linkedin.com/company/hillborn-technologies-private-limited/
+directly clicking on mail should redirect to  
+add whatsapp icon 9353690229, https://wa.me/message/BZCLAKUBIOEWO1

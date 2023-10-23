@@ -3,6 +3,7 @@
 
 .aboutus{
     background-color: #faf6f6;
+    margin-bottom: 10px;
   /* height: 340vh; */
     
 }
@@ -56,7 +57,12 @@
     position: absolute;
     animation: abt-two-anim 1s ease-in-out;
 }
+.abt-h2-2 {
+    margin: 30px;
+    font-size: 36px;
+    padding: 16px;
 
+}
 @keyframes abt-two-anim {
     from {
         height: 0;
@@ -127,7 +133,7 @@
 
     
     color: #e74c3c;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-size: 19px;
 }
 
@@ -206,7 +212,7 @@
 
 .abt-p-4 {
     color: white;
-    font-weight: 400;
+    font-size: 13px;
 
 }
 
