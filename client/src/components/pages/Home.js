@@ -63,7 +63,7 @@ const Home = () => {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [themes, setThemes] = useState();
-
+  const [isOpen, setIsOpen] = useState(true);
   function getScreenWidth() {
     let a = window.screen.width;
     return a;
@@ -118,6 +118,14 @@ const Home = () => {
     setSearchTerm("");
     setFilteredCategories([]);
   };
+
+  const closePopup = () => {
+    setIsOpen(false);
+  };
+  const popupClasses = isOpen
+    ? "fixed top-0 left-0 w-full h-12 bg-blue-500 text-white transform translate-y-0 transition-transform"
+    : "fixed top-0 left-0 w-full h-0 bg-blue-500 text-white transform -translate-y-32 transition-transform";
+
   return (
     <div>
       {/* <div className="h-one"> */}
@@ -142,6 +150,21 @@ const Home = () => {
               className="n-img1"
             /> */}
           {/* </div> */}
+          <div className="popup">
+            <div className={popupClasses}>
+              {isOpen && (
+                <div className=" top-0 left-0 w-full h-12 bg-red-500 text-white flex items-center justify-center z-50">
+                  <p className="popupText">Experience seamless accessibility on both web and mobile platforms, where our service unfolds at your fingertips</p>
+                  <button
+                    className="absolute  right-1 p-2 text-white hover:text-red-500"
+                    onClick={closePopup}
+                  >
+                    X
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
           <div className="nav-c">
             {show1 === true ? (
               <div className="nav-d">
@@ -295,7 +318,10 @@ const Home = () => {
             </h1>
             {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
             <p className="h-p2">
-            Welcome to our new collection of websites and apps for all your projects. We hope you discover the website or instant app of your dreams here. Begin your journey with our carefully curated selections
+              Welcome to our new collection of websites and apps for all your
+              projects. We hope you discover the website or instant app of your
+              dreams here. Begin your journey with our carefully curated
+              selections
             </p>
             <div className="search">
               <form action="" className="search-form">
@@ -335,12 +361,11 @@ const Home = () => {
 
         <div className="h-three">
           <div className="h-three-flexer">
-            <div
-              className="h-flex-childs"
-              data-aos="fade-out"
-              
-            >
-              <i className="fa-solid fa-graduation-cap h-icon1" onClick={() => scrollToCategory("category-Educational")}></i>
+            <div className="h-flex-childs" data-aos="fade-out">
+              <i
+                className="fa-solid fa-graduation-cap h-icon1"
+                onClick={() => scrollToCategory("category-Educational")}
+              ></i>
               <p className="h-p1">education</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
@@ -353,131 +378,103 @@ const Home = () => {
               </p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-cart-shopping h-icon1"  onClick={() => scrollToCategory("category-Ecommerce")}></i>
+              <i
+                className="fa-solid fa-cart-shopping h-icon1"
+                onClick={() => scrollToCategory("category-Ecommerce")}
+              ></i>
 
-              <p
-                className="h-p1"
-                
-              >
-                Ecommerce
-              </p>
+              <p className="h-p1">Ecommerce</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-user-tag h-icon1"  onClick={() => scrollToCategory("category-Portfolio")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Portfolio
-              </p>
+              <i
+                className="fa-solid fa-user-tag h-icon1"
+                onClick={() => scrollToCategory("category-Portfolio")}
+              ></i>
+              <p className="h-p1">Portfolio</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-circle-dollar-to-slot h-icon1"  onClick={() => scrollToCategory("category-Non Profit")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Non Profit
-              </p>
+              <i
+                className="fa-solid fa-circle-dollar-to-slot h-icon1"
+                onClick={() => scrollToCategory("category-Non Profit")}
+              ></i>
+              <p className="h-p1">Non Profit</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-bell-concierge h-icon1"  onClick={() => scrollToCategory("category-Services")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Services
-              </p>
+              <i
+                className="fa-solid fa-bell-concierge h-icon1"
+                onClick={() => scrollToCategory("category-Services")}
+              ></i>
+              <p className="h-p1">Services</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-plane-departure h-icon1"  onClick={() => scrollToCategory("category-Aerospace")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Aerospace
-              </p>
+              <i
+                className="fa-solid fa-plane-departure h-icon1"
+                onClick={() => scrollToCategory("category-Aerospace")}
+              ></i>
+              <p className="h-p1">Aerospace</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-flask-vial h-icon1"  onClick={() => scrollToCategory("category-Chemical")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                chemical
-              </p>
+              <i
+                className="fa-solid fa-flask-vial h-icon1"
+                onClick={() => scrollToCategory("category-Chemical")}
+              ></i>
+              <p className="h-p1">chemical</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-car-side h-icon1"  onClick={() => scrollToCategory("category-Transport")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Transport
-              </p>
+              <i
+                className="fa-solid fa-car-side h-icon1"
+                onClick={() => scrollToCategory("category-Transport")}
+              ></i>
+              <p className="h-p1">Transport</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-industry h-icon1"   onClick={() => scrollToCategory("category-Manufacturing")}></i>
-              <p
-                className="h-p1"
-              
-              >
-                Manufacturing
-              </p>
+              <i
+                className="fa-solid fa-industry h-icon1"
+                onClick={() => scrollToCategory("category-Manufacturing")}
+              ></i>
+              <p className="h-p1">Manufacturing</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-tractor h-icon1"  onClick={() => scrollToCategory("category-Heavy")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Heavy
-              </p>
+              <i
+                className="fa-solid fa-tractor h-icon1"
+                onClick={() => scrollToCategory("category-Heavy")}
+              ></i>
+              <p className="h-p1">Heavy</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-plug h-icon1"   onClick={() => scrollToCategory("category-Electric")}></i>
-              <p
-                className="h-p1"
-              
-              >
-                Electric
-              </p>
+              <i
+                className="fa-solid fa-plug h-icon1"
+                onClick={() => scrollToCategory("category-Electric")}
+              ></i>
+              <p className="h-p1">Electric</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-suitcase-medical h-icon1"  onClick={() => scrollToCategory("category-Healthcare")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Healthcare
-              </p>
+              <i
+                className="fa-solid fa-suitcase-medical h-icon1"
+                onClick={() => scrollToCategory("category-Healthcare")}
+              ></i>
+              <p className="h-p1">Healthcare</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i className="fa-solid fa-arrow-trend-up h-icon1"  onClick={() => scrollToCategory("category-Economic")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Economic
-              </p>
+              <i
+                className="fa-solid fa-arrow-trend-up h-icon1"
+                onClick={() => scrollToCategory("category-Economic")}
+              ></i>
+              <p className="h-p1">Economic</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i class="fa-solid fa-spa h-icon1"  onClick={() => scrollToCategory("category-Spa")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Spa
-              </p>
+              <i
+                class="fa-solid fa-spa h-icon1"
+                onClick={() => scrollToCategory("category-Spa")}
+              ></i>
+              <p className="h-p1">Spa</p>
             </div>
             <div className="h-flex-childs" data-aos="fade-out">
-              <i class="fa-solid fa-leaf h-icon1"  onClick={() => scrollToCategory("category-Yoga")}></i>
-              <p
-                className="h-p1"
-               
-              >
-                Yoga
-              </p>
+              <i
+                class="fa-solid fa-leaf h-icon1"
+                onClick={() => scrollToCategory("category-Yoga")}
+              ></i>
+              <p className="h-p1">Yoga</p>
             </div>
           </div>
         </div>
