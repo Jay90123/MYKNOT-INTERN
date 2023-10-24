@@ -18,7 +18,7 @@ app.use(
     origin: [
       "https://myknot-pstc.vercel.app",
       "https://myknot-intern-kuvc.vercel.app/",
-      "http://localhost:3001",
+      "",
       "http://localhost:3000",
     ],
     credentials: true,
