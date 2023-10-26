@@ -25,7 +25,7 @@ const Register = () => {
       toast.error("Please fill all the fields", toastoptions);
       return;
     } else {
-      if (password != confirmpass) {
+      if (password !== confirmpass) {
         toast.error("Please check passwords", toastoptions);
         return;
       } else {
@@ -68,7 +68,9 @@ const Register = () => {
                 return data;
               }
             })
-            .catch((error) => {console.log(error)});
+            .catch((error) => {
+              console.log(error);
+            });
         } catch (error) {
           console.log(error);
         }
@@ -129,7 +131,8 @@ const Register = () => {
               <button
                 type="submit"
                 className="l-formbtn-1"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   registerHandler();
                 }}
               >

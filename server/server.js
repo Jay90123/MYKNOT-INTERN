@@ -13,17 +13,34 @@ const app = express();
 //     origin:"https://myknot-official.netlify.app",
 //     // credentials: true
 // }))
+
 app.use(
   cors({
     origin: [
       "https://myknot-pstc.vercel.app",
       "https://myknot-intern-kuvc.vercel.app/",
-      "",
+      "http://localhost:3000/login",
       "http://localhost:3000",
     ],
     credentials: true,
   })
 );
+// module.exports = {
+//   async headers() {
+//     return [
+//       {
+//         source: "/(.*)",
+//         headers: [
+//           {
+//             key: "Cross-Origin-Opener-Policy",
+//             value: "same-origin", // "same-origin-allow-popups"
+//           },
+//         ],
+//       },
+//     ];
+//   },
+// };
+
 app.use("/public", express.static(path.join(__dirname, "/public")));
 app.use(express.static(path.join(__dirname, "/public")));
 

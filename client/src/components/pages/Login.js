@@ -10,6 +10,9 @@ import {
   FaGoogle,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+//import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 import {
   GoogleOAuthProvider,
   GoogleLogin,
@@ -36,7 +39,7 @@ const Login = () => {
     }
     try {
       // await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
-      await fetch("http://localhost:3001/api/auth/login", {
+      await fetch("http://localhost:5000/api/auth/login", {
         // await fetch("http://localhost:5000/api/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
@@ -72,6 +75,51 @@ const Login = () => {
     }
   }
 
+  const responseSuccessGoogle = (response) => {
+    console.log(response);
+
+    fetch("http://localhost:5000/api/auth/googlelogin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ tokenId: response.credential }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json(); // Parse the response JSON
+      })
+      .then((data) => {
+        // Check for success and perform actions accordingly
+        if (data.success === false) {
+          toast.error("Please enter a valid email or password", toastoptions);
+        } else {
+          document.cookie = `token=${data.token};max-age=1000;HttpOnly=true;`;
+          localStorage.setItem("userID", data.user._id);
+          toast.success("Logged in successfully", toastoptions);
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  };
+
+  const responseFacebook = (response) => {
+    console.log(response);
+    // axios({
+    //   method: "Post",
+    //   url: "http://localhost:5000/api/googlelogin",
+    //   data: { tokenId: response.tokenId },
+    // }).then((response) => {
+    //   console.log(response);
+    // });
+  };
+
+  const responseErrorGoogle = (response) => {};
+
   return (
     <>
       <Navbar />
@@ -89,22 +137,9 @@ const Login = () => {
               <FaLinkedinIn className="text-sm" />
             </div>
             <div className="login-icons">
-                <div className="google-auth">
-              <FaGoogle className="text-sm">
-                  {/* <GoogleOAuthProvider clientId="212716727274-kqbuov865c4pts6951k5dqv045fdebd6.apps.googleusercontent.com">
-                    <GoogleLogin
-                      onSuccess={(credentialResponse) => {
-                        console.log(credentialResponse);
-                        navigate("/");
-                      }}
-                      onError={() => {
-                        console.log("Login Failed");
-                      }}
-                    />
-                    <googleLogout></googleLogout>
-                  </GoogleOAuthProvider> */}
-              </FaGoogle>
-                </div>
+              <div className="google-auth">
+                <FaGoogle className="text-sm"></FaGoogle>
+              </div>
             </div>
           </div>
           <div className="l-form">
@@ -139,17 +174,19 @@ const Login = () => {
               <div className="google-auth">
                 <GoogleOAuthProvider clientId="212716727274-kqbuov865c4pts6951k5dqv045fdebd6.apps.googleusercontent.com">
                   <GoogleLogin
-                    onSuccess={(credentialResponse) => {
-                      console.log(credentialResponse);
-                      navigate("/");
-                    }}
-                    onError={() => {
-                      console.log("Login Failed");
-                    }}
+                    onSuccess={responseSuccessGoogle}
+                    onFailure={responseErrorGoogle}
+                    cookiepolicy={"single_host_origin"}
                   />
-                  <googleLogout></googleLogout>
                 </GoogleOAuthProvider>
               </div>
+              {/* <div className="fb-auth">
+                  <FacebookLogin
+                    appId="848866093532434"
+                    autoLoad={true}
+                    callback={responseFacebook}
+                  />
+              </div> */}
             </div>
           </div>
         </div>
