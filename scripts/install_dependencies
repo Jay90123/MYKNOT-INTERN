@@ -1,2 +1,3 @@
 #!/bin/bash
-yum install -y httpd
+Install Node.js and NPM
+sudo yum install nodejs npm
