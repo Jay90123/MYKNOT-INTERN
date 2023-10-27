@@ -1,3 +1,2 @@
 #!/bin/bash
-Install Node.js and NPM
 sudo yum install nodejs npm
