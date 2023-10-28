@@ -76,7 +76,7 @@ const Navbar = () => {
           <ul className="nav-ul">
             <div className='nav-1'>
               <div className='logo'>
-                <li className="list-ele nav-heading"><Link to="/">Hillbon</Link></li>
+                <li className="list-ele nav-heading"><Link to="/">Hillborn</Link></li>
               </div>
               <div>
                 {
@@ -86,8 +86,6 @@ const Navbar = () => {
                       <li className="list-ele"><Link to="/register">Signup</Link></li>
                       <li className="list-ele ">{checker ? <Link >Logout</Link> : <Link to="/login">Login</Link>}</li>
                     </div>
-
-
 
                   </> : undefined
                 }
