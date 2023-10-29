@@ -56,4 +56,5 @@ const themesSchema=new mongoose.Schema({
 })
 
 const Themes=mongoose.model("Themes",themesSchema)
+console.log(Themes);
 module.exports=Themes
