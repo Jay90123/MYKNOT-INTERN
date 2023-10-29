@@ -17,6 +17,3 @@ npm install
 # Start your Node.js server using "npm start server.js"
 npm start server.js > server.out.log 2> server.err.log < /dev/null &
 
-# Optionally, you can also log the process ID (PID) of the running server
-# This can be useful for stopping or managing the background process
-echo $! > server.pid
