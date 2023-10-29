@@ -4,7 +4,7 @@
 sudo chmod -R 777 /home/ec2-user/express-app
 
 #navigate into our working directory where we have all our github files
-cd /home/ec2-user/express-app
+cd /home/ec2-user/express-app/client
 
 #add npm and node to path
 export NVM_DIR="$HOME/.nvm"	
@@ -15,4 +15,4 @@ export NVM_DIR="$HOME/.nvm"
 npm install
 
 #start our node app in the background
-node server.js > app.out.log 2> app.err.log < /dev/null & 
+npm start > app.out.log 2> app.err.log < /dev/null & 
