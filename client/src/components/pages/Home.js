@@ -173,7 +173,7 @@ const Home = () => {
                   {/* </div> */}
                   <div className="logo">
                     <li className="list-ele nav-heading">
-                      <Link to="/">Hillbon</Link>
+                      <Link to="/">Hillborn</Link>
                     </li>
                   </div>
                   <div className="nav-btn">
