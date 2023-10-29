@@ -5,7 +5,7 @@ sudo chmod -R 777 /home/ec2-user/express-app
 
 # Navigate into our working directory where we have all our files
 cd /home/ec2-user/express-app/server
-
+ 
 # Add npm and node to path using NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads nvm
