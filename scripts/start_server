@@ -5,6 +5,6 @@ sudo chmod -R 777 /home/ec2-user/express-app
 
 #navigate into our working directory where we have all our github files
 cd /home/ec2-user/express-app/server
-
+ 
 #start our node app in the background
 npm start server.js > app.out.log 2> app.err.log < /dev/null & 
