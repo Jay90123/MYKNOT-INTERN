@@ -13,7 +13,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Install Node.js modules using npm
 npm install
+npm install -g pm2 
 
 # Start your Node.js server using "npm start server.js"
-npm start server.js &
+npm start server.js > app.out.log 2> app.err.log < /dev/null & 
 
