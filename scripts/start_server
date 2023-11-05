@@ -1,20 +1,16 @@
 #!/bin/bash
 
-# Give permission for everything in the express-app directory
-sudo chmod -R 777 /home/ec2-user/express-app
+#download node and npm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install 16
+sudo npm install pm2 -g
 
-# Navigate into our working directory where we have all our files
-cd /home/ec2-user/express-app/server
- 
-# Add npm and node to path using NVM (Node Version Manager)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Loads nvm bash_completion (Node is in the path now)
-
-# Install Node.js modules using npm
-npm install
-npm install -g pm2 
-
-# Start your Node.js server using "npm start server.js"
-npm start server.js > app.out.log 2> app.err.log < /dev/null & 
-
+#create our working directory if it doesnt exist
+DIR="/home/ec2-user/express-app"
+if [ -d "$DIR" ]; then
+  echo "${DIR} exists"
+else
+  echo "Creating ${DIR} directory"
+  mkdir ${DIR}
+fi
