@@ -12,7 +12,7 @@ const CartItem = ({data}) => {
     try {
       //  fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
         // fetch(`http://65.0.19.30:3001/api/themes/getonetheme`, {
-        fetch(`http:// 3.111.5.157:5000/api/themes/getonetheme`, {
+        fetch(`http://3.111.5.157:5000/api/themes/getonetheme`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -36,7 +36,7 @@ const CartItem = ({data}) => {
 
   function removeOneTheme(){
     try {
-      fetch("http:// 3.111.5.157:5000/api/cart/deletefromcart",{
+      fetch("http://3.111.5.157:5000/api/cart/deletefromcart",{
       // fetch("http://65.0.19.30:3001/api/cart/deletefromcart",{
       // fetch("https://myknot-official.herokuapp.com/api/cart/deletefromcart",{
         method:"DELETE",

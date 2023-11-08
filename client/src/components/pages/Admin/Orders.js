@@ -10,8 +10,8 @@ const Productlist = () => {
   
   async function getAllOrders(){
    try {
-    await fetch("http:// 3.111.5.157:5000/api/orders/getallorders",{
-    // await fetch("http:// 3.111.5.157:5000/api/orders/getallorders",{
+    await fetch("http://3.111.5.157:5000/api/orders/getallorders",{
+    // await fetch("http://3.111.5.157:5000/api/orders/getallorders",{
         method:"GET",
         headers: { "Content-type": "application/json"},
       }).then((res)=>{
