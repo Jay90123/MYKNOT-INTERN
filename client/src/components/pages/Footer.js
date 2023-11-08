@@ -9,7 +9,7 @@ const Footer = () => {
   async function fullthemes() {
     try {
       //  await fetch("http://65.0.19.30:3001/api/themes/getallthemes",{
-      await fetch("http://65.0.19.30:5000/api/themes/getallthemes", {
+      await fetch("http:// 3.111.5.157:5000/api/themes/getallthemes", {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -35,7 +35,7 @@ const Footer = () => {
   async function getAllCategories() {
     try {
       // await fetch("http://65.0.19.30:3001/api/category/getallcategories",{
-      await fetch("http://65.0.19.30:5000/api/category/getallcategories", {
+      await fetch("http:// 3.111.5.157:5000/api/category/getallcategories", {
         method: "GET",
         headers: {
           "Content-type": "application/json",

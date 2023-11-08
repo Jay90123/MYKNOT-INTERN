@@ -22,7 +22,7 @@ const Card = ({ data }) => {
   function addtoCart() {
     try {
       if (userID) {
-        fetch("http://65.0.19.30:5000/api/cart/addtocart", {
+        fetch("http:// 3.111.5.157:5000/api/cart/addtocart", {
         // fetch("http://65.0.19.30:3001/api/cart/addtocart", {
         // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
           method: "POST",

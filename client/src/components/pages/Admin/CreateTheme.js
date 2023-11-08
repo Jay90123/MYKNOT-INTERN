@@ -34,7 +34,7 @@
 //   async function createTheme(imgurl) {
 //     try {
 //       await fetch(
-//         "http://65.0.19.30:5000/api/themes/createtheme",
+//         "http:// 3.111.5.157:5000/api/themes/createtheme",
 //         {
 //           method: "POST",
 //           body: JSON.stringify({
@@ -65,7 +65,7 @@
 
 //   const uploadImage = async (base64EncodedImage) => {
 //     try {
-//       await fetch("http://65.0.19.30:5000/api/img/upload", {
+//       await fetch("http:// 3.111.5.157:5000/api/img/upload", {
 //         method: "POST",
 //         body: JSON.stringify({ data: base64EncodedImage }),
 //         headers: { "Content-type": "application/json" },
@@ -84,7 +84,7 @@
 //   };
 
 //   async function getAllCategories(){
-//     await fetch("http://65.0.19.30:5000/api/category/getallcategories",{
+//     await fetch("http:// 3.111.5.157:5000/api/category/getallcategories",{
 //       method:"GET",
 //       headers: { "Content-type": "application/json" }
 //     }).then((res)=>{
@@ -233,7 +233,7 @@ export default function ThemesForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://65.0.19.30:5000/sendThemesData', theme);
+      const response = await axios.post('http:// 3.111.5.157:5000/sendThemesData', theme);
       console.log('Data sent successfully:', response.data);
 
       setTheme({
@@ -253,7 +253,7 @@ export default function ThemesForm() {
   useEffect(() => {
     async function getAllCategories() {
       try {
-        const response = await fetch('http://65.0.19.30:5000/api/category/getallcategories', {
+        const response = await fetch('http:// 3.111.5.157:5000/api/category/getallcategories', {
           method: 'GET',
           headers: { 'Content-type': 'application/json' },
         });
