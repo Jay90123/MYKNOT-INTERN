@@ -21,6 +21,7 @@ app.use(
       "https://myknot-intern-kuvc.vercel.app/",
       "http://localhost:3000/login",
       "http://localhost:3000",
+      "http://65.0.19.30:5000"
     ],
     credentials: true,
   })
