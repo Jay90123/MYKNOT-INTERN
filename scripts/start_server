@@ -16,7 +16,9 @@ npm install
 
 
 # Start your Node.js server using "npm start server.js"
-pm2 start server.js > app.out.log 2> app.err.log < /dev/null &
+pm2 start server.js >> app.out.log 2> app.err.log < /dev/null &
+
+echo working >> test.log
 
 //new
 
@@ -27,7 +29,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # Loads nvm bash_completion (Node is in the path now)
 
-
+echo working >> test.log
 
 
 # Start your Node.js server using "npm start server.js"
