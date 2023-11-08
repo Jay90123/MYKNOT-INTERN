@@ -22,7 +22,7 @@ app.use(
       "http://localhost:3000/login",
       "http://localhost:3000",
       "http://65.0.19.30:3000",
-      "http:// 3.111.5.157:3000"
+      "http://3.111.5.157:3000"
 
     ],
     credentials: true,
