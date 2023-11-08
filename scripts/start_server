@@ -9,6 +9,7 @@ cd /home/ec2-user/express-app/server
  
 
 # Install Node.js modules using npm
+nvm use 16
 npm install
 
 
