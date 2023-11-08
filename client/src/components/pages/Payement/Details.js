@@ -39,7 +39,7 @@ const Details = () => {
 
   async function getuserdetails() {
     await fetch(`https://myknot-intern-kuvc.vercel.app/api/auth/getuserdetails`, {
-      // await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
+      // await fetch(`http://65.0.19.30:3001/api/auth/getuserdetails`, {
       // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
       method: "GET",
       headers: {
@@ -66,8 +66,8 @@ const Details = () => {
 
   useEffect(() => {
     // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-    //  fetch(`http://localhost:3001/api/themes/getonetheme`, {
-    fetch(`http://localhost:5000/api/themes/getonetheme`, {
+    //  fetch(`http://65.0.19.30:3001/api/themes/getonetheme`, {
+    fetch(`http://65.0.19.30:5000/api/themes/getonetheme`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -94,9 +94,9 @@ const Details = () => {
     } else {
       try {
         await fetch(
-          "http://localhost:5000/api/payement/getclientdetails",
+          "http://65.0.19.30:5000/api/payement/getclientdetails",
           {
-            // await fetch("http://localhost:3001/api/payement/getclientdetails", {
+            // await fetch("http://65.0.19.30:3001/api/payement/getclientdetails", {
             // await fetch("https://myknot-official.herokuapp.com/api/payement/getclientdetails", {
             method: "POST",
             headers: {
@@ -120,9 +120,9 @@ const Details = () => {
               // console.log(data.data)
               try {
                 await fetch(
-                  "http://localhost:5000/api/orders/createorder",
+                  "http://65.0.19.30:5000/api/orders/createorder",
                   {
-                    // await fetch("http://localhost:3001/api/orders/createorder", {
+                    // await fetch("http://65.0.19.30:3001/api/orders/createorder", {
                     // await fetch("https://myknot-official.herokuapp.com/api/orders/createorder", {
                     method: "POST",
                     headers: {

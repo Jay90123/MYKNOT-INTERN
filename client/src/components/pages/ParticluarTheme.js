@@ -18,8 +18,8 @@ const ParticluarTheme = () => {
   const userID = localStorage.getItem("userID");
   useEffect(() => {
     // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-    // fetch(`http://localhost:3001/api/themes/getonetheme`, {
-    fetch(`http://localhost:5000/api/themes/getonetheme`, {
+    // fetch(`http://65.0.19.30:3001/api/themes/getonetheme`, {
+    fetch(`http://65.0.19.30:5000/api/themes/getonetheme`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -61,8 +61,8 @@ const ParticluarTheme = () => {
       }else{
         setShow(false)
         try {
-          await fetch(`http://localhost:5000/api/auth/getuserdetails`, {
-          // await fetch(`http://localhost:3001/api/auth/getuserdetails`, {
+          await fetch(`http://65.0.19.30:5000/api/auth/getuserdetails`, {
+          // await fetch(`http://65.0.19.30:3001/api/auth/getuserdetails`, {
           // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
           method: "GET",
           headers: {
@@ -78,8 +78,8 @@ const ParticluarTheme = () => {
               // console.log("data",data.user.name)
               
               setTimeout(()=>{
-                fetch(`http://localhost:5000/api/themes/createreview`, {
-                // fetch(`http://localhost:3001/api/themes/createreview`, {
+                fetch(`http://65.0.19.30:5000/api/themes/createreview`, {
+                // fetch(`http://65.0.19.30:3001/api/themes/createreview`, {
                 // fetch(`https://myknot-official.herokuapp.com/api/themes/createreview`, {
               method: "POST",
               headers: {
@@ -123,8 +123,8 @@ const ParticluarTheme = () => {
   function addtoCart() {
     try {
       if (userID) {
-        fetch("http://localhost:5000/api/cart/addtocart", {
-        // fetch("http://localhost:3001/api/cart/addtocart", {
+        fetch("http://65.0.19.30:5000/api/cart/addtocart", {
+        // fetch("http://65.0.19.30:3001/api/cart/addtocart", {
         // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
           method: "POST",
           headers: {

@@ -42,7 +42,7 @@ const Navbar = () => {
 
   async function admincheck(userID) {
     try {
-      await fetch("http://localhost:3001/api/auth/getuserdetails", {
+      await fetch("http://65.0.19.30:3001/api/auth/getuserdetails", {
         method: "GET",
         headers: { "Content-type": "application/json", userID: userID },
 

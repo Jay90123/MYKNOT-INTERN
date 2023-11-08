@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "proxy":"http://65.0.19.30:5000",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -65,7 +66,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://myknot-official.herokuapp.com",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "author": "",

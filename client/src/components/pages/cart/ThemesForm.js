@@ -22,7 +22,7 @@ export default function ThemesForm() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/sendThemesData",
+        "http://65.0.19.30:5000/sendThemesData",
         theme
       );
       console.log("Data sent successfully:", response.data);

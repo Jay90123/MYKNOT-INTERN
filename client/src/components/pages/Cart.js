@@ -10,8 +10,8 @@ const Cart = () => {
 
   function getCartItems(){
     try {
-      fetch("http://localhost:5000/api/cart/getcartitems",{
-      // fetch("http://localhost:3001/api/cart/getcartitems",{
+      fetch("http://65.0.19.30:5000/api/cart/getcartitems",{
+      // fetch("http://65.0.19.30:3001/api/cart/getcartitems",{
       // fetch("https://myknot-official.herokuapp.com/api/cart/getcartitems",{
         method:"GET",
         headers: {
@@ -34,8 +34,8 @@ const Cart = () => {
 
   function emptyCart(){
     try {
-      fetch("http://localhost:5000/api/cart/deleteallfromcart",{
-      // fetch("http://localhost:3001/api/cart/deleteallfromcart",{
+      fetch("http://65.0.19.30:5000/api/cart/deleteallfromcart",{
+      // fetch("http://65.0.19.30:3001/api/cart/deleteallfromcart",{
       // fetch("https://myknot-official.herokuapp.com/api/cart/deleteallfromcart",{
         method:"DELETE",
         headers: {

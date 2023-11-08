@@ -11,8 +11,8 @@ const CartItem = ({data}) => {
   function getThisTheme(){
     try {
       //  fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
-        // fetch(`http://localhost:3001/api/themes/getonetheme`, {
-        fetch(`http://localhost:5000/api/themes/getonetheme`, {
+        // fetch(`http://65.0.19.30:3001/api/themes/getonetheme`, {
+        fetch(`http://65.0.19.30:5000/api/themes/getonetheme`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -36,8 +36,8 @@ const CartItem = ({data}) => {
 
   function removeOneTheme(){
     try {
-      fetch("http://localhost:5000/api/cart/deletefromcart",{
-      // fetch("http://localhost:3001/api/cart/deletefromcart",{
+      fetch("http://65.0.19.30:5000/api/cart/deletefromcart",{
+      // fetch("http://65.0.19.30:3001/api/cart/deletefromcart",{
       // fetch("https://myknot-official.herokuapp.com/api/cart/deletefromcart",{
         method:"DELETE",
         headers: {

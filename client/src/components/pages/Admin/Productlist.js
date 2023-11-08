@@ -24,8 +24,8 @@ const Productlist = () => {
   const [searchQuery, setSearchQuery] = useState("");
   async function updateTheme(themeID) {
     try {
-      // await fetch(`http://localhost:5000/api/themes/getonetheme`, {
-      await fetch(`http://localhost:5000/api/themes/getonetheme`, {
+      // await fetch(`http://65.0.19.30:5000/api/themes/getonetheme`, {
+      await fetch(`http://65.0.19.30:5000/api/themes/getonetheme`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const Productlist = () => {
       }
       console.log(themeID);
       const response = await fetch(
-        `http://localhost:5000/api/themes/deletetheme/${themeID}`,
+        `http://65.0.19.30:5000/api/themes/deletetheme/${themeID}`,
         {
           method: "DELETE",
           headers: {
@@ -80,8 +80,8 @@ const Productlist = () => {
 
   async function submitHandlerUpdate() {
     try {
-      await fetch(`http://localhost:5000/api/themes/updatetheme`, {
-        // await fetch(`http://localhost:3001/api/themes/updatetheme`, {
+      await fetch(`http://65.0.19.30:5000/api/themes/updatetheme`, {
+        // await fetch(`http://65.0.19.30:3001/api/themes/updatetheme`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

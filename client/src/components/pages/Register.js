@@ -31,8 +31,8 @@ const Register = () => {
       } else {
         try {
           // await fetch("https://myknot-official.herokuapp.com/api/auth/register",{
-          // await fetch("http://localhost:3001/api/auth/register", {
-          await fetch("http://localhost:5000/api/auth/register", {
+          // await fetch("http://65.0.19.30:3001/api/auth/register", {
+          await fetch("http://65.0.19.30:5000/api/auth/register", {
             method: "POST",
             body: JSON.stringify({
               email,
