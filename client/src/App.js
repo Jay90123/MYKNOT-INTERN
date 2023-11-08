@@ -18,7 +18,6 @@ import CardList from "../src/components/pages/cart/CardList"
 import ThemesForm from "../src/components/pages/cart/ThemesForm"
 import "./index.css";
 const App = () => {
-  alert("WOOOOO");
   return (
     <div>
       <Appstate>
