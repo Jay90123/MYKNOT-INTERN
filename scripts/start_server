@@ -17,8 +17,8 @@ npm install
 
 
 # Start your Node.js server using "npm start server.js"
-pm2 start server.js >> app.out.log 2> app.err.log < /dev/null &
-
+#pm2 start server.js >> app.out.log 2> app.err.log < /dev/null &
+node server.js &
 
 //new
 
@@ -31,4 +31,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # Start your Node.js server using "npm start server.js"
-pm2 start npm -- start > app.out.log 2> app.err.log < /dev/null &
+#pm2 start npm -- start > app.out.log 2> app.err.log < /dev/null &
+npm start &
