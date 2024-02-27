@@ -27,9 +27,7 @@ const Home = () => {
     speed: 500,
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
-    // cssEase: "linear",
+   
     responsive: [
       {
         breakpoint: 1024,
