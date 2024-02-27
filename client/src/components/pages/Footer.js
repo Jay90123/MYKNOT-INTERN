@@ -9,7 +9,7 @@ const Footer = () => {
   async function fullthemes() {
     try {
       //  await fetch("http://65.0.19.30:3001/api/themes/getallthemes",{
-      await fetch("http://3.111.5.157:5000/api/themes/getallthemes", {
+      await fetch("http://3.111.5.157/api/themes/getallthemes", {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -35,7 +35,7 @@ const Footer = () => {
   async function getAllCategories() {
     try {
       // await fetch("http://65.0.19.30:3001/api/category/getallcategories",{
-      await fetch("http://3.111.5.157:5000/api/category/getallcategories", {
+      await fetch("http://3.111.5.157/api/category/getallcategories", {
         method: "GET",
         headers: {
           "Content-type": "application/json",
@@ -109,12 +109,14 @@ const Footer = () => {
                 <li className="f-list-ele"></li>
                 <li className="f-list-ele f-l-e-over">
                   <Link to="https://instagram.com/hillborn_technologies?igshid=OGQ5ZDc2ODk2ZA==">
-                  <i className="fa-brands fa-instagram f-icon"></i></Link>
+                    <i className="fa-brands fa-instagram f-icon"></i>
+                  </Link>
                 </li>
                 {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
                 <li className="f-list-ele f-l-e-over">
                   <Link to="https://www.linkedin.com/company/hillborn-technologies-private-limited/">
-                  <i className="fa-brands fa-linkedin f-icon"></i></Link>
+                    <i className="fa-brands fa-linkedin f-icon"></i>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -125,13 +127,13 @@ const Footer = () => {
                 <li className="f-list-ele cutoff"></li>
                 <li className="f-list-ele f-l-e-over">
                   <Link to="https://www.facebook.com/profile.php?id=100092124730505">
-                  <i className="fa-brands fa-facebook f-icon"></i>
+                    <i className="fa-brands fa-facebook f-icon"></i>
                   </Link>
                 </li>
                 {/* <li className="f-list-ele cutoff">&nbsp;</li> */}
                 <li className="f-list-ele f-l-e-over">
                   <Link to="mailto:hillborntechnologies@gmail.com">
-                  <i className="fa-solid fa-envelope f-icon"></i>
+                    <i className="fa-solid fa-envelope f-icon"></i>
                   </Link>
                 </li>
               </ul>

@@ -4,79 +4,88 @@ import "../css/cart.css";
 import CartItem from "./CartItem";
 
 const Cart = () => {
+  const [cartitem, setCartItem] = useState();
+  const userID = localStorage.getItem("userID");
 
-  const [cartitem,setCartItem]=useState()
-  const userID=localStorage.getItem("userID")
-
-  function getCartItems(){
+  function getCartItems() {
     try {
-      fetch("http://3.111.5.157:5000/api/cart/getcartitems",{
-      // fetch("http://65.0.19.30:3001/api/cart/getcartitems",{
-      // fetch("https://myknot-official.herokuapp.com/api/cart/getcartitems",{
-        method:"GET",
+      fetch("http://3.111.5.157/api/cart/getcartitems", {
+        // fetch("http://65.0.19.30:3001/api/cart/getcartitems",{
+        // fetch("https://myknot-official.herokuapp.com/api/cart/getcartitems",{
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
           userID: userID,
         },
-      }).then((res)=>{
-        return res.json()
-      }).then((data)=>{
-        // console.log(data.cartitems)
-        setCartItem(data.cartitems)
-        return data
-      }).catch((error)=>{
-        console.log(error)
       })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          // console.log(data.cartitems)
+          setCartItem(data.cartitems);
+          return data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
-  function emptyCart(){
+  function emptyCart() {
     try {
-      fetch("http://3.111.5.157:5000/api/cart/deleteallfromcart",{
-      // fetch("http://65.0.19.30:3001/api/cart/deleteallfromcart",{
-      // fetch("https://myknot-official.herokuapp.com/api/cart/deleteallfromcart",{
-        method:"DELETE",
+      fetch("http://3.111.5.157/api/cart/deleteallfromcart", {
+        // fetch("http://65.0.19.30:3001/api/cart/deleteallfromcart",{
+        // fetch("https://myknot-official.herokuapp.com/api/cart/deleteallfromcart",{
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
           userID: userID,
         },
-      }).then((res)=>{
-        return res.json()
-      }).then((data)=>{
-        // console.log(data.cartitems)
-        // setCartItem(data.cartitems)
-        if(data.success==true){
-          getCartItems()
-        }
-        return data
-      }).catch((error)=>{
-        console.log(error)
       })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          // console.log(data.cartitems)
+          // setCartItem(data.cartitems)
+          if (data.success == true) {
+            getCartItems();
+          }
+          return data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
-  useEffect(()=>{
-    getCartItems()
-  },[])
+  useEffect(() => {
+    getCartItems();
+  }, []);
 
   return (
     <>
       <Navbar />
       <div className="cart-one">
         <h1 className="cart-h1">Your cartitems</h1>
-        <button className="cart-btnone" onClick={()=>{
-          emptyCart()
-        }}><i className="fa-solid fa-trash-can cart-icon1"></i>Empty cart</button>
-        {
-          cartitem?cartitem.map((ele,index)=>{
-            return   <CartItem data={ele} key={index}/>
-          }):undefined
-        }
-  
+        <button
+          className="cart-btnone"
+          onClick={() => {
+            emptyCart();
+          }}
+        >
+          <i className="fa-solid fa-trash-can cart-icon1"></i>Empty cart
+        </button>
+        {cartitem
+          ? cartitem.map((ele, index) => {
+              return <CartItem data={ele} key={index} />;
+            })
+          : undefined}
       </div>
     </>
   );

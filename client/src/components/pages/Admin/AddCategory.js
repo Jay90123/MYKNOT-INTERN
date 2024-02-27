@@ -3,70 +3,82 @@ import "../../css/admin/createtheme.css";
 
 const AddCategory = () => {
   const [category, setCategory] = useState("");
-  const [categories,setCategories]=useState()
+  const [categories, setCategories] = useState();
 
-
-  async function getAllCategories(){
+  async function getAllCategories() {
     // await fetch("http://65.0.19.30:3001/api/category/getallcategories",{
-    await fetch("http://3.111.5.157:5000/api/category/getallcategories",{
-      method:"GET",
-      headers: { "Content-type": "application/json" }
-    }).then((res)=>{
-      return res.json()
-    }).then((data)=>{
-      if(data){
-        setCategories(data.categories)
-      }
-    }).catch((error)=>{
-      console.log(error)
+    await fetch("http://3.111.5.157/api/category/getallcategories", {
+      method: "GET",
+      headers: { "Content-type": "application/json" },
     })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          setCategories(data.categories);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  useEffect(()=>{
-    getAllCategories()
-  },[])
+  useEffect(() => {
+    getAllCategories();
+  }, []);
 
-
- async function handelSubmit(){
+  async function handelSubmit() {
     try {
-     if(category){
-      // await fetch("http://65.0.19.30:3001/api/category/createcategory",{
-      await fetch("http://3.111.5.157:5000/api/category/createcategory",{
-        method:"POST",
-        headers: { "Content-type": "application/json" },
-        body:JSON.stringify({
-          name:category
+      if (category) {
+        // await fetch("http://65.0.19.30:3001/api/category/createcategory",{
+        await fetch("http://3.111.5.157/api/category/createcategory", {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            name: category,
+          }),
         })
-      }).then((res)=>{
-        return res.json()
-      }).then((data)=>{
-        if(data.success===true){setCategory("") ;getAllCategories()}
-      }).catch((error)=>{
-        console.log(error)
-      })
-     }
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            if (data.success === true) {
+              setCategory("");
+              getAllCategories();
+            }
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
 
-async function  deleteHandler(catID){
-  try {
-    await fetch("http://3.111.5.157:5000/api/category/deletecategory",{
-    // await fetch("http://3.111.5.157:5000/api/category/deletecategory",{
-      method:"DELETE",
-      headers: { "Content-type": "application/json",catID },
-    }).then((res)=>{
-      return res.json()
-    }).then((data)=>{
-      if(data.success===true){getAllCategories()}
-    }).catch((error)=>{
-      console.log(error)
-    })
-  } catch (error) {
-    console.log(error)
+  async function deleteHandler(catID) {
+    try {
+      await fetch("http://3.111.5.157/api/category/deletecategory", {
+        // await fetch("http://3.111.5.157/api/category/deletecategory",{
+        method: "DELETE",
+        headers: { "Content-type": "application/json", catID },
+      })
+        .then((res) => {
+          return res.json();
+        })
+        .then((data) => {
+          if (data.success === true) {
+            getAllCategories();
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   }
-}
   return (
     <>
       <div className="ctheme-one">
@@ -94,14 +106,22 @@ async function  deleteHandler(catID){
 
           <div className="ctheme-two-child1">
             <div className="over2">
-              {
-                categories ? categories.map((ele,index)=>{
-                  return <div className="over2childs" key={index}>{ele.name}  <i class="fa-solid fa-trash-can" style={{"color":"red","cursor":"pointer"}} onClick={()=>{
-                    deleteHandler(ele._id)
-                  }}></i></div>
-
-                }) :null
-              }
+              {categories
+                ? categories.map((ele, index) => {
+                    return (
+                      <div className="over2childs" key={index}>
+                        {ele.name}{" "}
+                        <i
+                          class="fa-solid fa-trash-can"
+                          style={{ color: "red", cursor: "pointer" }}
+                          onClick={() => {
+                            deleteHandler(ele._id);
+                          }}
+                        ></i>
+                      </div>
+                    );
+                  })
+                : null}
             </div>
           </div>
         </div>

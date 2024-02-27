@@ -34,7 +34,7 @@
 //   async function createTheme(imgurl) {
 //     try {
 //       await fetch(
-//         "http://3.111.5.157:5000/api/themes/createtheme",
+//         "http://3.111.5.157/api/themes/createtheme",
 //         {
 //           method: "POST",
 //           body: JSON.stringify({
@@ -65,7 +65,7 @@
 
 //   const uploadImage = async (base64EncodedImage) => {
 //     try {
-//       await fetch("http://3.111.5.157:5000/api/img/upload", {
+//       await fetch("http://3.111.5.157/api/img/upload", {
 //         method: "POST",
 //         body: JSON.stringify({ data: base64EncodedImage }),
 //         headers: { "Content-type": "application/json" },
@@ -84,7 +84,7 @@
 //   };
 
 //   async function getAllCategories(){
-//     await fetch("http://3.111.5.157:5000/api/category/getallcategories",{
+//     await fetch("http://3.111.5.157/api/category/getallcategories",{
 //       method:"GET",
 //       headers: { "Content-type": "application/json" }
 //     }).then((res)=>{
@@ -213,13 +213,13 @@ import axios from "axios";
 export default function ThemesForm() {
   const [category, setCategory] = useState("");
   const [theme, setTheme] = useState({
-    title: '',
-    description: '',
-    price: '',
-    siteurl: '',
-    img: '',
-    category: '',
-    reviewCount: '',
+    title: "",
+    description: "",
+    price: "",
+    siteurl: "",
+    img: "",
+    category: "",
+    reviewCount: "",
   });
 
   const [categoryarray, setCategoryarray] = useState([]);
@@ -233,30 +233,36 @@ export default function ThemesForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://3.111.5.157:5000/sendThemesData', theme);
-      console.log('Data sent successfully:', response.data);
+      const response = await axios.post(
+        "http://3.111.5.157/sendThemesData",
+        theme
+      );
+      console.log("Data sent successfully:", response.data);
 
       setTheme({
-        title: '',
-        description: '',
-        price: '',
-        siteurl: '',
-        img: '',
-        category: '',
-        reviewCount: '',
+        title: "",
+        description: "",
+        price: "",
+        siteurl: "",
+        img: "",
+        category: "",
+        reviewCount: "",
       });
     } catch (error) {
-      console.error('Error sending data:', error);
+      console.error("Error sending data:", error);
     }
   };
 
   useEffect(() => {
     async function getAllCategories() {
       try {
-        const response = await fetch('http://3.111.5.157:5000/api/category/getallcategories', {
-          method: 'GET',
-          headers: { 'Content-type': 'application/json' },
-        });
+        const response = await fetch(
+          "http://3.111.5.157/api/category/getallcategories",
+          {
+            method: "GET",
+            headers: { "Content-type": "application/json" },
+          }
+        );
 
         if (response.ok) {
           const data = await response.json();
@@ -265,10 +271,10 @@ export default function ThemesForm() {
             console.log(data.categories); // Log the fetched categories
           }
         } else {
-          console.error('Failed to fetch categories');
+          console.error("Failed to fetch categories");
         }
       } catch (error) {
-        console.error('Error fetching categories:', error);
+        console.error("Error fetching categories:", error);
       }
     }
 

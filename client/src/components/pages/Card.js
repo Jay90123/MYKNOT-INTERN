@@ -22,9 +22,9 @@ const Card = ({ data }) => {
   function addtoCart() {
     try {
       if (userID) {
-        fetch("http://3.111.5.157:5000/api/cart/addtocart", {
-        // fetch("http://65.0.19.30:3001/api/cart/addtocart", {
-        // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
+        fetch("http://3.111.5.157/api/cart/addtocart", {
+          // fetch("http://65.0.19.30:3001/api/cart/addtocart", {
+          // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -54,14 +54,14 @@ const Card = ({ data }) => {
     }
   }
 
-  function paymentstatusCheck(){
-    if(userID){
-      navigate(`/payement/clientdetails/${data._id}`)
-    }else{
-      toast.warning("You need to login to proceed",toastoptions)
-      setTimeout(()=>{
-        navigate("login")
-      },2000)
+  function paymentstatusCheck() {
+    if (userID) {
+      navigate(`/payement/clientdetails/${data._id}`);
+    } else {
+      toast.warning("You need to login to proceed", toastoptions);
+      setTimeout(() => {
+        navigate("login");
+      }, 2000);
     }
   }
   return (
@@ -101,9 +101,12 @@ const Card = ({ data }) => {
               {/* <Link to={`/payement/clientdetails/${data._id}`} className="card-anchor" >
                 Buy at &#8377; {data.price}
               </Link> */}
-              <p onClick={()=>{
-                paymentstatusCheck()
-              }} className="card-anchor-override" >
+              <p
+                onClick={() => {
+                  paymentstatusCheck();
+                }}
+                className="card-anchor-override"
+              >
                 Buy at &#8377; {data.price}
               </p>
             </p>

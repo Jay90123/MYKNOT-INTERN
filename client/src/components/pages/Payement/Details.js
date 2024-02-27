@@ -5,9 +5,9 @@ import "../../css/login.css";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { AiFillEdit } from "react-icons/ai"
+import { AiFillEdit } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
-import { BsFillTelephoneFill} from "react-icons/bs";
+import { BsFillTelephoneFill } from "react-icons/bs";
 
 const Details = () => {
   const [show, setShow] = useState(false);
@@ -38,15 +38,18 @@ const Details = () => {
   }
 
   async function getuserdetails() {
-    await fetch(`https://myknot-intern-kuvc.vercel.app/api/auth/getuserdetails`, {
-      // await fetch(`http://65.0.19.30:3001/api/auth/getuserdetails`, {
-      // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        userID: userID,
-      },
-    })
+    await fetch(
+      `https://myknot-intern-kuvc.vercel.app/api/auth/getuserdetails`,
+      {
+        // await fetch(`http://65.0.19.30:3001/api/auth/getuserdetails`, {
+        // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          userID: userID,
+        },
+      }
+    )
       .then((res) => {
         return res.json();
       })
@@ -67,7 +70,7 @@ const Details = () => {
   useEffect(() => {
     // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
     //  fetch(`http://65.0.19.30:3001/api/themes/getonetheme`, {
-    fetch(`http://3.111.5.157:5000/api/themes/getonetheme`, {
+    fetch(`http://3.111.5.157/api/themes/getonetheme`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -93,24 +96,21 @@ const Details = () => {
       toast.warning("Please enter you phone number", toastoptions);
     } else {
       try {
-        await fetch(
-          "http://3.111.5.157:5000/api/payement/getclientdetails",
-          {
-            // await fetch("http://65.0.19.30:3001/api/payement/getclientdetails", {
-            // await fetch("https://myknot-official.herokuapp.com/api/payement/getclientdetails", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              price,
-              email,
-              phone,
-              name,
-              customerId: userID,
-            }),
-          }
-        )
+        await fetch("http://3.111.5.157/api/payement/getclientdetails", {
+          // await fetch("http://65.0.19.30:3001/api/payement/getclientdetails", {
+          // await fetch("https://myknot-official.herokuapp.com/api/payement/getclientdetails", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            price,
+            email,
+            phone,
+            name,
+            customerId: userID,
+          }),
+        })
           .then((res) => {
             return res.json();
           })
@@ -119,27 +119,24 @@ const Details = () => {
             if (data.success == true) {
               // console.log(data.data)
               try {
-                await fetch(
-                  "http://3.111.5.157:5000/api/orders/createorder",
-                  {
-                    // await fetch("http://65.0.19.30:3001/api/orders/createorder", {
-                    // await fetch("https://myknot-official.herokuapp.com/api/orders/createorder", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                      client_id: userID,
-                      name,
-                      email,
-                      phone,
-                      amount: price,
-                      created_at: data.data.data.created_at,
-                      cf_orderid: data.data.data.cf_order_id,
-                      my_orderid: data.data.data.order_id,
-                    }),
-                  }
-                )
+                await fetch("http://3.111.5.157/api/orders/createorder", {
+                  // await fetch("http://65.0.19.30:3001/api/orders/createorder", {
+                  // await fetch("https://myknot-official.herokuapp.com/api/orders/createorder", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    client_id: userID,
+                    name,
+                    email,
+                    phone,
+                    amount: price,
+                    created_at: data.data.data.created_at,
+                    cf_orderid: data.data.data.cf_order_id,
+                    my_orderid: data.data.data.order_id,
+                  }),
+                })
                   .then((res) => {
                     return res.json();
                   })
@@ -181,8 +178,8 @@ const Details = () => {
             </div>
             <div className="d-three-childtwo">
               <div className="d-tc-one">
-              <div className="details">
-              <AiFillEdit className="icons"/> <h4> {name}</h4>
+                <div className="details">
+                  <AiFillEdit className="icons" /> <h4> {name}</h4>
                 </div>
                 <button
                   onClick={() => {
@@ -199,26 +196,26 @@ const Details = () => {
               </div>
               <div className="d-tc-one">
                 <div className="details">
-                <MdEmail className="icons"/>
+                  <MdEmail className="icons" />
                   <h4>{email}</h4>
-                  </div>
-                  <button
-                    onClick={() => {
-                      {
-                        updateHandler();
-                        setShow(true);
-                        setS2(true);
-                      }
-                    }}
-                    className="d-button-update"
-                  >
-                    Update
-                  </button>
+                </div>
+                <button
+                  onClick={() => {
+                    {
+                      updateHandler();
+                      setShow(true);
+                      setS2(true);
+                    }
+                  }}
+                  className="d-button-update"
+                >
+                  Update
+                </button>
               </div>
               <div className="d-tc-one">
-              <div className="details">
-              <BsFillTelephoneFill className="icons"/>
-                <h4> {phone}</h4>
+                <div className="details">
+                  <BsFillTelephoneFill className="icons" />
+                  <h4> {phone}</h4>
                 </div>
                 <button
                   onClick={() => {

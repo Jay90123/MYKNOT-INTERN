@@ -23,11 +23,7 @@ app.use(
       "http://localhost:3000",
 
       "http://65.0.19.30:3000",
-      "http://3.111.5.157:3000"
-
-
-      
-
+      "http://3.111.5.157",
     ],
     credentials: true,
   })
@@ -95,6 +91,6 @@ app.get("*", (req, res) => {
 
 app.use(ErrorResponse);
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 80, () => {
   console.log(`Server is listening on port ${process.env.PORT}`);
 });

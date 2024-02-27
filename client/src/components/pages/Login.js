@@ -39,8 +39,8 @@ const Login = () => {
     }
     try {
       // await fetch("https://myknot-official.herokuapp.com/api/auth/login",{
-      await fetch("http://3.111.5.157:5000/api/auth/login", {
-        // await fetch("http://3.111.5.157:5000/api/auth/login", {
+      await fetch("http://3.111.5.157/api/auth/login", {
+        // await fetch("http://3.111.5.157/api/auth/login", {
         method: "POST",
         body: JSON.stringify({ email, password }),
         // withCredentials:true,
@@ -78,7 +78,7 @@ const Login = () => {
   const responseSuccessGoogle = (response) => {
     console.log(response);
 
-    fetch("http://3.111.5.157:5000/api/auth/googlelogin", {
+    fetch("http://3.111.5.157/api/auth/googlelogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -111,7 +111,7 @@ const Login = () => {
     console.log(response);
     // axios({
     //   method: "Post",
-    //   url: "http://3.111.5.157:5000/api/googlelogin",
+    //   url: "http://3.111.5.157/api/googlelogin",
     //   data: { tokenId: response.tokenId },
     // }).then((response) => {
     //   console.log(response);

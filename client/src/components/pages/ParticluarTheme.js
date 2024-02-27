@@ -6,7 +6,6 @@ import Review from "./Review";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 const ParticluarTheme = () => {
   const [show, setShow] = useState(false);
   const [themedata, setThemeData] = useState();
@@ -14,12 +13,12 @@ const ParticluarTheme = () => {
   const [comment, setComment] = useState();
 
   const { id } = useParams();
-  
+
   const userID = localStorage.getItem("userID");
   useEffect(() => {
     // fetch(`https://myknot-official.herokuapp.com/api/themes/getonetheme`, {
     // fetch(`http://65.0.19.30:3001/api/themes/getonetheme`, {
-    fetch(`http://3.111.5.157:5000/api/themes/getonetheme`, {
+    fetch(`http://3.111.5.157/api/themes/getonetheme`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -46,86 +45,84 @@ const ParticluarTheme = () => {
     theme: "dark",
   };
 
- async function submitHandler() {
-    if(!rating||!comment){
-      toast.warning("Please fill all the fields",toastoptions)
-      return
-    }else{
-    if(!userID){
-        toast.warning("Please login to rate product",toastoptions)
-        return
-    }else{
-      if(rating>5 || rating<0){
-        toast.warning("Please rate in range of 5",toastoptions)
-        return
-      }else{
-        setShow(false)
-        try {
-          await fetch(`http://3.111.5.157:5000/api/auth/getuserdetails`, {
-          // await fetch(`http://65.0.19.30:3001/api/auth/getuserdetails`, {
-          // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            userID: userID,
-          },
-        })
-          .then((res) => {
-            return res.json();
-          })
-          .then((data) => {
-            if(data.success==true){
-              // console.log("data",data.user.name)
-              
-              setTimeout(()=>{
-                fetch(`http://3.111.5.157:5000/api/themes/createreview`, {
-                // fetch(`http://65.0.19.30:3001/api/themes/createreview`, {
-                // fetch(`https://myknot-official.herokuapp.com/api/themes/createreview`, {
-              method: "POST",
+  async function submitHandler() {
+    if (!rating || !comment) {
+      toast.warning("Please fill all the fields", toastoptions);
+      return;
+    } else {
+      if (!userID) {
+        toast.warning("Please login to rate product", toastoptions);
+        return;
+      } else {
+        if (rating > 5 || rating < 0) {
+          toast.warning("Please rate in range of 5", toastoptions);
+          return;
+        } else {
+          setShow(false);
+          try {
+            await fetch(`http://3.111.5.157/api/auth/getuserdetails`, {
+              // await fetch(`http://65.0.19.30:3001/api/auth/getuserdetails`, {
+              // await fetch(`https://myknot-official.herokuapp.com/api/auth/getuserdetails`, {
+              method: "GET",
               headers: {
                 "Content-Type": "application/json",
-                themeID: id,
                 userID: userID,
-                // userName:username
-                userName:data.user.name
               },
-              body: JSON.stringify({
-                rating:rating,
-                comment:comment
-            })
             })
               .then((res) => {
                 return res.json();
               })
-              .then((data2) => {
-                window.location.reload(true)
-                return data2
+              .then((data) => {
+                if (data.success == true) {
+                  // console.log("data",data.user.name)
+
+                  setTimeout(() => {
+                    fetch(`http://3.111.5.157/api/themes/createreview`, {
+                      // fetch(`http://65.0.19.30:3001/api/themes/createreview`, {
+                      // fetch(`https://myknot-official.herokuapp.com/api/themes/createreview`, {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                        themeID: id,
+                        userID: userID,
+                        // userName:username
+                        userName: data.user.name,
+                      },
+                      body: JSON.stringify({
+                        rating: rating,
+                        comment: comment,
+                      }),
+                    })
+                      .then((res) => {
+                        return res.json();
+                      })
+                      .then((data2) => {
+                        window.location.reload(true);
+                        return data2;
+                      })
+                      .catch((error) => {
+                        console.log(error);
+                      });
+                  }, 1000);
+                }
               })
               .catch((error) => {
                 console.log(error);
               });
-              },1000)
-            
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-        } catch (error) {
-          console.log("error",error)
+          } catch (error) {
+            console.log("error", error);
+          }
         }
       }
     }
   }
-  }
-
 
   function addtoCart() {
     try {
       if (userID) {
-        fetch("http://3.111.5.157:5000/api/cart/addtocart", {
-        // fetch("http://65.0.19.30:3001/api/cart/addtocart", {
-        // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
+        fetch("http://3.111.5.157/api/cart/addtocart", {
+          // fetch("http://65.0.19.30:3001/api/cart/addtocart", {
+          // fetch("https://myknot-official.herokuapp.com/api/cart/addtocart", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -186,9 +183,14 @@ const ParticluarTheme = () => {
                 </p>
                 <p className="ptc-ptwo">&#10003; Well Documented</p>
                 <button className="ptc-btntwo">Buy Now</button>
-                <button className="ptc-btntwo" onClick={()=>{
-                  addtoCart()
-                }}>Add to cart</button>
+                <button
+                  className="ptc-btntwo"
+                  onClick={() => {
+                    addtoCart();
+                  }}
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </div>
@@ -242,7 +244,7 @@ const ParticluarTheme = () => {
           </div>
         </>
       ) : null}
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 };
