@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   const navigate = useNavigate();
   var settings = {
-    // dots: true,
+    
     infinite: true,
     speed: 500,
     slidesToShow: 4,
