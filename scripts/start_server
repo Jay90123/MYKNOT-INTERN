@@ -16,6 +16,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm use 16
 npm install
 
+
 # Start your Node.js server using "npm start server.js"
 pm2 start server.js > test.log
 
