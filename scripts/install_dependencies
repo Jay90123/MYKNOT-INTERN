@@ -7,7 +7,7 @@ nvm install 16
 sudo npm install pm2 -g
 
 #create our working directory if it doesnt exist
-DIR="/var/www/html/express-app"
+DIR="/var/www/html/"
 if [ -d "$DIR" ]; then
   echo "${DIR} exists"
 else
