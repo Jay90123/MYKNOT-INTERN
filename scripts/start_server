@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Give permission for everything in the express-app directory
-sudo chmod -R 777 /var/www/html/
+sudo chmod -R 777 /var/www
 
 
 # Navigate into our working directory where we have all our files
-cd /var/www/html/server
+cd /var/www/server
  
 # Add npm and node to path using NVM (Node Version Manager) 
 export NVM_DIR="$HOME/.nvm"
