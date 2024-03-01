@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 const Home = () => {
   const navigate = useNavigate();
   var settings = {
-    // dots: true,
+    
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -27,9 +27,7 @@ const Home = () => {
     speed: 500,
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
-    // cssEase: "linear",
+   
     responsive: [
       {
         breakpoint: 1024,

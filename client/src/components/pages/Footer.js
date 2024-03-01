@@ -139,7 +139,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <p className="f-last-p">&#169; 2022 Myknot.com</p>
+          <p className="f-last-p">&#169; 2022 Hillborn.com</p>
         </div>
       </div>
     </>
