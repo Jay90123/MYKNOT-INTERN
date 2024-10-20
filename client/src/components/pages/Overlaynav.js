@@ -17,7 +17,7 @@ const Overlaynav = () => {
     <ul className="overlay-list">
         <li className="overlay-list-ele"><p className='overlay-para' onClick={()=>{
             closer()
-        }}> <Link to="/" style={{"color":"white"}}>Home</Link></p></li>
+        }}> <Link to="/" style={{"color":"white"}}>House</Link></p></li>
         <li className="overlay-list-ele"><p className='overlay-para' onClick={()=>{
             closer()
         }}><Link to="/aboutus" style={{"color":"white"}}>About Us</Link></p></li>
