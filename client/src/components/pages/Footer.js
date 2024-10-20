@@ -68,7 +68,7 @@ const Footer = () => {
         <div className="f-two">
           {/* <p className="f-p1">ShopX</p> */}
           <p className="f-p2">
-            <Link to="/contact">Visit help center</Link>
+            <Link to="/contact">Do not Visit help center</Link>
           </p>
 
           <div className="f-three">
