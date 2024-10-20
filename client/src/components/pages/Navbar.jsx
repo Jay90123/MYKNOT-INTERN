@@ -94,7 +94,7 @@ const Navbar = () => {
             <div >
               {
                 show1 === true ? <>
-                  <div className='list'><li className="list-ele"><Link to="/">Home</Link></li>
+                  <div className='list'><li className="list-ele"><Link to="/">House</Link></li>
                     <li className="list-ele"><Link to="/aboutus">About Us</Link></li>
                     <li className="list-ele"><Link to="/contact">Contact Us</Link></li>
                     <li className="list-ele"><Link to="/admin">{validate ? "Become a seller" : null}</Link></li>
