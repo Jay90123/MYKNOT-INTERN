@@ -318,10 +318,7 @@ const Home = () => {
             </h1>
             {/* <p className="h-p2">Select your dream website from our rich collection</p> */}
             <p className="h-p2">
-              Welcome to our new collection of websites and apps for all your
-              projects. We hope you discover the website or instant app of your
-              dreams here. Begin your journey with our carefully curated
-              selections
+              
             </p>
             <div className="search">
               <form action="" className="search-form">
