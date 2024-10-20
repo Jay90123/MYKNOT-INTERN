@@ -173,7 +173,7 @@ const Collection = () => {
   return (
     <>
       <Navbar />
-      <h1 style={{"textAlign":"center"}}>Our Categories</h1>
+      <h1 style={{"textAlign":"center"}}>Not Our Categories</h1>
       <ul className="collection-listcontrol">
         <li className="collection-list-item dropdown">
           Educational
